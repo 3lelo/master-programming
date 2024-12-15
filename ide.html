@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online IDE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <style>
+        .online-ide-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+        .code-editor {
+            height: 300px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .ide-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        #output {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            min-height: 50px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .language-select {
+            padding: 5px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="body-learn">
+    <nav>
+        <a href="index.html" data-label-before="الرئيسية" data-label-after="الرئيسية" onclick="showTab('main', event)"></a>
+        <a href="java.html" data-label-before="جافا" data-label-after="تعلم جافا!" onclick="showTab('java', event)"></a>
+        <a href="kotlin.html" data-label-before="كوتلين" data-label-after="تعلم كوتلين!" onclick="showTab('kotlin', event)"></a>
+        <a href="#" data-label-before="IDE" data-label-after="اكتب كودك!" onclick="showTab('ide', event)" class="active"></a>
+    </nav>
+
+
+    <div class="online-ide-container">
+        <h3>Online Code Editor</h3>
+        <select id="language-select" class="language-select">
+            <option value="java">Java</option>
+            <option value="kotlin">Kotlin</option>
+        </select>
+        <textarea id="code-editor" class="code-editor"></textarea>
+        <div class="ide-controls">
+            <button id="run-code">Run Code</button>
+            <button id="clear-code">Clear</button>
+        </div>
+        <div id="output">Output will appear here...</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script>
+        // Initialize CodeMirror
+        var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+            lineNumbers: true,
+            mode: 'text/x-java',
+            theme: 'monokai',
+            indentUnit: 4,
+            tabSize: 4
+        });
+
+        // Language selection
+        const languageSelect = document.getElementById('language-select');
+        languageSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'java') {
+                editor.setOption('mode', 'text/x-java');
+                editor.setValue(`public class Solution {
+    public static void main(String[] args) {
+        // Your Java code here
+        System.out.println("Hello, Java!");
+    }
+}`);
+            } else {
+                editor.setOption('mode', 'text/x-kotlin');
+                editor.setValue(`fun main() {
+    // Your Kotlin code here
+    println("Hello, Kotlin!")
+}`);
+            }
+        });
+
+        // Run Code button (simulated)
+        document.getElementById('run-code').addEventListener('click', () => {
+            const output = document.getElementById('output');
+            const code = editor.getValue();
+            const language = languageSelect.value;
+
+            // Clear previous output
+            output.innerHTML = '';
+
+            // Simulate running code (since actual compilation isn't possible locally)
+            const outputMessage = document.createElement('pre');
+            outputMessage.textContent = `Running ${language.toUpperCase()} code...\n\n${code}\n\n(Note: Actual code execution requires a backend server)`;
+            output.appendChild(outputMessage);
+        });
+
+        // Clear Code button
+        document.getElementById('clear-code').addEventListener('click', () => {
+            editor.setValue('');
+            document.getElementById('output').innerHTML = 'Output will appear here...';
+        });
+
+        // Initial setup
+        editor.setValue(`public class Solution {
+    public static void main(String[] args) {
+        // Your Java code here
+        System.out.println("Hello, Java!");
+    }
+}`);
+    </script>
+</body>
+</html>
