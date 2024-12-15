@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم برمجة جافا وكوتلين</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body class="body-learn" dir="rtl">
+
+    <nav>
+        <a href="index.html" data-label-before="الرئيسية" data-label-after="الرئيسية" onclick="showTab('main', event)"></a>
+        <a href="java.html" data-label-before="جافا" data-label-after="تعلم جافا!" onclick="showTab('java', event)"></a>
+        <a href="#" data-label-before="كوتلين" data-label-after="تعلم كوتلين!" onclick="showTab('kotlin', event)" class="active"></a>
+    </nav>
+
+    <div id="kotlin" class="main active">
+
+        <h1>دورة كوتلن</h1>
+        <h2>استكشاف كوتلن، لغة برمجة حديثة مفضلة لتطوير تطبيقات أندرويد.</h2>
+        <div class="course-content" dir="rtl">
+            <div class="sidebar">
+                <ul class="section-list">
+                    <li class="section-item-k active" data-section="hello-world-k">Hello World with Kotlin</li>
+                    <li class="section-item-k" data-section="data-types">Kotlin Data Types</li>
+                    <li class="section-item-k" data-section="operators-k">Kotlin Operators</li>
+                    <li class="section-item-k" data-section="strings-k">Kotlin Strings</li>
+                    <li class="section-item-k" data-section="math-k">Kotlin Math</li>
+                    <li class="section-item-k" data-section="booleans-k">Kotlin Booleans</li>
+                    <li class="section-item-k" data-section="if.else-k">Kotlin If..Else</li>
+                    <li class="section-item-k" data-section="when">Kotlin When</li>
+                    <li class="section-item-k" data-section="loops-k">Kotlin Loops</li>
+                    <li class="section-item-k" data-section="break.continue-k">Kotlin Break and Continue</li>
+                    <li class="section-item-k" data-section="arrays-k">Kotlin Arrays</li>
+                </ul>
+            </div>
+            <div class="section-content">
+                <div id="hello-world-k" class="section-k active">
+                    <h3>مرحبًا بالعالم باستخدام كوتلن</h3>
+                    <p>برنامج "مرحبًا بالعالم" هو أبسط طريقة للبدء بالبرمجة في كوتلن.</p>
+                    <pre>
+<code>// مرحبًا بالعالم في كوتلن
+fun main() {
+    println("Hello, World!")
+}
+                        </code>
+                    </pre>
+                    <p>هذا البرنامج يُعرّف دالة <code>main</code>، وهي نقطة البداية للتطبيق. وتُستخدم دالة <code>println</code> لطباعة النصوص على وحدة التحكم.</p>
+                </div>
+
+                <div id="data-types" class="section-k">
+                    <h3>أنواع البيانات في كوتلن</h3>
+                    <p>تُقدم كوتلن أنواع بيانات متعددة لتخزين قيم مختلفة:</p>
+                    <ul>
+                        <li><strong>Int:</strong> يخزن الأعداد الصحيحة (مثل: <code>val x: Int = 10</code>)</li>
+                        <li><strong>Double:</strong> يخزن الأعداد العشرية (مثل: <code>val y: Double = 3.14</code>)</li>
+                        <li><strong>Char:</strong> يخزن حرفًا واحدًا (مثل: <code>val c: Char = 'A'</code>)</li>
+                        <li><strong>Boolean:</strong> يخزن القيم المنطقية (صح أو خطأ) (مثل: <code>val isKotlinFun: Boolean = true</code>)</li>
+                        <li><strong>String:</strong> يخزن النصوص (مثل: <code>val message: String = "Hello"</code>)</li>
+                    </ul>
+                    <p>إليك مثالًا لاستخدام هذه الأنواع في كوتلن:</p>
+                    <pre>
+                        <code>
+fun main() {
+    val age: Int = 25
+    val pi: Double = 3.14159
+    val grade: Char = 'A'
+    val isActive: Boolean = true
+    val name: String = "John"
+
+    println("العمر: $age")
+    println("قيمة π: $pi")
+    println("التقدير: $grade")
+    println("هل نشط؟: $isActive")
+    println("الاسم: $name")
+}
+                        </code>
+                    </pre>
+                </div>
+
+
+                <div id="operators-k" class="section-k">
+                    <h3>العوامل في كوتلن</h3>
+                    <p>توفر كوتلن مجموعة غنية من العوامل لإجراء عمليات مختلفة على المتغيرات والقيم، مع ميزات فريدة مقارنة بجافا.</p>
+                    
+                    <h4>العوامل الحسابية</h4>
+                    <pre><code>// العمليات الحسابية الأساسية
+val a = 10
+val b = 3
+
+val sum = a + b       // الجمع: 13
+val difference = a - b// الطرح: 7
+val product = a * b   // الضرب: 30
+val division = a / b  // القسمة العددية: 3
+val modulus = a % b   // الباقي: 1
+
+// عامل القسمة الآمنة
+val safeDivision = a.div(b)  // قسمة آمنة في كوتلن
+                </code></pre>
+                    
+                    <h4>عوامل المقارنة</h4>
+                    <pre><code>// عوامل المقارنة
+val x = 5
+val y = 10
+
+val isEqual = x == y       // المساواة الهيكلية
+val isExactEqual = x === y // المساواة المرجعية
+val isNotEqual = x != y    // غير متساوي
+val isGreater = x > y      // أكبر من
+val isLess = x < y         // أصغر من
+val isGreaterOrEqual = x >= y
+val isLessOrEqual = x <= y
+                </code></pre>
+                    
+                    <h4>العوامل المنطقية</h4>
+                    <pre><code>// العوامل المنطقية
+val isTrue = true
+val isFalse = false
+
+val andResult = isTrue && isFalse   // و منطقي
+val orResult = isTrue || isFalse    // أو منطقي
+val notResult = !isTrue             // نفي منطقي
+
+// عوامل آمنة مع القيم الفارغة
+val nullableValue: Int? = null
+val safeResult = nullableValue?.plus(10)  // يعيد null إذا كانت القيمة nullableValue فارغة
+                </code></pre>
+                    
+                    <h4>عوامل النطاق والانتماء</h4>
+                    <pre><code>// عوامل فريدة في كوتلن
+val range = 1..10         // إنشاء نطاق من 1 إلى 10
+val inRange = 5 in range  // تحقق إذا كانت 5 ضمن النطاق: true
+
+val list = listOf(1, 2, 3, 4, 5)
+val containsCheck = 3 in list   // تحقق الانتماء: true
+val notContainsCheck = 6 !in list // عكس الانتماء: true
+
+// زيادة وتنقيص
+var counter = 0
+counter++   // زيادة بعدية
+++counter   // زيادة قبلية
+counter--   // تنقيص بعدي
+--counter   // تنقيص قبلي
+                </code></pre>
+                    
+                    <h4>العوامل الثنائية</h4>
+                    <pre><code>// العمليات الثنائية
+val num1 = 5  // ثنائي: 0101
+val num2 = 3  // ثنائي: 0011
+
+val bitwiseAnd = num1 and num2   // و ثنائي: 1
+val bitwiseOr = num1 or num2     // أو ثنائي: 7
+val bitwiseXor = num1 xor num2   // أو حصر ثنائي: 6
+val bitwiseInvert = num1.inv()   // نفي ثنائي
+                </code></pre>
+                    
+                    <h4>عامل الانتشار وعامل Elvis</h4>
+                    <pre><code>// عامل الانتشار
+fun printNumbers(vararg numbers: Int) {
+    numbers.forEach { println(it) }
+}
+val nums = intArrayOf(1, 2, 3)
+printNumbers(*nums)  // عامل الانتشار يفكك المصفوفة
+
+// عامل Elvis (التحقق من القيم الفارغة)
+val nullableStr: String? = null
+val definedStr = nullableStr ?: "قيمة افتراضية"
+                </code></pre>
+                    
+                    <h4>نصائح عن عوامل كوتلن:
+                    <ul>
+                        <li>كوتلن توفر عوامل أكثر أمانًا من حيث النوع ووعيًا بالقيم الفارغة</li>
+                        <li>استخدم === للمساواة المرجعية، و == للمساواة الهيكلية</li>
+                        <li>استفد من العوامل الآمنة للتعامل مع الأنواع القابلة لأن تكون فارغة</li>
+                    </ul>
+                    </h4>
+                </div>
+                
+                
+                <div id="strings-k" class="section-k">
+                    <h3>النصوص في كوتلن</h3>
+                    <p>النصوص في كوتلن غير قابلة للتغيير وتوفر وظائف مدمجة قوية للتلاعب والإدراج.</p>
+                    
+                    <h4>إنشاء النصوص والأساسيات</h4>
+                    <pre><code>// تعريف النصوص
+val greeting = "مرحبًا، كوتلن!"
+val multiLineString = """
+    هذا نص
+    متعدد
+    الأسطر
+""".trimIndent()
+
+// القوالب النصية
+val name = "أليس"
+val age = 30
+val message = "اسمي $name وعمري $age سنة"
+val complexMessage = "حساب معقد: ${age * 2}"
+                </code></pre>
+                    
+                    <h4>وظائف النصوص</h4>
+                    <pre><code>// العمليات الشائعة على النصوص
+val text = "  برمجة كوتلن  "
+
+// التحويلات
+val lowercase = text.lowercase()
+val uppercase = text.uppercase()
+val trimmed = text.trim()
+
+// الطول والفحوصات
+val length = text.length
+val isEmpty = text.isEmpty()
+val isBlank = text.isBlank()
+
+// اقتطاع واستبدال
+val substring = text.substring(2, 8)
+val replaced = text.replace("كوتلن", "جافا")
+                </code></pre>
+                    
+                    <h4>مقارنة النصوص</h4>
+                    <pre><code>// مقارنة النصوص
+val str1 = "hello"
+val str2 = "hello"
+val str3 = String("hello".toCharArray())
+
+println(str1 == str2)   // true (المساواة الهيكلية)
+println(str1 === str2)  // true (المساواة المرجعية بسبب التجميع)
+println(str1 == str3)   // true
+println(str1 === str3)  // false
+                </code></pre>
+                    
+                    <h4>التلاعب المتقدم بالنصوص</h4>
+                    <pre><code>// التقسيم والجمع
+val csv = "apple,banana,cherry"
+val fruits = csv.split(",")
+val restored = fruits.joinToString(",")
+
+// العمليات على الأحرف
+val firstChar = greeting.first()
+val lastChar = greeting.last()
+
+// التحقق من الشروط
+val startsWith = greeting.startsWith("مرحبًا")
+val endsWith = greeting.endsWith("كوتلن!")
+val contains = greeting.contains("كوتلن")
+                </code></pre>
+                    
+                    <h4>ميزات النصوص في كوتلن:
+                    <ul>
+                        <li>تدعم القوالب النصية للتضمين السهل</li>
+                        <li>توفر طرقًا مدمجة شاملة لتلاعب النصوص</li>
+                        <li>غير قابلة للتغيير من أجل أمان الخيوط</li>
+                    </ul>
+                    </h4>
+                </div>
+                
+
+                <div id="math-k" class="section-k">
+                    <h3>الرياضيات في كوتلن</h3>
+                    <p>توفر كوتلن عمليات رياضية قوية وتدعم الحسابات الرياضية القياسية.</p>
+                    <pre>
+<code>fun main() {
+    // العمليات الحسابية الأساسية
+    val a = 10
+    val b = 3
+
+    // الجمع
+    println("الجمع: ${a + b}")  // 13
+
+    // الطرح
+    println("الطرح: ${a - b}")  // 7
+
+    // الضرب
+    println("الضرب: ${a * b}")  // 30
+
+    // القسمة
+    println("القسمة: ${a / b}")  // 3 (قسمة عددية)
+    println("قسمة دقيقة: ${a.toDouble() / b}")  // 3.333...
+
+    // الباقي (المدلول)
+    println("الباقي: ${a % b}")  // 1
+
+    // دوال رياضية
+    println("القيمة المطلقة: ${Math.abs(-5)}")  // 5
+    println("القيمة العظمى: ${Math.max(a, b)}")  // 10
+    println("القيمة الصغرى: ${Math.min(a, b)}")  // 3
+    println("الأس: ${Math.pow(2.0, 3.0)}")  // 8.0
+    println("الجذر التربيعي: ${Math.sqrt(16.0)}")  // 4.0
+}
+                        </code>
+                    </pre>
+                    <h4>الميزات الرئيسية للرياضيات في كوتلن:</h4>
+                    <ul>
+                        <li>تدعم العمليات الحسابية القياسية (+, -, *, /, %)</li>
+                        <li>توفر فئة <code>Math</code> مع طرق مساعدة</li>
+                        <li>تدعم تحويل الأنواع للحسابات الدقيقة</li>
+                        <li>عمليات رياضية آمنة من حيث النوع</li>
+                    </ul>
+                </div>
+                
+                <div id="booleans-k" class="section-k">
+                    <h3>القيم البوليانية في كوتلن</h3>
+                    <p>تمثل القيم البوليانية في كوتلن قيم الحقيقة (true/false) مع عمليات منطقية شاملة.</p>
+                    <pre>
+<code>fun main() {
+    // تعريف القيم البوليانية
+    val isTrue = true
+    val isFalse = false
+
+    // العمليات المنطقية
+    println("عملية AND: ${isTrue && isFalse}")  // false
+    println("عملية OR: ${isTrue || isFalse}")   // true
+    println("عملية NOT: ${!isTrue}")            // false
+
+    // العمليات المقارنة
+    val x = 5
+    val y = 10
+    println("يساوي: ${x == y}")        // false
+    println("لا يساوي: ${x != y}")    // true
+    println("أكبر من: ${x > y}")      // false
+    println("أصغر من: ${x < y}")      // true
+    println("أكبر أو يساوي: ${x >= y}") // false
+    println("أصغر أو يساوي: ${x <= y}") // true
+}
+                        </code>
+                    </pre>
+                    <h4>عمليات القيم البوليانية في كوتلن تشمل:</h4>
+                    <ul>
+                        <li>العوامل المنطقية: <code>&&</code> (AND)، <code>||</code> (OR)، <code>!</code> (NOT)</li>
+                        <li>عوامل المقارنة لمختلف الأنواع</li>
+                        <li>منطق بولياني آمن وصارم</li>
+                    </ul>
+                </div>
+                
+
+
+                <div id="if.else-k" class="section-k">
+                    <h3>تعليمات If ... Else في كوتلن</h3>
+                    <p>توفر تعليمات if-else في كوتلن مرونة وقوة في الاستخدام.</p>
+                    <pre>
+<code>fun main() {
+    val age = 20
+
+    // تعليمة if بسيطة
+    if (age >= 18) {
+        println("أنت بالغ")
+    }
+
+    // تعليمة if-else
+    if (age >= 18) {
+        println("يمكنك التصويت")
+    } else {
+        println("لا يمكنك التصويت")
+    }
+
+    // سلم if-else-if
+    val score = 85
+    when {
+        score >= 90 -> println("ممتاز")
+        score >= 80 -> println("جيد")
+        score >= 70 -> println("مرضٍ")
+        else -> println("يحتاج إلى تحسين")
+    }
+
+    // تعليمة if-else مختصرة (مثل ternary)
+    val result = if (age >= 18) "بالغ" else "قاصر"
+    println(result)
+}
+                        </code>
+                    </pre>
+                    <h4>ميزات تعليمات if-else:</h4>
+                    <ul>
+                        <li>صياغة if-else التقليدية</li>
+                        <li>يمكن استخدامها كتعابير</li>
+                        <li>دعم للعديد من الحالات الشرطية</li>
+                        <li>تعيينات شرطية مضمنة</li>
+                    </ul>
+                </div>
+                
+                <div id="when" class="section-k">
+                    <h3>تعليمة When (بديل Switch) في كوتلن</h3>
+                    <p>تعليمة <code>when</code> في كوتلن هي بديل قوي لتعليمة switch.</p>
+                    <pre>
+<code>fun main() {
+    // تعبير when الأساسي
+    val day = 3
+    when (day) {
+        1 -> println("الإثنين")
+        2 -> println("الثلاثاء")
+        3 -> println("الأربعاء")
+        4 -> println("الخميس")
+        5 -> println("الجمعة")
+        6 -> println("السبت")
+        7 -> println("الأحد")
+        else -> println("يوم غير صالح")
+    }
+
+    // قيم متعددة في فرع واحد
+    val x = 1
+    when (x) {
+        0, 1 -> println("صفر أو واحد")
+        else -> println("شيء آخر")
+    }
+
+    // التحقق من النطاق والنوع
+    val value: Any = "مرحباً"
+    when (value) {
+        in 1..10 -> println("رقم بين 1 و 10")
+        is String -> println("إنها سلسلة نصية")
+        !is Int -> println("ليس عدد صحيح")
+    }
+}
+                        </code>
+                    </pre>
+                    <h4>قدرات تعليمة when:</h4>
+                    <ul>
+                        <li>أكثر مرونة من switch التقليدية</li>
+                        <li>يمكنها مطابقة قيم متعددة</li>
+                        <li>تدعم التحقق من النطاق والنوع</li>
+                        <li>يمكن استخدامها كتعبير</li>
+                    </ul>
+                </div>
+                
+
+                <div id="loops-k" class="section-k">
+                    <h3>الحلقات في كوتلن</h3>
+                    <p>توفر كوتلن أنواعًا متعددة من الحلقات لتناسب مختلف السيناريوهات.</p>
+                    <pre>
+<code>fun main() {
+    // حلقة for مع نطاق
+    for (i in 1..5) {
+        println(i)  // يطبع 1, 2, 3, 4, 5
+    }
+
+    // حلقة for مع مصفوفة
+    val fruits = arrayOf("Apple", "Banana", "Cherry")
+    for (fruit in fruits) {
+        println(fruit)
+    }
+
+    // حلقة while
+    var count = 0
+    while (count < 5) {
+        println(count)
+        count++
+    }
+
+    // حلقة do-while
+    var x = 0
+    do {
+        println(x)
+        x++
+    } while (x < 3)
+
+    // التكرار مع الفهرس
+    for ((index, value) in fruits.withIndex()) {
+        println("Index: $index, Value: $value")
+    }
+}
+                        </code>
+                    </pre>
+                    <h4>أنواع الحلقات في كوتلن:</h4>
+                    <ul>
+                        <li>حلقات <code>for</code> مع النطاقات والمجموعات</li>
+                        <li>حلقات <code>while</code> و<code>do-while</code></li>
+                        <li>تكرار سهل مع الفهرس والقيمة</li>
+                        <li>أكثر اختصارًا وسهولة في القراءة</li>
+                    </ul>
+                </div>
+                
+                <div id="break.continue-k" class="section-k">
+                    <h3>التعليمات Break و Continue في كوتلن</h3>
+                    <p>تحكم في تنفيذ الحلقات باستخدام التعليمات break و continue.</p>
+                    <pre>
+<code>fun main() {
+    // تعليمة break داخل حلقة
+    for (i in 1..10) {
+        if (i == 5) {
+            break  // يخرج من الحلقة تمامًا
+        }
+        println(i)
+    }
+
+    // تعليمة continue داخل حلقة
+    for (i in 1..5) {
+        if (i == 3) {
+            continue  // يتخطى بقية التكرار الحالي
+        }
+        println(i)
+    }
+
+    // تعليمة break و continue مع التسمية
+    outerLoop@ for (i in 1..3) {
+        for (j in 1..3) {
+            if (i == 2 && j == 2) {
+                break@outerLoop  // يخرج من الحلقة الخارجية
+            }
+            println("i = $i, j = $j")
+        }
+    }
+}
+                        </code>
+                    </pre>
+                    <h4>ميزات التعليمات break و continue:</h4>
+                    <ul>
+                        <li><code>break</code> تخرج من الحلقة بالكامل</li>
+                        <li><code>continue</code> تتخطى التكرار الحالي</li>
+                        <li>دعم للتعليمات المسماة</li>
+                        <li>مفيدة في سيناريوهات الحلقات المتداخلة</li>
+                    </ul>
+                </div>
+                
+                <div id="arrays-k" class="section-k">
+                    <h3>المصفوفات في كوتلن</h3>
+                    <p>المصفوفات في كوتلن هي هياكل بيانات مرنة وقوية.</p>
+                    <pre>
+<code>fun main() {
+    // إعلان مصفوفة
+    val numbers = arrayOf(1, 2, 3, 4, 5)
+    val mixed = arrayOf(1, "Two", 3.0, true)
+
+    // الوصول إلى العناصر
+    println(numbers[0])  // أول عنصر
+    println(numbers.size)  // طول المصفوفة
+
+    // إنشاء مصفوفات بحجم محدد
+    val zeroArray = Array(5) { 0 }  // [0, 0, 0, 0, 0]
+    val squaredArray = Array(5) { it * it }  // [0, 1, 4, 9, 16]
+
+    // التكرار عبر المصفوفات
+    for (num in numbers) {
+        println(num)
+    }
+
+    // طرق المصفوفات
+    println(numbers.contains(3))  // true
+    println(numbers.indexOf(4))   // 3
+    println(numbers.first())      // 1
+    println(numbers.last())       // 5
+
+    // تعديل المصفوفات
+    numbers[2] = 10  // تغيير العنصر الثالث
+}
+                        </code>
+                    </pre>
+                    <h4>خصائص المصفوفات في كوتلن:</h4>
+                    <ul>
+                        <li>مرنة وآمنة النوع</li>
+                        <li>يمكن أن تحتوي على أنواع مختلطة</li>
+                        <li>دعم لطرق التهيئة المختلفة</li>
+                        <li>توفير العديد من الطرق المدمجة</li>
+                        <li>غير قابلة للتغيير افتراضيًا مع <code>val</code></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
