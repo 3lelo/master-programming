@@ -45,21 +45,3 @@ document.addEventListener('DOMContentLoaded', function () {
         '.section-k'
     );
 });
-
-
-
-
-
-function updateTimeAndDate() {
-    const timeElement = document.getElementById('time');
-    const dateElement = document.getElementById('date');
-    const now = new Date();
-    const optionsTime = { hour: '2-digit', minute: '2-digit', hour12: true };
-    const optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
-
-    dateElement.textContent = now.toLocaleDateString('en-US', optionsDate);
-    timeElement.textContent = now.toLocaleString('en-US', optionsTime);
-}
-
-updateTimeAndDate();
-setInterval(updateTimeAndDate, 1000);
