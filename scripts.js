@@ -59,7 +59,6 @@ function updateTimeAndDate() {
 
     dateElement.textContent = now.toLocaleDateString('en-US', optionsDate);
     timeElement.textContent = now.toLocaleString('en-US', optionsTime);
-    
 }
 
 updateTimeAndDate();
