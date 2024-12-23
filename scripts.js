@@ -46,6 +46,29 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const footer = document.querySelector("footer");
+
+    window.addEventListener("scroll", () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+
+        if (scrolled >= scrollableHeight - 50) {
+            // Show the footer when near the bottom
+            footer.style.visibility = "visible";
+            footer.style.opacity = "1";
+        } else {
+            // Hide the footer when not near the bottom
+            footer.style.visibility = "hidden";
+            footer.style.opacity = "0";
+        }
+    });
+});
+
+
+
+
 function updateTimeAndDate() {
     const timeElement = document.getElementById('time');
     const dateElement = document.getElementById('date');
