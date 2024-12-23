@@ -56,9 +56,10 @@ function updateTimeAndDate() {
     const now = new Date();
     const optionsTime = { hour: '2-digit', minute: '2-digit', hour12: true };
     const optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
-  
-    timeElement.textContent = now.toLocaleString('en-US', optionsTime);
+
     dateElement.textContent = now.toLocaleDateString('en-US', optionsDate);
+    timeElement.textContent = now.toLocaleString('en-US', optionsTime);
+    
 }
 
 updateTimeAndDate();
