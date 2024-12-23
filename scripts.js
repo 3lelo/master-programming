@@ -60,3 +60,6 @@ function updateTimeAndDate() {
     timeElement.textContent = now.toLocaleString('en-US', optionsTime);
     dateElement.textContent = now.toLocaleDateString('en-US', optionsDate);
 }
+
+updateTimeAndDate();
+setInterval(updateTimeAndDate, 1000);
