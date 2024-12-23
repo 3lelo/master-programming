@@ -40,6 +40,9 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 a:link {
@@ -60,7 +63,6 @@ a:active {
     color: #d63833;
     background-color: transparent;
 }
-
 nav {
     height: 100px;
     display: flex;
