@@ -50,7 +50,7 @@ footer {
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
-    z-index: 1000; /* Ensure it appears above other elements */
+    z-index: 1000;
     font-family: Arial, sans-serif;
 }
 
