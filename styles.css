@@ -79,11 +79,26 @@ footer {
     color: rgba(0, 0, 0, 0.280)
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
     footer {
         flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    footer {
+        padding: 25px;
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    pre {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -111,9 +126,11 @@ nav {
     height: 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #359d38;
     padding: 10px;
-    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 nav a {
