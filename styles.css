@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
     overflow-x: hidden;
 }
 
@@ -38,6 +39,8 @@ main {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     background-color: #359d38;
     color: white;
     padding: 10px 50px;
@@ -76,12 +79,29 @@ footer {
     color: rgba(0, 0, 0, 0.280)
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 600px) {
     footer {
-        position: fixed;
-        bottom: 0;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
     }
 }
+
+@media screen and (min-width: 1200px) {
+    footer {
+        padding: 25px;
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    pre {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 a:link {
     color: #fff;
