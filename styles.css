@@ -4,10 +4,15 @@ body {
     background-image: url("bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: "Almarai", serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .body-learn {
@@ -26,60 +31,62 @@ header {
     font-size: 20px;
 }
 
-html, body {
-    height: 100%;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
 main {
     flex: 1 0 auto;
     position: relative;
     z-index: 1;
+    background: transparent;
 }
 
 footer {
-    flex-shrink: 0;
-    background-color: #4caf50;
+    position: fixed;
+    bottom: 0;
+    background-color: #359d38;
     color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 18px;
+    padding: 10px 50px;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
-    position: relative;
+    gap: 200px;
     z-index: 2;
 }
 
-
-@media screen and (max-width: 600px) {
-    footer {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-@media screen and (min-width: 1200px) {
-    footer {
-        padding: 25px;
-        gap: 50px;
-    }
+.footer-section h3 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+    width: fit-content;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.footer-section a:hover {
+    color: rgba(0, 0, 0, 0.280)
 }
 
 @media screen and (max-width: 768px) {
-    pre {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
     }
 }
+
 
 a:link {
     color: #fff;
@@ -175,6 +182,7 @@ nav a:hover::after {
 nav a:hover::before {
     transform: translateY(-50px) scale(0) rotate(120deg);
 }
+
 
 
 .main {
