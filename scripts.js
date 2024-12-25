@@ -1,13 +1,15 @@
-function showTab(tabId, event) {
-    document.querySelectorAll('nav a').forEach(btn => {
-        btn.classList.remove('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop();
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+        const page = button.dataset.page;
+        if (page === currentPage) {
+            button.classList.add('active');
+        }
+        button.addEventListener('click', () => window.location.href = page);
     });
-    event.target.classList.add('active');
-    document.querySelectorAll('.main').forEach(tab => {
-        tab.classList.remove('active');
-    });
-    document.getElementById(tabId).classList.add('active');
-}
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     function initializeTabs(containerSelector, itemClass, sectionClass) {
