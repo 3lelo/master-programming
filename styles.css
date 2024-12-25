@@ -43,11 +43,10 @@ footer {
     bottom: 0;
     background-color: #359d38;
     color: white;
-    padding: 10px 50px;
+    padding: 10px 0;
     width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 200px;
+    justify-content: space-around;
     z-index: 2;
 }
 
@@ -71,7 +70,7 @@ footer {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
+
     font-size: 0.9rem;
 }
 
@@ -80,11 +79,6 @@ footer {
 }
 
 
-@media screen and (max-height: 695px) {
-    footer{
-        position: relative;
-    }
-}
 
 
 a:link {
