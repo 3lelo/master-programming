@@ -79,26 +79,10 @@ footer {
     color: rgba(0, 0, 0, 0.280)
 }
 
-@media screen and (max-width: 600px) {
-    footer {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-}
 
-@media screen and (min-width: 1200px) {
-    footer {
-        padding: 25px;
-        gap: 50px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    pre {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+@media screen and (max-height: 695px) {
+    footer{
+        position: relative;
     }
 }
 
@@ -133,74 +117,153 @@ nav {
     white-space: nowrap;
 }
 
-nav a {
-    height: 50px;
+nav .btn {
     width: 150px;
-    text-decoration: none;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
-    margin: 0 15px;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-nav a.active::before {
-    transform: translateY(-50px) scale(0) rotate(120deg);
-}
-
-nav a.active::after {
-    transform: translateY(0) scale(1.2);
-}
-
-nav a::after {
-    content: attr(data-label-after);
     height: 50px;
-    width: 150px;
     background-color: #359d38;
+    margin: 0 15px;
     color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(50px);
+    position: relative;
+    overflow: hidden;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.5s ease-in-out;
-    font-size: 20px;
+    border-radius: 3px;
 }
 
-nav a::before {
-    content: attr(data-label-before);
-    height: 50px;
-    width: 150px;
-    background-color: #fff;
-    color: #359d38;
+nav .btn:before,
+nav .btn:after {
+    content: "";
     position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #13cf71;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+nav .btn:before {
+    right: 0;
     top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+nav .btn:after {
     left: 0;
-    transform: translateY(0px) scale(1.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease-in-out;
+    bottom: 0;
 }
 
-nav a:hover::after {
-    transform: translateY(0) scale(1.2);
+nav .btn span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
 }
 
-nav a:hover::before {
-    transform: translateY(-50px) scale(0) rotate(120deg);
+nav .btn span:before,
+nav .btn span:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 0;
+    background-color: #13cf71;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
+nav .btn span:before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
 
+nav .btn span:after {
+    left: 0;
+    bottom: 0;
+}
+
+nav .btn p {
+    padding: 0;
+    margin: 0;
+    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+nav .btn p:before,
+nav .btn p:after {
+    position: absolute;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+    z-index: 1;
+    left: 0;
+}
+
+nav .btn p:before {
+    content: attr(data-title);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav .btn p:after {
+    content: attr(data-text);
+    top: 150%;
+    color: #13cf71;
+}
+
+nav .btn:hover:before,
+nav .btn:hover:after {
+    width: 100%;
+}
+
+nav .btn:hover span {
+    z-index: 1;
+}
+
+nav .btn:hover span:before,
+nav .btn:hover span:after {
+    height: 100%;
+}
+
+nav .btn:hover p:before {
+    top: -70%;
+    transform: rotate(10deg);
+}
+
+nav .btn:hover p:after {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav .btn.active:before,
+nav .btn.active:after {
+    width: 100%;
+}
+
+nav .btn.active span:before,
+nav .btn.active span:after {
+    height: 100%;
+}
+
+nav .btn.active p:before {
+    top: -70%;
+    transform: rotate(10deg);
+}
+
+nav .btn.active p:after {
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 .main {
     display: none;
@@ -339,7 +402,7 @@ transform: skew(0deg);
 }
 
 .langs:hover {
-    height: 300px;
+    height: 340px;
     transform: skew(0deg);
 }
 
