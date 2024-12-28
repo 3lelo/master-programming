@@ -77,7 +77,11 @@ footer {
 
 
 @media screen and (max-height: 695px) {
-    footer{
+    .langs:hover {
+        height: 350px;
+    }
+
+    footer {
         position: relative;
     }
 }
