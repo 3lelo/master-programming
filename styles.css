@@ -257,11 +257,7 @@ nav .btn.active p:after {
     transform: translateY(-50%);
 }
 
-/* Your original nav styles stay the same for desktop */
-
-/* Mobile only styles */
 @media screen and (max-width: 768px) {
-    /* Regular nav is hidden by default on mobile */
     nav {
         display: none;
         position: fixed;
@@ -281,7 +277,6 @@ nav .btn.active p:after {
         right: 0;
     }
 
-    /* Mobile menu button */
     .menu-toggle {
         position: fixed;
         top: 20px;
