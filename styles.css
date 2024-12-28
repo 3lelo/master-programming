@@ -315,7 +315,6 @@ nav .btn.active p:after {
         top: 8px;
     }
 
-    /* Button animation when menu is open */
     .menu-toggle.active .hamburger {
         background: transparent;
     }
