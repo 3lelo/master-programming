@@ -257,42 +257,6 @@ nav .btn.active p:after {
     transform: translateY(-50%);
 }
 
-.menu-toggle {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 250px;
-        height: 100vh;
-        flex-direction: column;
-        padding: 80px 20px 20px;
-        background-color: #359d38;
-        transition: right 0.3s ease;
-        z-index: 999;
-    }
-
-    nav.active {
-        display: flex;
-        right: 0;
-    }
-}
 
 .main {
     display: none;
