@@ -522,43 +522,159 @@ val contains = greeting.contains("كوتلن")
                     <h3>المصفوفات في كوتلن</h3>
                     <p>المصفوفات في كوتلن هي هياكل بيانات مرنة وقوية.</p>
                     <pre>
-<code>fun main() {
-    // إعلان مصفوفة
-    val numbers = arrayOf(1, 2, 3, 4, 5)
-    val mixed = arrayOf(1, "Two", 3.0, true)
-
-    // الوصول إلى العناصر
-    println(numbers[0])  // أول عنصر
-    println(numbers.size)  // طول المصفوفة
-
-    // إنشاء مصفوفات بحجم محدد
-    val zeroArray = Array(5) { 0 }  // [0, 0, 0, 0, 0]
-    val squaredArray = Array(5) { it * it }  // [0, 1, 4, 9, 16]
-
-    // التكرار عبر المصفوفات
-    for (num in numbers) {
-        println(num)
-    }
-
-    // طرق المصفوفات
-    println(numbers.contains(3))  // true
-    println(numbers.indexOf(4))   // 3
-    println(numbers.first())      // 1
-    println(numbers.last())       // 5
-
-    // تعديل المصفوفات
-    numbers[2] = 10  // تغيير العنصر الثالث
-}
-                        </code>
+                    <code>fun main() {
+                        // إعلان مصفوفة
+                        val numbers = arrayOf(1, 2, 3, 4, 5)
+                        val mixed = arrayOf(1, "Two", 3.0, true)
+                    
+                        // الوصول إلى العناصر
+                        println(numbers[0])  // أول عنصر
+                        println(numbers.size)  // طول المصفوفة
+                    
+                        // إنشاء مصفوفات بحجم محدد
+                        val zeroArray = Array(5) { 0 }  // [0, 0, 0, 0, 0]
+                        val squaredArray = Array(5) { it * it }  // [0, 1, 4, 9, 16]
+                    
+                        // التكرار عبر المصفوفات
+                        for (num in numbers) {
+                            println(num)
+                        }
+                    
+                        // طرق المصفوفات
+                        println(numbers.contains(3))  // true
+                        println(numbers.indexOf(4))   // 3
+                        println(numbers.first())      // 1
+                        println(numbers.last())       // 5
+                    
+                        // تعديل المصفوفات
+                        numbers[2] = 10  // تغيير العنصر الثالث
+                    }
+                    </code>
                     </pre>
-                    <h4>خصائص المصفوفات في كوتلن:</h4>
-                    <ul>
-                        <li>مرنة وآمنة النوع</li>
-                        <li>يمكن أن تحتوي على أنواع مختلطة</li>
-                        <li>دعم لطرق التهيئة المختلفة</li>
-                        <li>توفير العديد من الطرق المدمجة</li>
-                        <li>غير قابلة للتغيير افتراضيًا مع <code>val</code></li>
+                    <h4>أنواع المصفوفات:</h4>
+                    <pre>
+                    <code>fun main() {
+                        // مصفوفة عامة
+                        val generalArray = arrayOf(1, 2, 3, 4)
+                    
+                        // مصفوفة مخصصة لنوع معين
+                        val intArray = intArrayOf(1, 2, 3, 4)
+                        val doubleArray = doubleArrayOf(1.1, 2.2, 3.3)
+                        val booleanArray = booleanArrayOf(true, false, true)
+                    
+                        // مصفوفة فارغة
+                        val emptyArray = arrayOfNulls<Int>(5)  // [null, null, null, null, null]
+                        val completelyEmptyArray = emptyArray<String>()
+                    }
+                    </code>
+                    </pre>
+                    
+                    <h4>أمثلة عملية:</h4>
+                    <pre>
+                    <code>fun main() {
+                        // إنشاء مصفوفة من 1 إلى n بدون حلقات
+                        val n = 10
+                        val array = IntArray(n) { it + 1 }
+                        println(array.joinToString(", "))  // الإخراج: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                    
+                        // تصفية العناصر الأكبر من 5
+                        val filteredArray = array.filter { it > 5 }.toIntArray()
+                        println(filteredArray.joinToString(", "))  // الإخراج: 6, 7, 8, 9, 10
+                    
+                        // تعديل مصفوفة
+                        val numbers = arrayOf(1, 2, 3, 4, 5)
+                        numbers[2] = 10
+                        println(numbers.joinToString(", "))  // الإخراج: 1, 2, 10, 4, 5
+                    }
+                    </code>
+                    </pre>
+                    <div style="
+                    background: linear-gradient(135deg, #2ecc71, #27ae60);
+                    color: white;
+                    padding: 2rem;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                    line-height: 1.6;
+                    width: 67.5%;
+                    text-align: right;
+                    direction: rtl;
+                  ">
+                    <h3 style="
+                      margin: 0 0 1.5rem 0;
+                      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                      padding-bottom: 0.5rem;
+                      text-align: right;
+                    ">الفرق بين IntArray و &lt;Array&lt;Int:</h3>
+                  
+                    <p style="font-weight: bold; margin: 1.5rem 0 0.5rem 0; text-align: right;">IntArray:</p>
+                    <ul style="
+                      list-style-type: none;
+                      padding: 0;
+                      margin: 0.5rem 0;
+                      text-align: right;
+                    ">
+                      <li style="margin: 0.5rem 0;">• نوع خاص للأعداد الصحيحة.</li>
+                      <li style="margin: 0.5rem 0;">• أداء أسرع واستهلاك أقل للذاكرة.</li>
+                      <li style="margin: 0.5rem 0;">• مناسب عند التعامل مع أعداد صحيحة فقط.</li>
+                      <li style="margin: 0.5rem 0;">• مثال: <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">IntArray(5) { it + 1 }</code></li>
                     </ul>
+                  
+                    <p style="font-weight: bold; margin: 1.5rem 0 0.5rem 0; text-align: right;">&lt;Array&lt;Int:</p>
+                    <ul style="
+                      list-style-type: none;
+                      padding: 0;
+                      margin: 0.5rem 0;
+                      text-align: right;
+                    ">
+                      <li style="margin: 0.5rem 0;">• مصفوفة عامة تحتوي على كائنات من النوع Int.</li>
+                      <li style="margin: 0.5rem 0;">• أبطأ قليلًا ويستهلك ذاكرة أكثر بسبب التغليف.</li>
+                      <li style="margin: 0.5rem 0;">• مناسب للتعامل مع الكائنات العامة أو المكتبات.</li>
+                      <li style="margin: 0.5rem 0;">• مثال: <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">Array&lt;Int&gt;(5) { it + 1 }</code></li>
+                    </ul>
+                  
+                    <h3 style="
+                      margin: 2rem 0 1rem 0;
+                      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                      padding-bottom: 0.5rem;
+                      text-align: right;
+                    ">طرق التعامل مع المصفوفات:</h3>
+                    <ul style="
+                      list-style-type: none;
+                      padding: 0;
+                      margin: 0.5rem 0;
+                      text-align: right;
+                    ">
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">size</code>: الحصول على حجم المصفوفة</li>
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">get(index)</code> أو <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">[index]</code>: الوصول إلى عنصر معين</li>
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">set(index, value)</code> أو <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">[index] = value</code>: تعديل عنصر معين</li>
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">first()</code> و <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">last()</code>: الحصول على أول وآخر عنصر</li>
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">indexOf(value)</code>: إيجاد فهرس قيمة معينة</li>
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">contains(value)</code>: التحقق من وجود قيمة معينة</li>
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">sortedArray()</code>: ترتيب المصفوفة</li>
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">reversedArray()</code>: عكس ترتيب المصفوفة</li>
+                      <li style="margin: 0.5rem 0;">• <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">filter { condition }</code>: تصفية العناصر حسب شرط معين</li>
+                    </ul>
+                  
+                    <h3 style="
+                      margin: 2rem 0 1rem 0;
+                      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                      padding-bottom: 0.5rem;
+                      text-align: right;
+                    ">خصائص المصفوفات في كوتلن:</h3>
+                    <ul style="
+                      list-style-type: none;
+                      padding: 0;
+                      margin: 0.5rem 0;
+                      text-align: right;
+                    ">
+                      <li style="margin: 0.5rem 0;">• مرنة وآمنة النوع</li>
+                      <li style="margin: 0.5rem 0;">• يمكن أن تحتوي على أنواع مختلطة</li>
+                      <li style="margin: 0.5rem 0;">• دعم لطرق التهيئة المختلفة</li>
+                      <li style="margin: 0.5rem 0;">• توفير العديد من الطرق المدمجة</li>
+                      <li style="margin: 0.5rem 0;">• غير قابلة للتغيير افتراضيًا مع <code style="background: rgba(255, 255, 255, 0.2); padding: 0.2rem 0.4rem; border-radius: 4px;">val</code></li>
+                    </ul>
+                  </div>
                 </div>
             </div>
         </div>
