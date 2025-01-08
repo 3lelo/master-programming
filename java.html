@@ -7,6 +7,11 @@
     <title>تعلم جافا</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-kotlin.min.js"></script>
 </head>
 <body class="body-learn" dir="rtl">
     
@@ -50,9 +55,11 @@
             <div class="section-content">
                 <div id="hello-world" class="section active">
                     <h3>أول برنامج في جافا</h3>
-                    <p>برنامج "Hello World" هو مثال بسيط للبدء في تعلم جافا. يظهر هيكل برنامج جافا الأساسي.</p>
+                    <p>برنامج "مرحبا بالعالم" هو مثال بسيط للبدء في تعلم جافا. يظهر هيكل برنامج جافا الأساسي.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>// HelloWorld in Java
+<code class="language-java">// مرحبًا بالعالم في جافا
 class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
@@ -60,6 +67,7 @@ class Main {
 }
                         </code>
                     </pre>
+                    </div>
                 </div>
                 
                 <div id="comments" class="section">
@@ -69,14 +77,17 @@ class Main {
                         <li><strong>تعليقات خطية واحدة:</strong> تبدأ بـ <code>//</code> وتمتد إلى نهاية السطر.</li>
                         <li><strong>تعليقات متعددة الخطوط:</strong> محاصرة بين <code>/* */</code> ويمكن أن تمتد عبر عدة خطوط.</li>
                     </ul>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>// هذا تعليق خطي واحد
+<code class="language-java">// هذا تعليق خطي واحد
 /* 
 هذا تعليق 
 متعدد الخطوط 
 */
                         </code>
                     </pre>
+                    </div>
                 </div>
 
                 <div id="variables" class="section">
@@ -86,13 +97,16 @@ class Main {
                         <li><strong>الأنواع الأولية:</strong> تشمل <code>int</code>، <code>double</code>، <code>boolean</code> والمزيد.</li>
                         <li><strong>الأنواع المرجعية:</strong> تشمل الكائنات والمصفوفات.</li>
                     </ul>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>// مثال على المتغيرات
+<code class="language-java">// مثال على المتغيرات
 int age = 25;
 double salary = 55000.50;
 boolean isJavaFun = true;
                         </code>
                     </pre>
+                    </div>
                 </div>
                 
                 <div id="type-casting" class="section">
@@ -102,13 +116,16 @@ boolean isJavaFun = true;
                         <li><strong>التحويل الضمني:</strong> تحويل نوعي تلقائي (مثل <code>int</code> إلى <code>double</code>).</li>
                         <li><strong>التحويل الصريح:</strong> تحويل نوعي يدوي باستخدام الأقواس (مثل <code>double</code> إلى <code>int</code>).</li>
                     </ul>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>// مثال على تحويل الأنواع
+<code class="language-java">// مثال على تحويل الأنواع
 int num = 10;
 double numDouble = num; // تحويل ضمني
 int numInt = (int) numDouble; // تحويل صريح
                         </code>
                     </pre>
+                    </div>
                 </div>
                 
                 <div id="operators" class="section">
@@ -118,15 +135,20 @@ int numInt = (int) numDouble; // تحويل صريح
                     <h4>أنواع العوامل</h4>
                     <ul>
                         <li><strong>عوامل حسابية:</strong> تُستخدم لإجراء العمليات الرياضية </li>
-                            <pre><code>int a = 10, b = 5;
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">int a = 10, b = 5;
 int sum = a + b;     // الجمع: 15
 int diff = a - b;    // الطرح: 5
 int prod = a * b;    // الضرب: 50
 int div = a / b;     // القسمة: 2
 int mod = a % b;     // الباقي: 0
                             </code></pre>
+                        </div>
                         <li><strong>عوامل مقارنة:</strong> تُستخدم لمقارنة قيمتين </li>
-                            <pre><code>int x = 5, y = 10;
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">int x = 5, y = 10;
 boolean isEqual = (x == y);    // يساوي: false
 boolean isNotEqual = (x != y); // لا يساوي: true
 boolean isGreater = (x > y);   // أكبر من: false
@@ -134,29 +156,38 @@ boolean isLess = (x < y);      // أصغر من: true
 boolean isGreaterOrEqual = (x >= y); // أكبر أو يساوي: false
 boolean isLessOrEqual = (x <= y);    // أصغر أو يساوي: true
                             </code></pre>
+                        </div>
                         <li><strong>عوامل منطقية:</strong> تُستخدم للجمع بين العبارات الشرطية </li>
-                            <pre><code>boolean a = true, b = false;
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">boolean a = true, b = false;
 boolean andResult = a && b;    // و منطقي: false
 boolean orResult = a || b;     // أو منطقي: true
 boolean notResult = !a;        // نفي منطقي: false
                             </code></pre>
+                        </div>
                         
                         <li><strong>عوامل بتية:</strong> تُستخدم لإجراء العمليات على مستوى البت </li>
-                            <pre><code>int num1 = 5;  // ثنائي: 0101
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">int num1 = 5;  // ثنائي: 0101
 int num2 = 3;  // ثنائي: 0011
 int andBit = num1 & num2;   // و بت: 1 (0001)
 int orBit = num1 | num2;    // أو بت: 7 (0111)
 int xorBit = num1 ^ num2;   // إكس أو بت: 6 (0110)
                             </code></pre>
+                        </div>
                         
                         <li><strong>عوامل الإسناد:</strong> تُستخدم لإسناد القيم إلى المتغيرات </li>
-                            <pre><code>int a = 10;
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">int a = 10;
 a += 5;  // يعادل: a = a + 5 (الآن a يساوي 15)
 a -= 3;  // يعادل: a = a - 3 (الآن a يساوي 12)
 a *= 2;  // يعادل: a = a * 2 (الآن a يساوي 24)
 a /= 4;  // يعادل: a = a / 4 (الآن a يساوي 6)
                             </code></pre>
-                        
+                        </div>
                     </ul>
                 </div>
                 
@@ -165,7 +196,9 @@ a /= 4;  // يعادل: a = a / 4 (الآن a يساوي 6)
                     <p>السلاسل في جافا هي كائنات تمثل تسلسلًا من الحروف. على عكس الأنواع الأساسية، السلاسل جزء من حزمة java.lang.</p>
                     
                     <h4>إنشاء سلاسل النصوص وتشغيلها الأساسي</h4>
-                    <pre><code>// إنشاء سلاسل النصوص
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إنشاء سلاسل النصوص
 String greeting = "Hello, World!"; // إنشاء سلسلة جديدة تحتوي على النص "Hello, World!"
 String name = new String("Java"); // إنشاء سلسلة جديدة باستخدام المُنشئ
 
@@ -182,9 +215,12 @@ String sub = greeting.substring(0, 5); // استرجاع جزء من السلس�
 // استبدال الأحرف
 String replaced = greeting.replace('l', 'x'); // استبدال الأحرف 'l' بـ 'x' في السلسلة
                 </code></pre>
+                    </div>
                     
                     <h4>إضافة سلاسل النصوص</h4>
-                    <pre><code>// طرق متعددة لدمج السلاسل
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق متعددة لدمج السلاسل
 String firstName = "John"; // السلسلة الأولى
 String lastName = "Doe"; // السلسلة الثانية
 
@@ -192,9 +228,12 @@ String fullName1 = firstName + " " + lastName; // دمج السلاسل باست
 String fullName2 = String.format("%s %s", firstName, lastName); // دمج السلاسل باستخدام طريقة التنسيق
 String fullName3 = String.join(" ", firstName, lastName); // دمج السلاسل باستخدام طريقة join
                 </code></pre>
+                    </div>
                     
                     <h4>مقارنة سلاسل النصوص</h4>
-                    <pre><code>String s1 = "Java"; // السلسلة الأولى
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">String s1 = "Java"; // السلسلة الأولى
 String s2 = "Java"; // السلسلة الثانية
 String s3 = new String("Java"); // إنشاء نسخة جديدة من السلسلة
 
@@ -206,9 +245,12 @@ boolean areEqualIgnoreCase = s1.equalsIgnoreCase("java"); // مقارنة الس
 boolean sameReference = (s1 == s2); // مقارنة المرجع (تشيران إلى نفس السلسلة)
 boolean differentReference = (s1 == s3); // مقارنة المرجع (السلسلتان مختلفتان)
                 </code></pre>
+                    </div>
                     
                     <h4>تحليل السلاسل</h4>
-                    <pre><code>String text = "  Java Programming  "; // سلسلة تحتوي على نص برمجة جافا
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">String text = "  Java Programming  "; // سلسلة تحتوي على نص برمجة جافا
                 
 // تقليم المسافات البيضاء
 String trimmed = text.trim(); // إزالة المسافات البيضاء من بداية ونهاية السلسلة
@@ -221,6 +263,7 @@ boolean isBlank = text.isBlank(); // التحقق إذا كانت السلسلة
 String csv = "Java,Kotlin,Python"; // سلسلة تحتوي على نص مفصول بفواصل
 String[] languages = csv.split(","); // تقسيم السلسلة إلى عناصر بناءً على الفواصل
                 </code></pre>
+                    </div>
                     
                     <p><strong>ملاحظة:</strong> السلاسل غير قابلة للتغيير في جافا، مما يعني أن القيمة لا يمكن تغييرها بعد إنشائها. كل معالجة سلسلة تولد سلسلة جديدة.</p>
                 </div>
@@ -230,7 +273,9 @@ String[] languages = csv.split(","); // تقسيم السلسلة إلى عنا�
                     <p>توفر جافا فئة <code>Math</code> في حزمة <code>java.lang</code>، التي تقدم عمليات رياضية متنوعة وثوابت.</p>
                     
                     <h4>العمليات الرياضية الأساسية</h4>
-                    <pre><code>// طرق رياضية أساسية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق رياضية أساسية
 double absolute = Math.abs(-10.5);     // الحصول على القيمة المطلقة
 double rounded = Math.round(10.6);     // تقريب الرقم لأقرب عدد صحيح
 double ceiling = Math.ceil(10.1);      // تقويم الرقم لأقرب عدد صحيح أكبر
@@ -240,36 +285,48 @@ double floor = Math.floor(10.9);       // تقويم الرقم لأقرب عد�
 int max = Math.max(10, 20);            // الحصول على العدد الأكبر
 int min = Math.min(10, 20);            // الحصول على العدد الأصغر
                 </code></pre>
+                    </div>
                     
                     <h4>الدوال المثلثية</h4>
-                    <pre><code>// حسابات المثلثات (بالراديان)
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// حسابات المثلثات (بالراديان)
 double sine = Math.sin(Math.PI / 2);   // حساب جيب الزاوية π/2
 double cosine = Math.cos(0);           // حساب جيب تمام الزاوية 0
 double tangent = Math.tan(Math.PI / 4);// حساب ظل الزاوية π/4
                 </code></pre>
+                    </div>
                     
                     <h4>الدوال الأسية واللوغاريتمية</h4>
-                    <pre><code>// حسابات الأس واللوغاريتمات
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// حسابات الأس واللوغاريتمات
 double power = Math.pow(2, 3);         // 2 مرفوعة للأس 3
 double squareRoot = Math.sqrt(16);     // الجذر التربيعي للعدد 16
 double naturalLog = Math.log(Math.E);  // اللوغاريتم الطبيعي للعدد e
 double base10Log = Math.log10(100);    // اللوغاريتم الأساس 10 للعدد 100
                 </code></pre>
-                    
+                    </div>
                     <h4>إنتاج الأعداد العشوائية</h4>
-                    <pre><code>// إنتاج أعداد عشوائية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إنتاج أعداد عشوائية
 // عدد عشوائي بين 0.0 و 1.0
 double randomDecimal = Math.random();
 
 // عدد صحيح عشوائي ضمن نطاق محدد
 int randomInRange = (int)(Math.random() * 100) + 1; // من 1 إلى 100
                 </code></pre>
+                    </div>
                     
                     <h4>الثوابت الرياضية</h4>
-                    <pre><code>// الثوابت الرياضية المحددة
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الثوابت الرياضية المحددة
 double pi = Math.PI;        // قيمة π (3.141592653589793)
 double e = Math.E;          // قيمة e (2.718281828459045)
                 </code></pre>
+                    </div>
                     
                     <p><strong>نصيحة احترافية:</strong> للحصول على عمليات رياضية متقدمة، يفضل استخدام <code>java.math.BigDecimal</code> لحسابات عشرية دقيقة.</p>
                 </div>
@@ -279,7 +336,9 @@ double e = Math.E;          // قيمة e (2.718281828459045)
                     <p>البوليانات في جافا تمثل قيمتين ممكنتين: <code>true</code> أو <code>false</code>. وهي أساسية للمنطق الشرطي والسيطرة على التدفق.</p>
                     
                     <h4>إعلان وتخصيص البوليانات</h4>
-                    <pre><code>// إعلان متغيرات البوليانات
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إعلان متغيرات البوليانات
 boolean isJavaFun = true; // صحيح أن البرمجة بلغة جافا ممتعة
 boolean isComplexLanguage = false; // البرمجة بلغة جافا ليست معقدة
 
@@ -288,9 +347,12 @@ int x = 10, y = 20;
 boolean isGreater = x < y;     // صحيح
 boolean isEqual = x == y;      // خاطئ
                 </code></pre>
+                    </div>
                     
                     <h4>عمليات المنطق البولي</h4>
-                    <pre><code>// المنطق البولي AND (&&)
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// المنطق البولي AND (&&)
 boolean result1 = true && true;    // true
 boolean result2 = true && false;   // false
 
@@ -302,9 +364,12 @@ boolean result4 = false || false;  // false
 boolean result5 = !true;           // false
 boolean result6 = !false;          // true
                 </code></pre>
+                    </div>
                     
                     <h4>طرق البوليانات والتحليل</h4>
-                    <pre><code>// تحويل إلى بوليانات
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// تحويل إلى بوليانات
 boolean fromString1 = Boolean.parseBoolean("true");   // true
 boolean fromString2 = Boolean.parseBoolean("false");  // false
 boolean fromString3 = Boolean.parseBoolean("True");   // true (حساس لحالة الأحرف)
@@ -313,9 +378,12 @@ boolean fromString3 = Boolean.parseBoolean("True");   // true (حساس لحال
 boolean compare = Boolean.compare(true, false);      // ترجع 1
 boolean logicalXOR = true ^ false;                   // ترجع true
                 </code></pre>
+                    </div>
                     
                     <h4>استخدام البوليانات العملية في الشروط</h4>
-                    <pre><code>// استخدام البوليانات في العبارات الشرطية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// استخدام البوليانات في العبارات الشرطية
 int age = 25;
 boolean isAdult = age >= 18;
 
@@ -329,6 +397,7 @@ if (isAdult) {
 boolean hasPermission = checkUserPermission();
 boolean isValidUser = hasPermission && isAdult;
                 </code></pre>
+                    </div>
                     
                     <p><strong>ملاحظة:</strong> يتم استخدام البوليانات بشكل شائع في الهياكل الشرطية، والتحقق، وإنشاء المنطق الشرطي المعقد في برامج جافا.</p>
                 </div>
@@ -339,15 +408,20 @@ boolean isValidUser = hasPermission && isAdult;
                     <p>عبارات الشرط في جافا تسمح لك بتنفيذ كتل تعليمات مختلفة بناءً على ظروف محددة. إنها أساسية للتحكم في تدفق البرنامج.</p>
                     
                     <h4>عبارة إذا بسيطة</h4>
-                    <pre><code>// عبارة إذا بسيطة
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// عبارة إذا بسيطة
 int age = 20;
 if (age >= 18) {
     System.out.println("You are an adult");
 }
                 </code></pre>
+                    </div>
                     
-                    <h4>عبارة إذا - else</h4>
-                    <pre><code>// هيكل if-else
+                    <h4>عبارة إذا - وإلا</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// هيكل if-else
 int score = 75;
 if (score >= 60) {
     System.out.println("You passed");
@@ -355,9 +429,12 @@ if (score >= 60) {
     System.out.println("You failed");
 }
                 </code></pre>
+                    </div>
                     
                     <h4>سلم else if</h4>
-                    <pre><code>// شروط متعددة باستخدام else if
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// شروط متعددة باستخدام else if
 int marks = 85;
 if (marks >= 90) {
     System.out.println("Grade A");
@@ -371,9 +448,12 @@ if (marks >= 90) {
     System.out.println("Fail");
 }
                 </code></pre>
+                    </div>
                     
                     <h4>عبارات if المدمجة</h4>
-                    <pre><code>// منطق الشرط المدمج
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// منطق الشرط المدمج
 int temperature = 25;
 boolean isSunny = true;
 
@@ -387,9 +467,12 @@ if (temperature > 20) {
     System.out.println("It's a bit cold");
 }
                 </code></pre>
+                    </div>
                     
                     <h4>مشغل الشرط الثلاثي (إذا قصيرة)</h4>
-                    <pre><code>// تخصيص مشروط مضغوط
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// تخصيص مشروط مضغوط
 int age = 20;
 String status = (age >= 18) ? "Adult" : "Minor";
 System.out.println(status);
@@ -398,6 +481,7 @@ System.out.println(status);
 int x = 10, y = 20;
 String result = (x > y) ? "x is larger" : (x < y) ? "y is larger" : "x and y are equal";
                 </code></pre>
+                    </div>
                     
                     <h4>أفضل الممارسات:
                         <ul>
@@ -413,7 +497,9 @@ String result = (x > y) ? "x is larger" : (x < y) ? "y is larger" : "x and y are
                     <p>توفر عبارة Switch بديلاً لعدة عبارات If-Else لمقارنة متغير مقابل قيم متعددة.</p>
                     
                     <h4>عبارة Switch التقليدية</h4>
-                    <pre><code>// عبارة Switch الأساسية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// عبارة Switch الأساسية
 int day = 3;
 switch (day) {
     case 1:
@@ -435,9 +521,12 @@ switch (day) {
         System.out.println("Weekend");
 }
                 </code></pre>
+                    </div>
                     
                     <h4>Switch مع حالات متعددة</h4>
-                    <pre><code>// حالات متعددة تشارك نفس الإجراء
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// حالات متعددة تشارك نفس الإجراء
 String month = "JUN";
 switch (month) {
     case "JUN":
@@ -454,9 +543,12 @@ switch (month) {
         System.out.println("Other Months");
 }
                 </code></pre>
+                    </div>
                     
                     <h4>Switch المحسن (Java 12+)</h4>
-                    <pre><code>// تعبير Switch حديث
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// تعبير Switch حديث
 int numLetters = switch (day) {
     case 1, 4, 7 -> 1;
     case 2, 5, 8 -> 2;
@@ -475,9 +567,12 @@ String dayType = switch (day) {
     default -> "Invalid Day";
 };
                 </code></pre>
+                    </div>
                     
                     <h4>تحويل النوع في Switch</h4>
-                    <pre><code>// Switch مع أنواع مختلفة
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// Switch مع أنواع مختلفة
 Object obj = "Hello";
 switch (obj) {
     case Integer i -> System.out.println("Integer: " + i);
@@ -486,6 +581,7 @@ switch (obj) {
     default -> System.out.println("Unknown type");
 }
                 </code></pre>
+                    </div>
                     
                     <h4>نقاط رئيسية:
                     <ul>
@@ -502,7 +598,9 @@ switch (obj) {
                     <p>تتيح الحلقات في جافا تنفيذ كتلة من التعليمات بشكل متكرر بناءً على حالة معينة أو عدد محدد من التكرارات.</p>
                     
                     <h4>الحلقة While</h4>
-                    <pre><code>// الحلقة While الأساسية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الحلقة While الأساسية
 int count = 0;
 while (count < 5) {
     System.out.println("Count is: " + count);
@@ -517,9 +615,12 @@ while (index < numbers.length && numbers[index] < 4) {
     index++;
 }
                 </code></pre>
+                    </div>
                     
                     <h4>الحلقة Do-While</h4>
-                    <pre><code>// حلقة Do-While (ضمان تنفيذ واحد على الأقل)
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// حلقة Do-While (ضمان تنفيذ واحد على الأقل)
 int x = 10;
 do {
     System.out.println("Value of x: " + x);
@@ -535,9 +636,12 @@ do {
     userInput = scanner.nextInt();
 } while (userInput < 1 || userInput > 10);
                 </code></pre>
+                    </div>
                     
                     <h4>الحلقة For</h4>
-                    <pre><code>// الحلقة For القياسية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الحلقة For القياسية
 for (int i = 0; i < 5; i++) {
     System.out.println("Iteration: " + i);
 }
@@ -552,9 +656,12 @@ for (int i = 0, j = 10; i < 5; i++, j--) {
     System.out.println("This will run forever");
 } */
                 </code></pre>
+                    </div>
                     
                     <h4>الحلقة المدمجة</h4>
-                    <pre><code>// الحلقات المدمجة For
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الحلقات المدمجة For
 for (int i = 1; i <= 3; i++) {
     for (int j = 1; j <= 3; j++) {
         System.out.println("i: " + i + ", j: " + j);
@@ -569,9 +676,12 @@ for (int i = 1; i <= 5; i++) {
     System.out.println(); // سطر جديد بعد كل صف
 }
                 </code></pre>
+                    </div>
                     
                     <h4>الحلقة For-Each (الحلقة المحسنة)</h4>
-                    <pre><code>// التكرار من خلال المصفوفات
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// التكرار من خلال المصفوفات
 int[] numbers = {10, 20, 30, 40, 50};
 for (int number : numbers) {
     System.out.println(number);
@@ -596,6 +706,7 @@ for (int[] row : matrix) {
     System.out.println();
 }
                 </code></pre>
+                    </div>
                     
                     <h4>نصائح تحكم في الحلقات:
                     <ul>
@@ -612,7 +723,9 @@ for (int[] row : matrix) {
                     <p>الكسر والاستمرار هما عبارات تحكم تساعد في إدارة تنفيذ الحلقات وتوفير مرونة أكبر في عمليات التكرار.</p>
                     
                     <h4>عبارة الكسر</h4>
-                    <pre><code>// الخروج من الحلقة
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الخروج من الحلقة
 for (int i = 0; i < 10; i++) {
     if (i == 5) {
         break; // يخرج من الحلقة بالكامل عندما تكون i تساوي 5
@@ -641,9 +754,12 @@ outer: for (int i = 0; i < 3; i++) {
     }
 }
                 </code></pre>
+                    </div>
                 
                     <h4>عبارة الاستمرار</h4>
-                    <pre><code>// تخطي التكرار
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// تخطي التكرار
 for (int i = 0; i < 10; i++) {
     if (i % 2 == 0) {
         continue; // يتخطى الأرقام الزوجية
@@ -673,9 +789,12 @@ for (int i = 0; i < 10; i++) {
 }
 // المخرجات: 1، 3، 5، 7
                 </code></pre>
+                    </div>
                 
                     <h4>استخدامات عملية</h4>
-                    <pre><code>// البحث في مصفوفة
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// البحث في مصفوفة
 int[] data = {10, 20, 30, 40, 50, 60, 70};
 int searchValue = 40;
 boolean found = false;
@@ -700,6 +819,7 @@ for (int score : scores) {
     System.out.println(score);
 }
                 </code></pre>
+                    </div>
                 
                     <h4>أفضل الممارسات لاستخدام الكسر والاستمرار:
                     <ul>
@@ -716,7 +836,9 @@ for (int score : scores) {
                     <p>المصفوفات في جافا هي كائنات تخزن قيمًا متعددة من نفس نوع البيانات في موقع ذاكرة متجاور. توفر طريقة لتخزين ومعالجة مجموعات من العناصر.</p>
                     
                     <h4>إعلان المصفوفة وتهيئتها</h4>
-                    <pre><code>// طرق مختلفة لإنشاء المصفوفات
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق مختلفة لإنشاء المصفوفات
 // الطريقة 1: الإعلان والتهيئة
 int[] numbers = {1, 2, 3, 4, 5};
 
@@ -735,9 +857,12 @@ names[2] = "Charlie";
 double[] prices = new double[4]; 
 // جميع العناصر مهيأة إلى 0.0
                 </code></pre>
+                    </div>
                     
                     <h4>الوصول إلى عناصر المصفوفة</h4>
-                    <pre><code>// الوصول إلى وتعديل عناصر المصفوفة
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الوصول إلى وتعديل عناصر المصفوفة
 int[] ages = {25, 30, 35, 40};
 
 // الوصول باستخدام الفهرس
@@ -750,9 +875,12 @@ ages[1] = 32;              // يغير العنصر الثاني
 // طول المصفوفة
 int arrayLength = ages.length; // 4
                 </code></pre>
+                    </div>
                     
                     <h4>التكرار عبر المصفوفات</h4>
-                    <pre><code>// طرق مختلفة للتكرار عبر المصفوفات
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق مختلفة للتكرار عبر المصفوفات
 int[] numbers = {10, 20, 30, 40, 50};
 
 // الحلقة التقليدية
@@ -768,9 +896,12 @@ for (int number : numbers) {
 // استخدام تدفقات جافا 8
 Arrays.stream(numbers).forEach(System.out::println);
                 </code></pre>
+                    </div>
                     
                     <h4>المصفوفات متعددة الأبعاد</h4>
-                    <pre><code>// إعلان مصفوفة ثنائية الأبعاد
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إعلان مصفوفة ثنائية الأبعاد
 int[][] matrix = {
     {1, 2, 3},
     {4, 5, 6},
@@ -791,9 +922,12 @@ for (int[] row : matrix) {
 // مثال على مصفوفة ثلاثية الأبعاد
 int[][][] threeDArray = new int[3][4][5];
                 </code></pre>
+                    </div>
                     
                     <h4>طرق التعامل مع المصفوفات</h4>
-                    <pre><code>// طرق المرافق الخاصة بالمصفوفات
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق المرافق الخاصة بالمصفوفات
 import java.util.Arrays;
 
 int[] original = {5, 2, 8, 1, 9};
@@ -811,9 +945,12 @@ Arrays.fill(filledArray, 42);  // [42, 42, 42, 42, 42]
 // البحث الثنائي
 int index = Arrays.binarySearch(original, 5);  // يعيد فهرس الرقم 5
                 </code></pre>
+                    </div>
                     
                     <h4>أمثلة حقيقية لاستخدام المصفوفات</h4>
-                    <pre><code>// إدارة درجات الطلاب
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إدارة درجات الطلاب
 class GradeTracker {
     private double[] grades;
     
@@ -841,6 +978,7 @@ tracker.addGrade(1, 92.3);
 // ... إضافة المزيد من الدرجات
 double classAverage = tracker.calculateAverage();
                 </code></pre>
+                    </div>
                     
                     <h4>أفضل ممارسات العمل مع المصفوفات:</h4>
                     <ul>
