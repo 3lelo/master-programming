@@ -6,6 +6,11 @@
     <title>تعلم كوتلن</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-kotlin.min.js"></script>
 </head>
 <body class="body-learn" dir="rtl">
     <nav>
@@ -26,7 +31,7 @@
     <div id="kotlin" class="main active">
 
         <h1>دورة كوتلن</h1>
-        <h2>استكشاف كوتلن، لغة برمجة حديثة مفضلة لتطوير تطبيقات أندرويد.</h2>
+        <h2>استكشف كوتلن، لغة برمجة حديثة مفضلة لتطوير تطبيقات أندرويد.</h2>
         <div class="course-content" dir="rtl">
             <div class="sidebar">
                 <ul class="section-list">
@@ -47,13 +52,17 @@
                 <div id="hello-world-k" class="section-k active">
                     <h3>مرحبًا بالعالم باستخدام كوتلن</h3>
                     <p>برنامج "مرحبًا بالعالم" هو أبسط طريقة للبدء بالبرمجة في كوتلن.</p>
-                    <pre>
-<code>// مرحبًا بالعالم في كوتلن
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre>
+<code class="language-kotlin">// مرحبًا بالعالم في كوتلن
 fun main() {
     println("Hello, World!")
 }
-                        </code>
-                    </pre>
+                            </code>
+                        </pre>
+                    </div>
+                    
                     <p>هذا البرنامج يُعرّف دالة <code>main</code>، وهي نقطة البداية للتطبيق. وتُستخدم دالة <code>println</code> لطباعة النصوص على وحدة التحكم.</p>
                 </div>
 
@@ -68,8 +77,10 @@ fun main() {
                         <li><strong>String:</strong> يخزن النصوص (مثل: <code>val message: String = "Hello"</code>)</li>
                     </ul>
                     <p>إليك مثالًا لاستخدام هذه الأنواع في كوتلن:</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-                        <code>
+                        <code class="language-kotlin">
 fun main() {
     val age: Int = 25
     val pi: Double = 3.14159
@@ -85,6 +96,7 @@ fun main() {
 }
                         </code>
                     </pre>
+                    </div>
                 </div>
 
 
@@ -93,7 +105,9 @@ fun main() {
                     <p>توفر كوتلن مجموعة غنية من العوامل لإجراء عمليات مختلفة على المتغيرات والقيم، مع ميزات فريدة مقارنة بجافا.</p>
                     
                     <h4>العوامل الحسابية</h4>
-                    <pre><code>// العمليات الحسابية الأساسية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// العمليات الحسابية الأساسية
 val a = 10
 val b = 3
 
@@ -106,9 +120,12 @@ val modulus = a % b   // الباقي: 1
 // عامل القسمة الآمنة
 val safeDivision = a.div(b)  // قسمة آمنة في كوتلن
                 </code></pre>
+                    </div>
                     
                     <h4>عوامل المقارنة</h4>
-                    <pre><code>// عوامل المقارنة
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// عوامل المقارنة
 val x = 5
 val y = 10
 
@@ -120,23 +137,25 @@ val isLess = x < y         // أصغر من
 val isGreaterOrEqual = x >= y
 val isLessOrEqual = x <= y
                 </code></pre>
+                    </div>
                     
                     <h4>العوامل المنطقية</h4>
-                    <pre><code>// العوامل المنطقية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// العوامل المنطقية
 val isTrue = true
 val isFalse = false
 
 val andResult = isTrue && isFalse   // و منطقي
 val orResult = isTrue || isFalse    // أو منطقي
 val notResult = !isTrue             // نفي منطقي
-
-// عوامل آمنة مع القيم الفارغة
-val nullableValue: Int? = null
-val safeResult = nullableValue?.plus(10)  // يعيد null إذا كانت القيمة nullableValue فارغة
                 </code></pre>
+                    </div>
                     
                     <h4>عوامل النطاق والانتماء</h4>
-                    <pre><code>// عوامل فريدة في كوتلن
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// عوامل فريدة في كوتلن
 val range = 1..10         // إنشاء نطاق من 1 إلى 10
 val inRange = 5 in range  // تحقق إذا كانت 5 ضمن النطاق: true
 
@@ -151,9 +170,12 @@ counter++   // زيادة بعدية
 counter--   // تنقيص بعدي
 --counter   // تنقيص قبلي
                 </code></pre>
+                    </div>
                     
                     <h4>العوامل الثنائية</h4>
-                    <pre><code>// العمليات الثنائية
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// العمليات الثنائية
 val num1 = 5  // ثنائي: 0101
 val num2 = 3  // ثنائي: 0011
 
@@ -162,9 +184,12 @@ val bitwiseOr = num1 or num2     // أو ثنائي: 7
 val bitwiseXor = num1 xor num2   // أو حصر ثنائي: 6
 val bitwiseInvert = num1.inv()   // نفي ثنائي
                 </code></pre>
+                    </div>
                     
                     <h4>عامل الانتشار وعامل Elvis</h4>
-                    <pre><code>// عامل الانتشار
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// عامل الانتشار
 fun printNumbers(vararg numbers: Int) {
     numbers.forEach { println(it) }
 }
@@ -175,6 +200,7 @@ printNumbers(*nums)  // عامل الانتشار يفكك المصفوفة
 val nullableStr: String? = null
 val definedStr = nullableStr ?: "قيمة افتراضية"
                 </code></pre>
+                    </div>
                     
                     <h4>نصائح عن عوامل كوتلن:
                     <ul>
@@ -191,7 +217,9 @@ val definedStr = nullableStr ?: "قيمة افتراضية"
                     <p>النصوص في كوتلن غير قابلة للتغيير وتوفر وظائف مدمجة قوية للتلاعب والإدراج.</p>
                     
                     <h4>إنشاء النصوص والأساسيات</h4>
-                    <pre><code>// تعريف النصوص
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// تعريف النصوص
 val greeting = "مرحبًا، كوتلن!"
 val multiLineString = """
     هذا نص
@@ -205,9 +233,12 @@ val age = 30
 val message = "اسمي $name وعمري $age سنة"
 val complexMessage = "حساب معقد: ${age * 2}"
                 </code></pre>
+                    </div>
                     
                     <h4>وظائف النصوص</h4>
-                    <pre><code>// العمليات الشائعة على النصوص
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// العمليات الشائعة على النصوص
 val text = "  برمجة كوتلن  "
 
 // التحويلات
@@ -224,9 +255,12 @@ val isBlank = text.isBlank()
 val substring = text.substring(2, 8)
 val replaced = text.replace("كوتلن", "جافا")
                 </code></pre>
+                    </div>
                     
                     <h4>مقارنة النصوص</h4>
-                    <pre><code>// مقارنة النصوص
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// مقارنة النصوص
 val str1 = "hello"
 val str2 = "hello"
 val str3 = String("hello".toCharArray())
@@ -236,9 +270,12 @@ println(str1 === str2)  // true (المساواة المرجعية بسبب ال
 println(str1 == str3)   // true
 println(str1 === str3)  // false
                 </code></pre>
+                    </div>
                     
                     <h4>التلاعب المتقدم بالنصوص</h4>
-                    <pre><code>// التقسيم والجمع
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-kotlin">// التقسيم والجمع
 val csv = "apple,banana,cherry"
 val fruits = csv.split(",")
 val restored = fruits.joinToString(",")
@@ -252,6 +289,7 @@ val startsWith = greeting.startsWith("مرحبًا")
 val endsWith = greeting.endsWith("كوتلن!")
 val contains = greeting.contains("كوتلن")
                 </code></pre>
+                    </div>
                     
                     <h4>ميزات النصوص في كوتلن:
                     <ul>
@@ -266,8 +304,10 @@ val contains = greeting.contains("كوتلن")
                 <div id="math-k" class="section-k">
                     <h3>الرياضيات في كوتلن</h3>
                     <p>توفر كوتلن عمليات رياضية قوية وتدعم الحسابات الرياضية القياسية.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>fun main() {
+<code class="language-kotlin">fun main() {
     // العمليات الحسابية الأساسية
     val a = 10
     val b = 3
@@ -297,6 +337,7 @@ val contains = greeting.contains("كوتلن")
 }
                         </code>
                     </pre>
+                    </div>
                     <h4>الميزات الرئيسية للرياضيات في كوتلن:</h4>
                     <ul>
                         <li>تدعم العمليات الحسابية القياسية (+, -, *, /, %)</li>
@@ -309,8 +350,10 @@ val contains = greeting.contains("كوتلن")
                 <div id="booleans-k" class="section-k">
                     <h3>القيم البوليانية في كوتلن</h3>
                     <p>تمثل القيم البوليانية في كوتلن قيم الحقيقة (true/false) مع عمليات منطقية شاملة.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>fun main() {
+<code class="language-kotlin">fun main() {
     // تعريف القيم البوليانية
     val isTrue = true
     val isFalse = false
@@ -332,6 +375,7 @@ val contains = greeting.contains("كوتلن")
 }
                         </code>
                     </pre>
+                    </div>
                     <h4>عمليات القيم البوليانية في كوتلن تشمل:</h4>
                     <ul>
                         <li>العوامل المنطقية: <code>&&</code> (AND)، <code>||</code> (OR)، <code>!</code> (NOT)</li>
@@ -345,8 +389,10 @@ val contains = greeting.contains("كوتلن")
                 <div id="if.else-k" class="section-k">
                     <h3>تعليمات If ... Else في كوتلن</h3>
                     <p>توفر تعليمات if-else في كوتلن مرونة وقوة في الاستخدام.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>fun main() {
+<code class="language-kotlin">fun main() {
     val age = 20
 
     // تعليمة if بسيطة
@@ -376,6 +422,7 @@ val contains = greeting.contains("كوتلن")
 }
                         </code>
                     </pre>
+                    </div>
                     <h4>ميزات تعليمات if-else:</h4>
                     <ul>
                         <li>صياغة if-else التقليدية</li>
@@ -388,8 +435,10 @@ val contains = greeting.contains("كوتلن")
                 <div id="when" class="section-k">
                     <h3>تعليمة When (بديل Switch) في كوتلن</h3>
                     <p>تعليمة <code>when</code> في كوتلن هي بديل قوي لتعليمة switch.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>fun main() {
+<code class="language-kotlin">fun main() {
     // تعبير when الأساسي
     val day = 3
     when (day) {
@@ -420,6 +469,7 @@ val contains = greeting.contains("كوتلن")
 }
                         </code>
                     </pre>
+                    </div>
                     <h4>قدرات تعليمة when:</h4>
                     <ul>
                         <li>أكثر مرونة من switch التقليدية</li>
@@ -433,8 +483,10 @@ val contains = greeting.contains("كوتلن")
                 <div id="loops-k" class="section-k">
                     <h3>الحلقات في كوتلن</h3>
                     <p>توفر كوتلن أنواعًا متعددة من الحلقات لتناسب مختلف السيناريوهات.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>fun main() {
+<code class="language-kotlin">fun main() {
     // حلقة for مع نطاق
     for (i in 1..5) {
         println(i)  // يطبع 1, 2, 3, 4, 5
@@ -467,6 +519,7 @@ val contains = greeting.contains("كوتلن")
 }
                         </code>
                     </pre>
+                    </div>
                     <h4>أنواع الحلقات في كوتلن:</h4>
                     <ul>
                         <li>حلقات <code>for</code> مع النطاقات والمجموعات</li>
@@ -479,8 +532,10 @@ val contains = greeting.contains("كوتلن")
                 <div id="break.continue-k" class="section-k">
                     <h3>التعليمات Break و Continue في كوتلن</h3>
                     <p>تحكم في تنفيذ الحلقات باستخدام التعليمات break و continue.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-<code>fun main() {
+<code class="language-kotlin">fun main() {
     // تعليمة break داخل حلقة
     for (i in 1..10) {
         if (i == 5) {
@@ -509,6 +564,7 @@ val contains = greeting.contains("كوتلن")
 }
                         </code>
                     </pre>
+                    </div>
                     <h4>ميزات التعليمات break و continue:</h4>
                     <ul>
                         <li><code>break</code> تخرج من الحلقة بالكامل</li>
@@ -521,73 +577,85 @@ val contains = greeting.contains("كوتلن")
                 <div id="arrays-k" class="section-k">
                     <h3>المصفوفات في كوتلن</h3>
                     <p>المصفوفات في كوتلن هي هياكل بيانات مرنة وقوية.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-                    <code>fun main() {
-                        // إعلان مصفوفة
-                        val numbers = arrayOf(1, 2, 3, 4, 5)
-                        val mixed = arrayOf(1, "Two", 3.0, true)
-                    
-                        // الوصول إلى العناصر
-                        println(numbers[0])  // أول عنصر
-                        println(numbers.size)  // طول المصفوفة
-                    
-                        // إنشاء مصفوفات بحجم محدد
-                        val zeroArray = Array(5) { 0 }  // [0, 0, 0, 0, 0]
-                        val squaredArray = Array(5) { it * it }  // [0, 1, 4, 9, 16]
-                    
-                        // التكرار عبر المصفوفات
-                        for (num in numbers) {
-                            println(num)
-                        }
-                    
-                        // طرق المصفوفات
-                        println(numbers.contains(3))  // true
-                        println(numbers.indexOf(4))   // 3
-                        println(numbers.first())      // 1
-                        println(numbers.last())       // 5
-                    
-                        // تعديل المصفوفات
-                        numbers[2] = 10  // تغيير العنصر الثالث
-                    }
+                    <code class="language-kotlin">
+fun main() {
+    // إعلان مصفوفة
+    val numbers = arrayOf(1, 2, 3, 4, 5)
+    val mixed = arrayOf(1, "Two", 3.0, true)
+
+    // الوصول إلى العناصر
+    println(numbers[0])  // أول عنصر
+    println(numbers.size)  // طول المصفوفة
+
+    // إنشاء مصفوفات بحجم محدد
+    val zeroArray = Array(5) { 0 }  // [0, 0, 0, 0, 0]
+    val squaredArray = Array(5) { it * it }  // [0, 1, 4, 9, 16]
+
+    // التكرار عبر المصفوفات
+    for (num in numbers) {
+        println(num)
+    }
+
+    // طرق المصفوفات
+    println(numbers.contains(3))  // true
+    println(numbers.indexOf(4))   // 3
+    println(numbers.first())      // 1
+    println(numbers.last())       // 5
+
+    // تعديل المصفوفات
+    numbers[2] = 10  // تغيير العنصر الثالث
+}
                     </code>
                     </pre>
+                    </div>
                     <h4>أنواع المصفوفات:</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-                    <code>fun main() {
-                        // مصفوفة عامة
-                        val generalArray = arrayOf(1, 2, 3, 4)
-                    
-                        // مصفوفة مخصصة لنوع معين
-                        val intArray = intArrayOf(1, 2, 3, 4)
-                        val doubleArray = doubleArrayOf(1.1, 2.2, 3.3)
-                        val booleanArray = booleanArrayOf(true, false, true)
-                    
-                        // مصفوفة فارغة
-                        val emptyArray = arrayOfNulls<Int>(5)  // [null, null, null, null, null]
-                        val completelyEmptyArray = emptyArray<String>()
-                    }
+                    <code class="language-kotlin">
+fun main() {
+    // مصفوفة عامة
+    val generalArray = arrayOf(1, 2, 3, 4)
+
+    // مصفوفة مخصصة لنوع معين
+    val intArray = intArrayOf(1, 2, 3, 4)
+    val doubleArray = doubleArrayOf(1.1, 2.2, 3.3)
+    val booleanArray = booleanArrayOf(true, false, true)
+
+    // مصفوفة فارغة
+    val emptyArray = arrayOfNulls<Int>(5)  // [null, null, null, null, null]
+    val completelyEmptyArray = emptyArray<String>()
+}
                     </code>
                     </pre>
+                    </div>
                     
                     <h4>أمثلة عملية:</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
                     <pre>
-                    <code>fun main() {
-                        // إنشاء مصفوفة من 1 إلى n بدون حلقات
-                        val n = 10
-                        val array = IntArray(n) { it + 1 }
-                        println(array.joinToString(", "))  // الإخراج: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-                    
-                        // تصفية العناصر الأكبر من 5
-                        val filteredArray = array.filter { it > 5 }.toIntArray()
-                        println(filteredArray.joinToString(", "))  // الإخراج: 6, 7, 8, 9, 10
-                    
-                        // تعديل مصفوفة
-                        val numbers = arrayOf(1, 2, 3, 4, 5)
-                        numbers[2] = 10
-                        println(numbers.joinToString(", "))  // الإخراج: 1, 2, 10, 4, 5
-                    }
+                    <code class="language-kotlin">
+fun main() {
+    // إنشاء مصفوفة من 1 إلى n بدون حلقات
+    val n = 10
+    val array = IntArray(n) { it + 1 }
+    println(array.joinToString(", "))  // الإخراج: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+    // تصفية العناصر الأكبر من 5
+    val filteredArray = array.filter { it > 5 }.toIntArray()
+    println(filteredArray.joinToString(", "))  // الإخراج: 6, 7, 8, 9, 10
+
+    // تعديل مصفوفة
+    val numbers = arrayOf(1, 2, 3, 4, 5)
+    numbers[2] = 10
+    println(numbers.joinToString(", "))  // الإخراج: 1, 2, 10, 4, 5
+}
                     </code>
                     </pre>
+                    </div>
                     <div style="
                     background: linear-gradient(135deg, #2ecc71, #27ae60);
                     color: white;
@@ -596,7 +664,7 @@ val contains = greeting.contains("كوتلن")
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
                     line-height: 1.6;
-                    width: 67.5%;
+                    width: 47.5%;
                     text-align: right;
                     direction: rtl;
                   ">
