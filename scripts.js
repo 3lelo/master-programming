@@ -47,3 +47,21 @@ document.addEventListener('DOMContentLoaded', function () {
         '.section-k'
     );
 });
+
+
+
+document.querySelectorAll(".copy-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+        const codeBlock = button.nextElementSibling.querySelector("code");
+        const codeText = codeBlock.innerText;
+        navigator.clipboard.writeText(codeText).then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => {
+                button.textContent = "Copy";
+            }, 1500);
+        }).catch(() => {
+            alert("Failed to copy!");
+        });
+    });
+});
+
