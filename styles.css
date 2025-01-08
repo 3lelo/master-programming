@@ -328,7 +328,7 @@ nav .btn.active p:after {
 }
 
 .section-item.active {
-    background-color: #4caf50;
+    background-color: #19c059;
     color: white;
 }
 
@@ -358,7 +358,7 @@ nav .btn.active p:after {
 }
 
 .section-item-k.active {
-    background-color: #4caf50;
+    background-color: #19c059;
     color: white;
 }
 
@@ -464,7 +464,7 @@ pre {
     width: 70%;
     direction: ltr;
     background-color: #f4f4f4;
-    border: 1px solid #ddd;
+    border-left: 2px solid #00c74c;
     padding: 10px;
     border-radius: 8px;
     overflow-x: auto;
@@ -475,4 +475,31 @@ pre {
 code {
     font-family: Consolas, "Courier New", monospace;
     color: #d63384;
+}
+
+
+.code-container {
+    position: relative;
+    width: 70%;
+    margin-left: 150px;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #19c059;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #0f7938;
 }
