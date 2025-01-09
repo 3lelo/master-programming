@@ -72,8 +72,15 @@ footer {
 @media screen and (max-height: 695px) {
     .langs:hover {
         height: 350px;
-        overflow-y: visible;
-        overflow-x: hidden;
+        overflow-y: scroll;
+        scrollbar-width: 0;
+        -ms-overflow-style: none;
+    }
+    
+    .langs:hover::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+        display: none;
     }
 
     footer {
