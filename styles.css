@@ -133,7 +133,7 @@ nav .btn:after {
     position: absolute;
     width: 0;
     height: 3px;
-    background-color: #13cf71;
+    background-color: #19c059;
     transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
@@ -165,7 +165,7 @@ nav .btn span:after {
     position: absolute;
     width: 3px;
     height: 0;
-    background-color: #13cf71;
+    background-color: #19c059;
     transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
@@ -207,7 +207,7 @@ nav .btn p:before {
 nav .btn p:after {
     content: attr(data-text);
     top: 150%;
-    color: #13cf71;
+    color: #19c059;
 }
 
 nav .btn:hover:before,
