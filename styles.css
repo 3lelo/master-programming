@@ -75,10 +75,16 @@ footer {
     }
 
     .langs:hover {
-        height: 350px;
         overflow-y: scroll;
-        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        height: 350px;
     }
+    
+    .langs::-webkit-scrollbar {
+        display: none;
+    }
+    
 }
 
 
