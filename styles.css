@@ -69,22 +69,23 @@ footer {
 }
 
 
-@media screen and (max-height: 695px) {
+@media screen and (max-width: 1024px) {
     footer {
         position: relative;
     }
-
     .langs:hover {
-        overflow-y: scroll;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
         height: 350px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-scrollbar: none;
+        -webkit-overflow-scrolling: touch;
     }
     
-    .langs::-webkit-scrollbar {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .langs::-webkit-scrollbar { 
+        width: 0 !important;
         display: none;
     }
-    
 }
 
 
