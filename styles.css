@@ -388,7 +388,7 @@ nav .btn.active p:after {
 }
 
 .langs:hover {
-    height: 400px;
+    height: 280px;
     transform: skew(0deg);
 }
 
