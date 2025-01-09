@@ -69,7 +69,7 @@ footer {
 }
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-height: 695px) {
     footer {
         position: relative;
     }
