@@ -70,19 +70,14 @@ footer {
 
 
 @media screen and (max-height: 695px) {
-    footer {
-        position: relative;
-    }
     .langs:hover {
         height: 350px;
-        overflow-y: scroll;
+        overflow-y: visible;
         overflow-x: hidden;
-        scrollbar-width: none;  /* Firefox */
-        -ms-overflow-style: none;  /* Internet Explorer/Edge */
     }
-    
-    .langs:hover::-webkit-scrollbar {  /* Chrome, Safari, Opera */
-        display: none;
+
+    footer {
+        position: relative;
     }
 }
 
