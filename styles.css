@@ -73,6 +73,12 @@ footer {
     footer {
         position: relative;
     }
+
+    .langs:hover {
+        height: 350px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
 }
 
 
