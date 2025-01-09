@@ -69,11 +69,7 @@ footer {
 }
 
 
-@media screen and (min-width: 1024px) {
-    .langs:hover {
-        height: 350px;
-    }
-
+@media screen and (max-height: 695px) {
     footer {
         position: relative;
     }
@@ -392,7 +388,7 @@ nav .btn.active p:after {
 }
 
 .langs:hover {
-    height: 280px;
+    height: 400px;
     transform: skew(0deg);
 }
 
