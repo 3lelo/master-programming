@@ -84,20 +84,28 @@ footer {
     }
 }
 
+/* General card styles for mobile */
 @media (max-width: 768px) {
     .cards {
-        flex-direction: column;
-        align-items: center; /* Center the cards horizontally */
-        margin: 0; /* Remove any extra margin */
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center align cards horizontally */
+        margin: 0 auto; /* Center the entire cards container */
     }
 
     .card {
-        height: 254px; /* Simulate the hovered state */
-        transform: skew(0deg); /* Remove skew effect */
+        height: 254px; /* Set the height as if hovered */
+        transform: skew(0deg); /* Remove skew for mobile */
         width: 90%; /* Make cards responsive */
-        margin: 10px 0; /* Add spacing between cards */
+        margin: 10px 0; /* Add spacing between stacked cards */
+    }
+
+    /* Remove hover animations for mobile devices */
+    .card:hover {
+        height: 254px;
+        transform: skew(0deg);
     }
 }
+
 
 
 
