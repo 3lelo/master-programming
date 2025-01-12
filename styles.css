@@ -32,7 +32,7 @@ main {
 }
 
 footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
     background-color: #359d38;
     color: white;
@@ -82,31 +82,11 @@ footer {
         background: transparent;
         display: none;
     }
-}
 
-/* General card styles for mobile */
-@media (max-width: 768px) {
-    .cards {
-        flex-direction: column; /* Stack cards vertically */
-        align-items: center; /* Center align cards horizontally */
-        margin: 0 auto; /* Center the entire cards container */
-    }
-
-    .card {
-        height: 254px; /* Set the height as if hovered */
-        transform: skew(0deg); /* Remove skew for mobile */
-        width: 90%; /* Make cards responsive */
-        margin: 10px 0; /* Add spacing between stacked cards */
-    }
-
-    /* Remove hover animations for mobile devices */
-    .card:hover {
-        height: 254px;
-        transform: skew(0deg);
+    footer {
+        position: relative;
     }
 }
-
-
 
 
 a:link {
