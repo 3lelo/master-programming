@@ -88,118 +88,118 @@ footer {
     }
 }
 
-/* Add these media queries at the end of your CSS file */
+/* Update cards layout */
 @media screen and (max-width: 992px) {
     .cards {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;  /* Right alignment */
         padding: 10px;
+        width: 100%;
     }
 
     .card {
-        width: 90%;
-        margin: 10px 0;
+        width: 85%;            /* Slightly smaller width */
+        margin: 10px;
         height: auto;
-        min-height: 254px;
-        transform: none;
+        min-height: auto;      /* Remove fixed height */
+        transform: skewX(-10deg); /* Reverse skew direction */
         padding: 1rem;
     }
 
-    .langs {
-        min-height: 280px;
+    /* Make text readable despite skew */
+    .card > * {
+        transform: skewX(10deg);
     }
 
-    /* Remove hover effects since they're not needed on mobile */
+    .langs {
+        min-height: auto;
+    }
+
+    /* Remove hover effects */
     .card:hover {
         height: auto;
-        min-height: 254px;
-        transform: none;
+        transform: skewX(-10deg);
     }
 
-    .langs:hover {
-        height: auto;
-        min-height: 280px;
-        transform: none;
+    .card:hover > * {
+        transform: skewX(10deg);
     }
 
-    /* Fix margins and layout */
-    .card {
-        margin-left: 0;
-        margin-right: 0;
+    /* Adjust footer to match nav width */
+    footer {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 0;
+        margin: 0;
     }
 
-    /* Adjust heading and text sizes for mobile */
+    /* Fix the navigation width */
+    nav {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+
+    /* Adjust font sizes */
     .card h1 {
-        font-size: 1.2rem;
-        margin: 0.8rem;
+        font-size: 1rem;
+        margin: 0.5rem;
+        text-align: right;
     }
 
     .card p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        text-align: right;
+    }
+
+    .card ul {
+        padding-right: 20px;
+        padding-left: 0;
     }
 
     .card ul li {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        text-align: right;
     }
 
-    /* Adjust navigation for mobile */
-    nav {
-        padding: 5px;
+    /* Fix link behavior */
+    .footer-section a {
+        display: inline-block;
+        width: 100%;
+        padding: 5px 0;
+        cursor: pointer;
     }
 
-    nav .btn {
-        width: 120px;
-        font-size: 20px;
+    .footer-section a:active,
+    .footer-section a:hover {
+        color: #d63833;
     }
 
-    /* Fix footer on mobile */
-    footer {
-        position: relative;
-        gap: 50px;
-        padding: 20px;
+    /* Align footer sections */
+    .footer-section {
+        text-align: right;
+        padding: 0 20px;
     }
 }
 
-/* Additional fixes for very small screens */
-@media screen and (max-width: 480px) {
-    .card {
-        width: 95%;
-        padding: 0.5rem;
-    }
+/* Footer fixes for all screen sizes */
+footer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0;
+    margin: 0;
+    left: 0;
+}
 
-    .align {
-        padding: 0.5rem;
-    }
+/* Fix links for all screen sizes */
+a {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
 
-    /* Even smaller font sizes for very small screens */
-    .card h1 {
-        font-size: 1rem;
-        margin: 0.8rem;
-    }
-
-    .card p {
-        font-size: 0.85rem;
-    }
-
-    .card ul li {
-        font-size: 0.85rem;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-section {
-        align-items: center;
-        font-size: 0.9rem;
-    }
-
-    .footer-section h3 {
-        font-size: 1rem;
-    }
+.footer-section a {
+    transition: color 0.3s ease;
 }
 
 
