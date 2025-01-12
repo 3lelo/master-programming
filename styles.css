@@ -88,6 +88,47 @@ footer {
     }
 }
 
+@media screen and (max-width: 992px) {
+    .cards {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card {
+        width: auto;
+        margin: 10px;
+        transform: skew(0deg);
+        height: auto;
+        max-width: 100%;
+        /* Ensure card doesn't overflow screen width */
+    }
+
+    .card:hover {
+        transform: skew(0deg);
+    }
+
+    /* Force expanded state on mobile */
+    .card {
+        height: 254px !important;
+        /* Override the default height */
+    }
+
+    .langs {
+        height: 280px !important;
+        /* Override for language cards */
+    }
+
+    /* Remove hover effects since cards are already expanded */
+    .card:hover,
+    .langs:hover {
+        height: 280px !important;
+        transform: skew(0deg);
+    }
+    footer {
+        position: relative;
+    }
+}
+
 
 a:link {
     color: #fff;
