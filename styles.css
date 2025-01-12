@@ -88,44 +88,117 @@ footer {
     }
 }
 
+/* Add these media queries at the end of your CSS file */
 @media screen and (max-width: 992px) {
     .cards {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
+        padding: 10px;
     }
 
     .card {
-        width: auto;
-        margin: 10px;
-        transform: skew(0deg);
+        width: 90%;
+        margin: 10px 0;
         height: auto;
-        max-width: 100%;
-        /* Ensure card doesn't overflow screen width */
-    }
-
-    .card:hover {
-        transform: skew(0deg);
-    }
-
-    /* Force expanded state on mobile */
-    .card {
-        height: 254px !important;
-        /* Override the default height */
+        min-height: 254px;
+        transform: none;
+        padding: 1rem;
     }
 
     .langs {
-        height: 280px !important;
-        /* Override for language cards */
+        min-height: 280px;
     }
 
-    /* Remove hover effects since cards are already expanded */
-    .card:hover,
-    .langs:hover {
-        height: 280px !important;
-        transform: skew(0deg);
+    /* Remove hover effects since they're not needed on mobile */
+    .card:hover {
+        height: auto;
+        min-height: 254px;
+        transform: none;
     }
+
+    .langs:hover {
+        height: auto;
+        min-height: 280px;
+        transform: none;
+    }
+
+    /* Fix margins and layout */
+    .card {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Adjust heading and text sizes for mobile */
+    .card h1 {
+        font-size: 1.2rem;
+        margin: 0.8rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .card ul li {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust navigation for mobile */
+    nav {
+        padding: 5px;
+    }
+
+    nav .btn {
+        width: 120px;
+        font-size: 20px;
+    }
+
+    /* Fix footer on mobile */
     footer {
         position: relative;
+        gap: 50px;
+        padding: 20px;
+    }
+}
+
+/* Additional fixes for very small screens */
+@media screen and (max-width: 480px) {
+    .card {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    .align {
+        padding: 0.5rem;
+    }
+
+    /* Even smaller font sizes for very small screens */
+    .card h1 {
+        font-size: 1rem;
+        margin: 0.8rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+
+    .card ul li {
+        font-size: 0.85rem;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        align-items: center;
+        font-size: 0.9rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1rem;
     }
 }
 
