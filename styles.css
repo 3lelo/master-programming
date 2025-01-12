@@ -32,7 +32,7 @@ main {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     background-color: #359d38;
     color: white;
@@ -82,11 +82,23 @@ footer {
         background: transparent;
         display: none;
     }
+}
 
-    footer {
-        position: relative;
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center; /* Center the cards horizontally */
+        margin: 0; /* Remove any extra margin */
+    }
+
+    .card {
+        height: 254px; /* Simulate the hovered state */
+        transform: skew(0deg); /* Remove skew effect */
+        width: 90%; /* Make cards responsive */
+        margin: 10px 0; /* Add spacing between cards */
     }
 }
+
 
 
 a:link {
