@@ -88,6 +88,34 @@ footer {
     }
 }
 
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards horizontally */
+    }
+
+    .card {
+        width: 90%; /* Make cards take up most of the screen width */
+        margin: 10px 0; /* Add vertical spacing between cards */
+        transform: skewX(0deg); /* Remove skew effect on mobile */
+        height: 254px; /* Auto-expand height for mobile (no hover needed) */
+    }
+
+    .card:hover {
+        height: 254px; /* Disable hover effect on mobile */
+        transform: skewX(0deg); /* Ensure no skew on hover */
+    }
+
+    .langs {
+        height: 254px; /* Auto-expand height for mobile (no hover needed) */
+    }
+
+    .langs:hover {
+        height: 254px; /* Disable hover effect on mobile */
+    }
+}
+
 
 a:link {
     color: #fff;
