@@ -88,118 +88,105 @@ footer {
     }
 }
 
-/* Update cards layout */
 @media screen and (max-width: 992px) {
+    /* Main container adjustments */
+    main {
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    /* Cards container */
     .cards {
         flex-direction: column;
-        align-items: flex-end;  /* Right alignment */
+        align-items: center;
         padding: 10px;
-        width: 100%;
+        margin-bottom: 60px; /* Space for footer */
     }
 
+    /* Individual card styling */
     .card {
-        width: 85%;            /* Slightly smaller width */
-        margin: 10px;
-        height: auto;
-        min-height: auto;      /* Remove fixed height */
-        transform: skewX(-10deg); /* Reverse skew direction */
+        width: 90%;
+        margin: 15px 0;
+        height: auto !important; /* Force height */
+        min-height: 254px;
+        transform: none !important; /* Remove skew */
         padding: 1rem;
-    }
-
-    /* Make text readable despite skew */
-    .card > * {
-        transform: skewX(10deg);
+        /* Auto-expanded state */
+        display: flex;
+        flex-direction: column;
     }
 
     .langs {
-        min-height: auto;
+        min-height: 280px;
+        height: auto !important;
     }
 
-    /* Remove hover effects */
-    .card:hover {
-        height: auto;
-        transform: skewX(-10deg);
+    /* Remove all hover effects */
+    .card:hover, .langs:hover {
+        transform: none !important;
+        height: auto !important;
     }
 
-    .card:hover > * {
-        transform: skewX(10deg);
-    }
-
-    /* Adjust footer to match nav width */
-    footer {
-        position: relative;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 20px 0;
-        margin: 0;
-    }
-
-    /* Fix the navigation width */
-    nav {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 10px 0;
-    }
-
-    /* Adjust font sizes */
+    /* Adjust text sizes */
     .card h1 {
-        font-size: 1rem;
-        margin: 0.5rem;
-        text-align: right;
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
     }
 
     .card p {
-        font-size: 0.85rem;
-        text-align: right;
-    }
-
-    .card ul {
-        padding-right: 20px;
-        padding-left: 0;
+        font-size: 0.8rem;
+        line-height: 1.4;
     }
 
     .card ul li {
-        font-size: 0.85rem;
-        text-align: right;
+        font-size: 0.8rem;
+        line-height: 1.4;
     }
 
-    /* Fix link behavior */
-    .footer-section a {
-        display: inline-block;
+    /* Adjust the dots size */
+    .red, .yellow, .green {
+        width: 15px;
+        height: 15px;
+    }
+
+    .align {
+        padding: 0.5rem;
+    }
+
+    /* Footer adjustments */
+    footer {
+        position: fixed;
+        bottom: 0;
         width: 100%;
-        padding: 5px 0;
-        cursor: pointer;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #359d38;
     }
 
-    .footer-section a:active,
-    .footer-section a:hover {
-        color: #d63833;
-    }
-
-    /* Align footer sections */
     .footer-section {
-        text-align: right;
         padding: 0 20px;
+        font-size: 0.8rem;
     }
-}
 
-/* Footer fixes for all screen sizes */
-footer {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 20px 0;
-    margin: 0;
-    left: 0;
-}
+    .footer-section h3 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
 
-/* Fix links for all screen sizes */
-a {
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
+    .footer-section a, 
+    .footer-section li {
+        font-size: 0.8rem;
+    }
 
-.footer-section a {
-    transition: color 0.3s ease;
+    /* Adjust the two footer sections */
+    .footer-section:first-child {
+        text-align: right;
+    }
+
+    .footer-section:last-child {
+        text-align: left;
+    }
 }
 
 
