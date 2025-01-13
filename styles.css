@@ -93,6 +93,8 @@ footer {
     main {
         margin-top: 0;
         padding: 10px;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* Cards container */
@@ -100,15 +102,13 @@ footer {
         flex-direction: column;
         align-items: center;
         padding: 10px;
-        margin-bottom: 60px; /* Space for footer */
     }
 
     /* Individual card styling */
     .card {
-        width: 90%;
+        width: 50%;
         margin: 15px 0;
         height: auto !important; /* Force height */
-        min-height: 254px;
         transform: none !important; /* Remove skew */
         padding: 1rem;
         /* Auto-expanded state */
@@ -117,6 +117,7 @@ footer {
     }
 
     .langs {
+        width: 50%;
         min-height: 280px;
         height: auto !important;
     }
@@ -155,7 +156,7 @@ footer {
 
     /* Footer adjustments */
     footer {
-        position: fixed;
+        position: relative;
         bottom: 0;
         width: 100%;
         padding: 15px 0;
@@ -186,28 +187,6 @@ footer {
 
     .footer-section:last-child {
         text-align: left;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    body {
-        padding-bottom: 60px; /* Space for footer */
-    }
-
-    /* Handle very small screens */
-    @media screen and (max-height: 600px) {
-        .card {
-            margin: 10px 0;
-            min-height: 200px;
-        }
-
-        footer {
-            position: relative;
-        }
-
-        body {
-            padding-bottom: 0;
-        }
     }
 }
 
