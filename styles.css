@@ -93,26 +93,28 @@ footer {
     .cards {
         flex-direction: column; /* Stack cards vertically */
         align-items: center; /* Center cards horizontally */
+        gap: 20px; /* Add spacing between stacked cards */
     }
 
     .card {
         width: 90%; /* Make cards take up most of the screen width */
-        margin: 10px 0; /* Add vertical spacing between cards */
+        margin: 0; /* Remove margin to avoid extra spacing */
         transform: skewX(0deg); /* Remove skew effect on mobile */
-        height: 254px; /* Auto-expand height for mobile (no hover needed) */
+        height: auto; /* Allow cards to expand based on content */
+        padding: 20px; /* Add padding for better spacing */
     }
 
     .card:hover {
-        height: 254px; /* Disable hover effect on mobile */
+        height: auto; /* Disable hover effect on mobile */
         transform: skewX(0deg); /* Ensure no skew on hover */
     }
 
     .langs {
-        height: 254px; /* Auto-expand height for mobile (no hover needed) */
+        height: auto; /* Allow cards to expand based on content */
     }
 
     .langs:hover {
-        height: 254px; /* Disable hover effect on mobile */
+        height: auto; /* Disable hover effect on mobile */
     }
 }
 
