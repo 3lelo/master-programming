@@ -32,7 +32,7 @@ main {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     background-color: #359d38;
     color: white;
@@ -82,9 +82,15 @@ footer {
         background: transparent;
         display: none;
     }
+}
 
-    footer {
-        position: relative;
+@media screen and (max-width: 768px) {
+    .cards{
+        flex-direction: column;
+    }
+
+    .home.active{
+        flex-direction: row;
     }
 }
 
@@ -277,11 +283,9 @@ nav .btn.active p:after {
     text-align: center;
 }
 
-
-.cards {
-    width: 100%;
+.home.active{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -370,6 +374,14 @@ nav .btn.active p:after {
 
 .section-k.active {
     display: block;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 
