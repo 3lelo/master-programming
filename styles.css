@@ -85,35 +85,22 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .cards {
-        display: block;  /* Changes flex to block for better mobile layout */
-        padding: 1rem;   /* Add some padding around the container */
-    }
-
-    .card {
-        width: 100%;     /* Full width of the container */
-        margin: 1rem 0;  /* Vertical spacing between cards */
-        font-size: 14px; /* More readable font size instead of 0.4rem */
-    }
-
-    .card h1 {
-        font-size: 1.5rem; /* Appropriate heading size for mobile */
-    }
-
-    .card p, 
-    .card li {
-        font-size: 1rem;  /* Regular text size for better readability */
-    }
-
-    footer {
+    .card::after{
+        font-size: 0.4rem;
         width: 100%;
-        padding: 2rem 1rem;
-        gap: 2rem;
+        height: 100%;
+        margin: 10px;
+    }
+
+    footer{
+        width : 100%;
+        padding: 0 20px 50px;
+        gap: 50px;
     }
 
     .footer-section a,
-    .footer-section h3 {
-        font-size: 0.875rem; /* More readable size instead of 0.4rem */
+    .footer-section h3{
+        font-size: 0.4rem;
     }
 }
 
