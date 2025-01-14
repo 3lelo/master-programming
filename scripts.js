@@ -65,3 +65,23 @@ document.querySelectorAll(".copy-btn").forEach((button) => {
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const toggleButton = document.querySelector('.sidebar-toggle');
+    const overlay = document.createElement('div');
+    overlay.className = 'sidebar-overlay';
+    document.body.appendChild(overlay);
+
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('active');
+        toggleButton.style.display = sidebar.classList.contains('open') ? 'none' : 'block';
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        toggleButton.style.display = 'block';
+    });
+});
