@@ -319,8 +319,9 @@ nav .btn.active p:after {
 
 .sidebar {
     width: 250px;
-    background-color: #f0f0f0;
-    border-right: 1px solid #ddd;
+    background-color: #ffffff;
+    border-right: 1px solid #00c74c;
+    border-radius: 10px;
     padding: 20px 0;
     overflow-y: auto;
 }
