@@ -85,15 +85,15 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .card {
-        width: 50%;
-        height: 100%;
+    .pc {
+        display: none !important;
     }
-    .card:hover{
-        font-size: 0.4rem;
-        width: 50%;
-        height: auto;
-        margin: 10px;
+    .phone {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
     }
 
     footer{
@@ -393,6 +393,18 @@ nav .btn.active p:after {
     justify-content: center;
 }
 
+.pc{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone{
+    display: none;
+}
+
 
 .card {
     width: 450px;
@@ -424,6 +436,30 @@ nav .btn.active p:after {
 .langs:hover {
     height: 280px;
     transform: skew(0deg);
+}
+
+.mobile{
+    transform: none;
+    width: 300px;
+    height: 300px;
+}
+
+.mobile-langs{
+    transform: none;
+    width: 300px;
+    height: 370px;
+}
+
+.mobile:hover{
+    transform: none;
+    width: 300px;
+    height: 300px;
+}
+
+.mobile-langs:hover{
+    transform: none;
+    width: 300px;
+    height: 370px;
 }
 
 
