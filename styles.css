@@ -73,15 +73,6 @@ footer {
 @media screen and (max-height: 695px) {
     .langs:hover {
         height: 350px;
-        overflow-y: scroll;
-        scrollbar-width: 0;
-        -ms-overflow-style: none;
-    }
-    
-    .langs:hover::-webkit-scrollbar {
-        width: 0;
-        background: transparent;
-        display: none;
     }
 }
 
@@ -102,7 +93,7 @@ footer {
     }
 
     footer{
-        padding: 0 20px 50px;
+        padding: 0 0 10px;
         gap: 50px;
     }
 }
@@ -130,7 +121,7 @@ nav {
     justify-content: center;
     align-items: center;
     background-color: #359d38;
-    padding: 10px;
+    padding: 0 0 10px;
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -492,6 +483,15 @@ nav .btn.active p:after {
 .langs:hover {
     height: 280px;
     transform: skew(0deg);
+    overflow-y: scroll;
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+}
+
+.langs:hover::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    display: none;
 }
 
 .mobile{
