@@ -102,7 +102,7 @@ footer {
     .section-k.active {margin-right: -20px !important;}
     .section-k.active {overflow-x: hidden;}
 
-    .sidebar-toggle {margin-right: -20px !important;}
+    .sidebar-toggle {right: 0px !important;}
 
     .code-container {
         margin-left: -120px !important;
