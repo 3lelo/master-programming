@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Almarai:wght@300;400;700&display=swap');
 
 body {
-    background-image: url("bg.jpg");
+    background-image: url("home-bg.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -22,6 +22,7 @@ body {
     padding: 0;
     background-color: #fff;
 }
+
 
 main {
     flex: 1 0 auto;
@@ -322,6 +323,7 @@ nav .btn.active p:after {
 
 
 .sidebar {
+    direction: ltr;
     position: fixed;
     top: 0;
     right: -280px;
@@ -339,7 +341,7 @@ nav .btn.active p:after {
 }
 
 .sidebar.open {
-    right: 0;
+    right: -20px;
 }
 
 .sidebar-overlay {
@@ -406,7 +408,8 @@ nav .btn.active p:after {
 }
 
 .section.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-item-k {
@@ -430,7 +433,8 @@ nav .btn.active p:after {
 }
 
 .section-k.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .cards {
@@ -460,16 +464,16 @@ nav .btn.active p:after {
     margin-top: 20px;
     margin-left: 50px;
     padding: 0.5rem;
-    background: #222831;
+    background: #263238;
     border-radius: 8px;
     backdrop-filter: blur(5px);
     border-bottom: 3px solid rgba(255, 255, 255, 0.440);
     border-left: 2px  rgba(255, 255, 255, 0.545) outset;
     box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
-    transform: skewX(10deg);
+    transform: skewX(4deg);
     transition: .4s;
     overflow: hidden;
-    color: white;
+    color: #ececec;
 }
 
 .card:hover {
@@ -524,7 +528,7 @@ nav .btn.active p:after {
     height: 25px;
     border-radius: 50%;
     background-color: #ff605c;
-    box-shadow: 0px 0px 7px #ff605c;
+    box-shadow: 0px 0px 5px #ff605c;
 }
 
 .yellow {
@@ -532,7 +536,7 @@ nav .btn.active p:after {
     height: 25px;
     border-radius: 50%;
     background-color: #ffbd44;
-    box-shadow: 0px 0px 7px #ffbd44;
+    box-shadow: 0px 0px 5px #ffbd44;
 }
 
 .green {
@@ -540,14 +544,14 @@ nav .btn.active p:after {
     height: 25px;
     border-radius: 50%;
     background-color: #00ca4e;
-    box-shadow: 0px 0px 7px #00ca4e;
+    box-shadow: 0px 0px 5px #00ca4e;
 }
 
 .card h1 {
     text-align: center;
     margin: 1.3rem;
-    color: #4caf50;
-    text-shadow: 0px 0px 25px #0e8514;
+    color: #54c458;
+    text-shadow: 0px 0px 22px #0e8514;
 }
 
 .card:hover h1{
@@ -586,6 +590,7 @@ code {
 
 
 .code-container {
+    align-self: center;
     position: relative;
     width: 70%;
     margin-left: 150px;
@@ -593,7 +598,7 @@ code {
 
 .copy-btn {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 10px;
     background-color: #19c059;
     color: #ffffff;
