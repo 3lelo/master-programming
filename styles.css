@@ -93,15 +93,17 @@ footer {
     .section.active p{font-size: medium !important;}
     .section.active li{font-size: small !important;}
     .section.active {margin-right: -20px !important;}
+    .section.active {overflow-x: hidden;}
 
     .section-k.active h3{font-size: x-large !important;}
     .section-k.active h4{font-size: medium !important;}
     .section-k.active p{font-size: medium !important;}
     .section-k.active li{font-size: small !important;}
     .section-k.active {margin-right: -20px !important;}
+    .section-k.active {overflow-x: hidden;}
 
     .code-container {
-        margin-left: -140px !important;
+        margin-left: -120px !important;
         width: 130% !important;
         font-size: 0.7rem;
     }
