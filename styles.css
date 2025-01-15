@@ -88,6 +88,8 @@ footer {
         gap: 20px;
     }
 
+    body{background-image: url(home-bg-phone.png) !important;}
+
     .code-container {
         align-self: flex-start !important;
     }
