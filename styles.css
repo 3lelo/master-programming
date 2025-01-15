@@ -102,6 +102,8 @@ footer {
     .section-k.active {margin-right: -20px !important;}
     .section-k.active {overflow-x: hidden;}
 
+    .sidebar-toggle {margin-right: -20px !important;}
+
     .code-container {
         margin-left: -120px !important;
         width: 130% !important;
@@ -334,9 +336,6 @@ nav .btn.active p:after {
     display: flex;
     height: calc(100vh - 200px);
 }
-
-
-
 
 
 .sidebar {
