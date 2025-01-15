@@ -85,8 +85,8 @@ footer {
     }
 
     body{background-image: url(home-bg-phone.svg) !important;}
-    .body-learn-j {background-image: url(java-bg-phone.svg);}
-    .body-learn-k {background-image: url(kotlin-bg-phone.svg);}
+    .body-learn-j {background-image: url(java-bg-phone.svg) !important;}
+    .body-learn-k {background-image: url(kotlin-bg-phone.svg) !important;}
 
     .code-container {
         align-self: flex-start !important;
