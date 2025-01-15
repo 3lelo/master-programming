@@ -13,14 +13,15 @@ body {
     flex-direction: column;
     position: relative;
     overflow-x: hidden;
+    background-color: #fff;
 }
 
-.body-learn {
+.body-learn-j {
     background-image: none;
-    font-family: "Almarai", serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
+}
+
+.body-learn-k {
+    background-image: none;
 }
 
 
@@ -89,6 +90,8 @@ footer {
     }
 
     body{background-image: url(home-bg-phone.svg) !important;}
+    .body-learn-j {background-image: url(java-bg.svg) !important;}
+    .body-learn-k {background-image: url(kotlin-bg.svg) !important;}
 
     .code-container {
         align-self: flex-start !important;
