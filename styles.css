@@ -88,8 +88,28 @@ footer {
     .body-learn-j {background-image: url(java-bg-phone.svg) !important;}
     .body-learn-k {background-image: url(kotlin-bg-phone.svg) !important;}
 
+    .section.active h3{font-size: x-large !important;}
+    .section.active h4{font-size: medium !important;}
+    .section.active p{font-size: medium !important;}
+    .section.active li{font-size: small !important;}
+    .section.active {margin-right: -20px !important;}
+
+    .section-k.active h3{font-size: x-large !important;}
+    .section-k.active h4{font-size: medium !important;}
+    .section-k.active p{font-size: medium !important;}
+    .section-k.active li{font-size: small !important;}
+    .section-k.active {margin-right: -20px !important;}
+
     .code-container {
-        align-self: flex-start !important;
+        margin-left: -140px !important;
+        width: 130% !important;
+        font-size: 0.7rem;
+    }
+
+    nav .btn {font-size: medium !important;}
+    .copy-btn {
+        font-size: 8px !important;
+        top: 10px !important;
     }
 
     footer{
@@ -405,7 +425,12 @@ nav .btn.active p:after {
 .section.active {
     display: flex;
     flex-direction: column;
+    margin-right: 100px;
 }
+
+.section.active h3{font-size: xx-large;}
+.section.active h4{font-size: large;}
+.section.active p{font-size: large;}
 
 .section-item-k {
     padding: 10px 20px;
@@ -430,7 +455,13 @@ nav .btn.active p:after {
 .section-k.active {
     display: flex;
     flex-direction: column;
+    margin-right: 100px;
 }
+
+.section-k.active h3{font-size: xx-large;}
+.section-k.active h4{font-size: large;}
+.section-k.active p{font-size: large;}
+
 
 .cards {
     width: 100%;
@@ -576,15 +607,11 @@ nav .btn.active p:after {
 
 
 pre {
+    background-color: #fff !important;
     width: 70%;
     direction: ltr;
-    background-color: #f4f4f4;
     border-left: 2px solid #00c74c;
-    padding: 10px;
     border-radius: 8px;
-    overflow-x: auto;
-    margin-left: 150px;
-    direction: ltr;
 }
 
 code {
