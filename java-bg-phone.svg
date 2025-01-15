@@ -23,35 +23,35 @@
         transform="rotate(25, 50, 130)">public static</text>
 
     <text x="60" y="450" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-        fill="#359d38" text-anchor="middle" opacity="0.15" 
+        fill="#359d38" text-anchor="middle" opacity="0.07" 
         transform="rotate(-45, 60, 450)">void main</text>
 
     <text x="350" y="50" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-        fill="#359d38" text-anchor="middle" opacity="0.15" 
+        fill="#359d38" text-anchor="middle" opacity="0.07" 
         transform="rotate(10, 350, 50)">System.out.println</text>
 
     <text x="260" y="130" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-        fill="#359d38" text-anchor="middle" opacity="0.15" 
+        fill="#359d38" text-anchor="middle" opacity="0.07" 
         transform="rotate(75, 260, 130)">class Example</text>
 
     <text x="100" y="480" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-        fill="#359d38" text-anchor="middle" opacity="0.15" 
+        fill="#359d38" text-anchor="middle" opacity="0.07" 
         transform="rotate(-30, 100, 480)">String args</text>
 
     <text x="300" y="300" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-        fill="#359d38" text-anchor="middle" opacity="0.15" 
+        fill="#359d38" text-anchor="middle" opacity="0.07" 
         transform="rotate(60, 300, 300)">import java.util</text>
 
     <text x="160" y="290" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-        fill="#359d38" text-anchor="middle" opacity="0.15" 
+        fill="#359d38" text-anchor="middle" opacity="0.07" 
         transform="rotate(-20, 160, 290)">ArrayList</text>
 
     <text x="30" y="280" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-        fill="#359d38" text-anchor="middle" opacity="0.15" 
+        fill="#359d38" text-anchor="middle" opacity="0.07" 
         transform="rotate(15, 30, 280)">HashMap</text>
 
     <text x="320" y="360" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-        fill="#359d38" text-anchor="middle" opacity="0.15" 
+        fill="#359d38" text-anchor="middle" opacity="0.07" 
         transform="rotate(-50, 320, 360)">try-catch</text>
 
   
