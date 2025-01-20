@@ -16,8 +16,8 @@ body {
     background-color: #fff;
 }
 
-.body-learn-j {background-image: url(java-bg.svg);}
-.body-learn-k {background-image: url(kotlin-bg.svg);}
+.body-learn-j {background-image: url("java-bg.svg");}
+.body-learn-k {background-image: url("kotlin-bg.svg");}
 
 
 main {
@@ -84,9 +84,9 @@ footer {
         gap: 20px;
     }
 
-    body{background-image: url(home-bg-phone.svg) !important;}
-    .body-learn-j {background-image: url(java-bg-phone.svg) !important;}
-    .body-learn-k {background-image: url(kotlin-bg-phone.svg) !important;}
+    body{background-image: url("home-bg-phone.svg") !important;}
+    .body-learn-j {background-image: url("java-bg-phone.svg") !important;}
+    .body-learn-k {background-image: url("kotlin-bg-phone.svg") !important;}
 
     .section.active h3{font-size: x-large !important;}
     .section.active h4{font-size: medium !important;}
