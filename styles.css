@@ -102,7 +102,7 @@ footer {
     .section-k.active {margin-right: -20px !important;}
     .section-k.active {overflow-x: hidden;}
 
-    .sidebar-toggle {right: 0px !important;}
+    .sidebar-toggle {right: 0 !important;}
 
     .code-container {
         margin-left: -120px !important;
@@ -114,6 +114,12 @@ footer {
     .copy-btn {
         font-size: 8px !important;
         top: 10px !important;
+    }
+
+    .card {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 20px !important;
     }
 
     footer{
@@ -470,6 +476,7 @@ nav .btn.active p:after {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .pc{
@@ -559,6 +566,7 @@ nav .btn.active p:after {
     align-self: flex-start;
 }
 
+
 .red {
     width: 25px;
     height: 25px;
@@ -588,6 +596,15 @@ nav .btn.active p:after {
     margin: 1.3rem;
     color: #54c458;
     text-shadow: 0px 0px 22px #0e8514;
+}
+
+.card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .8rem;
+    width: 50px;
+    height: 50px;
 }
 
 .card:hover h1{
