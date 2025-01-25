@@ -355,7 +355,7 @@ nav .btn.active p:after {
     color: #000000;
     border-left: 2px solid #00c74c;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease;
+    transition: right 0.5s ease;
     z-index: 1000;
     border-radius: 0;
     padding: 20px 0;
@@ -601,7 +601,7 @@ nav .btn.active p:after {
 .card-img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10px;
     padding: .8rem;
     width: 50px;
     height: 50px;
