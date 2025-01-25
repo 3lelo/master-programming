@@ -31,7 +31,7 @@ main {
 footer {
     position: relative;
     bottom: 0;
-    background-color: #359d38;
+    background-color: #2b772d;
     color: white;
     padding: 0 50px 50px;
     width: 100%;
@@ -52,7 +52,7 @@ footer {
     margin-bottom: 5px;
     font-size: 1.1rem;
     border-bottom: 1px solid white;
-    padding-bottom: 3px;
+    padding-bottom: 10px;
     width: fit-content;
 }
 
@@ -150,7 +150,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #359d38;
+    background-color: #39a03d;
     padding: 0 0 10px;
     overflow-x: auto;
     white-space: nowrap;
@@ -159,7 +159,7 @@ nav {
 nav .btn {
     width: 150px;
     height: 50px;
-    background-color: #359d38;
+    background-color: #39a03d;
     margin: 0 15px;
     color: #fff;
     position: relative;
@@ -183,7 +183,7 @@ nav .btn:after {
     position: absolute;
     width: 0;
     height: 3px;
-    background-color: #19c059;
+    background-color: #ADE0FF;
     transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
@@ -215,7 +215,7 @@ nav .btn span:after {
     position: absolute;
     width: 3px;
     height: 0;
-    background-color: #19c059;
+    background-color: #ADE0FF;
     transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
@@ -257,7 +257,7 @@ nav .btn p:before {
 nav .btn p:after {
     content: attr(data-text);
     top: 150%;
-    color: #19c059;
+    color: #ADE0FF;
 }
 
 nav .btn:hover:before,
@@ -601,7 +601,7 @@ nav .btn.active p:after {
 .card-img {
     position: absolute;
     top: 0;
-    left: 10px;
+    left: 0;
     padding: .8rem;
     width: 50px;
     height: 50px;
