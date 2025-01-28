@@ -476,7 +476,6 @@ nav .btn.active p:after {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
 }
 
 .pc{
