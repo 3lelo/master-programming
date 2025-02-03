@@ -29,7 +29,7 @@
             <p data-start="كوتلن" data-text="تعلم كوتلن!" data-title="كوتلن" style="font-family: 'Almarai', serif;"></p>
         </button>
     </nav>
-
+    
 
     <div class="header">
         <button class="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
@@ -51,6 +51,16 @@
                     <li class="section-item" data-section="loops">Java Loops</li>
                     <li class="section-item" data-section="break.continue">Java Break and Continue</li>
                     <li class="section-item" data-section="arrays">Java Arrays</li>
+                    <li class="section-item" data-section="functions">Java Functions</li>
+                    <li class="section-item" data-section="oop-1">OOP: Classes and Objects</li>
+                    <li class="section-item" data-section="oop-2">OOP: Constructors</li>
+                    <li class="section-item" data-section="oop-3">OOP: Methods</li>
+                    <li class="section-item" data-section="oop-4">OOP: Access Modifiers</li>
+                    <li class="section-item" data-section="oop-5">OOP: Inheritance</li>
+                    <li class="section-item" data-section="oop-6">OOP: Abstract Classes</li>
+                    <li class="section-item" data-section="oop-7">OOP: Interfaces</li>
+                    <li class="section-item" data-section="oop-8">OOP: Polymorphism</li>
+                    
                 </ul>
             </div>
             <div class="section-content">
@@ -990,7 +1000,1209 @@ double classAverage = tracker.calculateAverage();
                     </ul>
                     </h4>
                 </div>
-                
+
+                <div id="functions" class="section">
+                    <h3>الدوال في جافا</h3>
+                    <p>تُستخدم الدوال (Methods) في جافا لتنظيم الكود وجعله أكثر قابلية لإعادة الاستخدام. يتم تعريف الدالة مرة واحدة ثم استدعاؤها عدة مرات عند الحاجة.</p>
+                    
+                    <h4>إنشاء دالة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// إنشاء دالة تقوم بطباعة رسالة
+public void sayHello() {
+    System.out.println("Hello, Java!");
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    sayHello();
+}</code></pre>
+                    </div>
+                    
+                    <h4>دالة تُرجع قيمة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// دالة تقوم بجمع رقمين وتُرجع النتيجة
+public int add(int num1, int num2) {
+    return num1 + num2;
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    int result = add(5, 3);
+    System.out.println("Result: " + result);
+}</code></pre>
+                    </div>
+                    
+                    <h4>دالة لا تُرجع قيمة (void)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// دالة تقوم بطباعة رسالة بدون إرجاع قيمة
+public void printMessage() {
+    System.out.println("This is a void method!");
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    printMessage();
+}</code></pre>
+                    </div>
+                    
+                    <h4>تمرير المعاملات إلى الدالة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// دالة تقوم بحساب مساحة المستطيل
+public int calculateArea(int length, int width) {
+    return length * width;
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    int area = calculateArea(5, 10);
+    System.out.println("Area: " + area);
+}</code></pre>
+                    </div>
+                    
+                    <h4>دوال مُثقلة (Method Overloading)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// تعريف دالتين بنفس الاسم ولكن بمعاملات مختلفة
+public int multiply(int a, int b) {
+    return a * b;
+}
+
+public double multiply(double a, double b) {
+    return a * b;
+}
+
+// استدعاء الدوال
+public static void main(String[] args) {
+    System.out.println("Multiplication (int): " + multiply(4, 5));
+    System.out.println("Multiplication (double): " + multiply(4.5, 3.2));
+}</code></pre>
+                    </div>
+                    
+                    <h4>الدوال الثابتة (Static Methods)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// دالة ثابتة يمكن استدعاؤها بدون إنشاء كائن من الكلاس
+public static void staticMethod() {
+    System.out.println("This is a static method!");
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    staticMethod();
+}</code></pre>
+                    </div>
+                    
+                    <p><strong>نصيحة احترافية:</strong> يُفضل استخدام الدوال لتقسيم الكود إلى وحدات صغيرة لجعله أكثر تنظيمًا وسهولة في الصيانة.</p>
+                </div>
+
+                <div id="oop-1" class="section">
+                    <h3>الفئات والكائنات في جافا (Classes and Objects)</h3>
+                    <p>الفئات والكائنات هي الأساس في البرمجة كائنية التوجه. الفئة هي المخطط الذي يحدد هيكل وسلوك الكائنات.</p>
+            
+                    <h4>تعريف الفئة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Car {
+    // متغيرات النسخة (Instance Variables)
+    private String brand;
+    private String model;
+    private int year;
+
+    // دالة (Method)
+    public void startEngine() {
+        System.out.println("The " + brand + " " + model + " is starting...");
+    }
+
+    // دالة أخرى
+    public void drive() {
+        System.out.println("Driving the " + year + " " + brand + " " + model);
+    }
+
+    // دوال الضبط والحصول (Setters and Getters)
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>إنشاء واستخدام الكائنات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        // إنشاء كائن جديد
+        Car myCar = new Car();
+        
+        // تعيين قيم للمتغيرات
+        myCar.setBrand("Toyota");
+        myCar.setModel("Camry");
+        myCar.setYear(2024);
+        
+        // استدعاء الدوال
+        myCar.startEngine();  // Output: The Toyota Camry is starting...
+        myCar.drive();       // Output: Driving the 2024 Toyota Camry
+        
+        // إنشاء كائن آخر
+        Car anotherCar = new Car();
+        anotherCar.setBrand("Honda");
+        anotherCar.setModel("Civic");
+        anotherCar.setYear(2023);
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مفاهيم مهمة:
+                    <ul>
+                        <li><strong>متغيرات النسخة (Instance Variables):</strong> تخزن حالة الكائن</li>
+                        <li><strong>الدوال (Methods):</strong> تحدد سلوك الكائن</li>
+                        <li><strong>التغليف (Encapsulation):</strong> استخدام private مع getters/setters</li>
+                        <li><strong>الكائن (Object):</strong> نسخة من الفئة تحتوي على قيمها الخاصة</li>
+                    </ul>
+                    </h4>
+            
+                    <h4>مثال متقدم: فئة مع تحقق من البيانات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    private String ownerName;
+    
+    // التحقق من صحة رقم الحساب
+    public void setAccountNumber(String accountNumber) {
+        if (accountNumber != null && accountNumber.length() == 10) {
+            this.accountNumber = accountNumber;
+        } else {
+            throw new IllegalArgumentException("Account number must be 10 digits");
+        }
+    }
+    
+    // التحقق من صحة المبلغ
+    public void deposit(double amount) {
+        if (amount > 0) {
+            this.balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+    }
+    
+    // دالة السحب مع التحقق من الرصيد
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            this.balance -= amount;
+            System.out.println("Withdrawn: $" + amount);
+        } else {
+            throw new IllegalArgumentException("Invalid withdrawal amount");
+        }
+    }
+    
+    // دالة عرض معلومات الحساب
+    public void displayInfo() {
+        System.out.println("Account Information:");
+        System.out.println("Owner: " + ownerName);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Balance: $" + balance);
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>نصائح للممارسات الجيدة:
+                    <ul>
+                        <li>اجعل متغيرات النسخة private دائماً للحفاظ على التغليف</li>
+                        <li>قم بتنفيذ التحقق من صحة البيانات في setters</li>
+                        <li>استخدم أسماء وصفية للفئات والمتغيرات والدوال</li>
+                        <li>قم بتوثيق الكود باستخدام التعليقات عند الحاجة</li>
+                    </ul>
+                    </h4>
+                </div>
+            
+                <div id="oop-2" class="section">
+                    <h3>المُنشئات في جافا (Constructors)</h3>
+                    <p>المُنشئ هو دالة خاصة تُستدعى عند إنشاء كائن جديد. يستخدم لتهيئة حالة الكائن.</p>
+            
+                    <h4>المُنشئ الافتراضي</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Student {
+    private String name;
+    private int age;
+    
+    // المُنشئ الافتراضي
+    public Student() {
+        name = "Unknown";
+        age = 0;
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>المُنشئ المعلمي</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Student {
+    private String name;
+    private int age;
+    private String id;
+    
+    // مُنشئ معلمي
+    public Student(String name, int age) {
+        this.name = name;
+        setAge(age);  // استخدام دالة setter للتحقق
+    }
+    
+    // مُنشئ معلمي آخر
+    public Student(String name, int age, String id) {
+        this(name, age);  // استدعاء المُنشئ الآخر
+        this.id = id;
+    }
+    
+    // دالة للتحقق من العمر
+    private void setAge(int age) {
+        if (age >= 0 && age <= 120) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("Invalid age");
+        }
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال متكامل: فئة مع منشئات متعددة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Employee {
+    private String name;
+    private String department;
+    private double salary;
+    private int id;
+    private static int nextId = 1;  // متغير ثابت لتوليد الـ ID
+    
+    // المُنشئ الافتراضي
+    public Employee() {
+        this("Unknown", "Unassigned", 0.0);
+    }
+    
+    // مُنشئ بمعلمتين
+    public Employee(String name, String department) {
+        this(name, department, 3000.0);  // راتب افتراضي
+    }
+    
+    // المُنشئ الرئيسي
+    public Employee(String name, String department, double salary) {
+        this.name = name;
+        this.department = department;
+        setSalary(salary);
+        this.id = nextId++;
+    }
+    
+    // دالة للتحقق من الراتب
+    private void setSalary(double salary) {
+        if (salary >= 0) {
+            this.salary = salary;
+        } else {
+            throw new IllegalArgumentException("Salary cannot be negative");
+        }
+    }
+    
+    // دالة لعرض معلومات الموظف
+    public void displayInfo() {
+        System.out.println("Employee Information:");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+        System.out.println("Salary: $" + salary);
+    }
+    
+    // مثال على الاستخدام
+    public static void main(String[] args) {
+        Employee emp1 = new Employee();  // استخدام المُنشئ الافتراضي
+        Employee emp2 = new Employee("Ahmed", "IT");  // استخدام المُنشئ بمعلمتين
+        Employee emp3 = new Employee("Sara", "HR", 5000.0);  // استخدام المُنشئ الكامل
+        
+        emp1.displayInfo();
+        emp2.displayInfo();
+        emp3.displayInfo();
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>نقاط مهمة عن المُنشئات:
+                    <ul>
+                        <li>اسم المُنشئ يجب أن يكون نفس اسم الفئة</li>
+                        <li>المُنشئ لا يُرجع أي قيمة (حتى void)</li>
+                        <li>يمكن أن يكون للفئة أكثر من مُنشئ (تحميل المُنشئ)</li>
+                        <li>this() تُستخدم لاستدعاء مُنشئ آخر من نفس الفئة</li>
+                        <li>المُنشئ الافتراضي يتم توفيره تلقائياً إذا لم يتم تعريف أي مُنشئ</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                <div id="oop-3" class="section">
+                    <h3>الدوال في جافا (Methods)</h3>
+                    <p>الدوال هي كتل من التعليمات البرمجية التي تؤدي مهمة محددة. تُستخدم لتنظيم الكود وإعادة استخدامه.</p>
+
+                    <h4>أنواع الدوال</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Calculator {
+    // دالة تُرجع قيمة
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    // دالة لا تُرجع قيمة (void)
+    public void printSum(int a, int b) {
+        System.out.println("Sum: " + (a + b));
+    }
+    
+    // دالة ثابتة (static)
+    public static double calculateAverage(double... numbers) {
+        if (numbers.length == 0) return 0.0;
+        
+        double sum = 0;
+        for (double num : numbers) {
+            sum += num;
+        }
+        return sum / numbers.length;
+    }
+    
+    // دالة تأخذ مصفوفة كمعامل
+    public int findMax(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            throw new IllegalArgumentException("Array cannot be empty");
+        }
+        
+        int max = numbers[0];
+        for (int num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>تحميل الدوال (Method Overloading)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class MathOperations {
+    // تحميل الدوال بأعداد مختلفة من المعاملات
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    public int multiply(int a, int b, int c) {
+        return a * b * c;
+    }
+    
+    // تحميل الدوال بأنواع مختلفة من المعاملات
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+    
+    // مثال على استخدام الدوال المحملة
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+        
+        System.out.println(math.multiply(5, 3));      // يستدعي النسخة الأولى
+        System.out.println(math.multiply(2, 3, 4));   // يستدعي النسخة الثانية
+        System.out.println(math.multiply(2.5, 3.0));  // يستدعي النسخة الثالثة
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>مثال متقدم: دوال مع معالجة الأخطاء</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class BankAccount {
+    private double balance;
+    
+    // دالة تتحقق من صحة المعاملات
+    public void deposit(double amount) throws IllegalArgumentException {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+        this.balance += amount;
+    }
+    
+    // دالة مع منطق معالجة متقدم
+    public boolean transfer(BankAccount recipient, double amount) {
+        try {
+            if (amount <= 0) {
+                throw new IllegalArgumentException("Transfer amount must be positive");
+            }
+            
+            if (this.balance < amount) {
+                throw new InsufficientFundsException("Insufficient funds for transfer");
+            }
+            
+            this.balance -= amount;
+            recipient.deposit(amount);
+            return true;
+            
+        } catch (Exception e) {
+            System.err.println("Transfer failed: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    // دالة مساعدة (helper method) خاصة
+    private void validateAmount(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>نقاط مهمة عن الدوال:
+                    <ul>
+                        <li>يجب أن يكون للدالة اسم وصفي يعبر عن وظيفتها</li>
+                        <li>يمكن تحميل الدوال بتغيير عدد أو نوع المعاملات</li>
+                        <li>الدوال الثابتة (static) تنتمي للفئة وليس للكائن</li>
+                        <li>الدوال الخاصة (private) تستخدم للمساعدة في التنظيم الداخلي</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                <div id="oop-4" class="section">
+                    <h3>معدلات الوصول في جافا (Access Modifiers)</h3>
+                    <p>معدلات الوصول تتحكم في إمكانية الوصول إلى الفئات والمتغيرات والدوال من أجزاء مختلفة من البرنامج.</p>
+
+                    <h4>أنواع معدلات الوصول</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">package com.example;
+
+public class AccessExample {
+    public String publicVar;      // يمكن الوصول من أي مكان
+    private String privateVar;    // يمكن الوصول فقط داخل الفئة
+    protected String protectedVar;// يمكن الوصول في نفس الحزمة والفئات الوارثة
+    String defaultVar;           // يمكن الوصول في نفس الحزمة فقط
+    
+    public void publicMethod() {
+        System.out.println("Public method");
+    }
+    
+    private void privateMethod() {
+        System.out.println("Private method");
+    }
+    
+    protected void protectedMethod() {
+        System.out.println("Protected method");
+    }
+    
+    void defaultMethod() {
+        System.out.println("Default method");
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>مثال على التغليف (Encapsulation)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Person {
+    private String name;
+    private int age;
+    private double salary;
+    
+    // دوال الوصول العامة (Getters)
+    public String getName() {
+        return name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    // دوال التعيين العامة (Setters) مع التحقق
+    public void setName(String name) {
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+    }
+    
+    public void setAge(int age) {
+        if (age >= 0 && age <= 120) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("Invalid age");
+        }
+    }
+    
+    // دالة خاصة للتحقق من البيانات
+    private boolean validateSalary(double salary) {
+        return salary >= 0;
+    }
+    
+    // دالة محمية يمكن للفئات الوارثة استخدامها
+    protected void updateSalary(double newSalary) {
+        if (validateSalary(newSalary)) {
+            this.salary = newSalary;
+        } else {
+            throw new IllegalArgumentException("Invalid salary amount");
+        }
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>ملخص معدلات الوصول:
+                    <ul>
+                        <li><strong>public:</strong> يمكن الوصول من أي مكان</li>
+                        <li><strong>private:</strong> يمكن الوصول فقط داخل نفس الفئة</li>
+                        <li><strong>protected:</strong> يمكن الوصول في نفس الحزمة والفئات الوارثة</li>
+                        <li><strong>default:</strong> يمكن الوصول في نفس الحزمة فقط</li>
+                    </ul>
+                    </h4>
+
+                    <h4>مثال عملي: تطبيق معدلات الوصول</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">package com.example.banking;
+
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    protected String accountType;
+    String branchCode;  // default access
+    
+    // Constructor
+    public BankAccount(String accountNumber, String accountType) {
+        this.accountNumber = accountNumber;
+        this.accountType = accountType;
+        this.balance = 0.0;
+    }
+    
+    // Public interface
+    public void deposit(double amount) {
+        validateAmount(amount);
+        updateBalance(amount);
+    }
+    
+    public void withdraw(double amount) {
+        validateAmount(amount);
+        validateWithdrawal(amount);
+        updateBalance(-amount);
+    }
+    
+    // Protected method for inheritance
+    protected void updateBalance(double amount) {
+        this.balance += amount;
+    }
+    
+    // Private validation methods
+    private void validateAmount(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+    }
+    
+    private void validateWithdrawal(double amount) {
+        if (amount > balance) {
+            throw new InsufficientFundsException("Insufficient funds");
+        }
+    }
+    
+    // Default access method
+    void updateBranchCode(String newCode) {
+        this.branchCode = newCode;
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div id="oop-5" class="section">
+                    <h3>الوراثة في جافا (Inheritance)</h3>
+                    <p>الوراثة هي أحد أهم مفاهيم البرمجة كائنية التوجه، حيث تسمح للفئات بوراثة الخصائص والسلوكيات من فئات أخرى. تساعد في تنظيم الكود وإعادة استخدامه وبناء تسلسل هرمي للفئات.</p>
+            
+                    <h4>أنواع الوراثة في جافا
+                    <ul>
+                        <li>الوراثة الأحادية (Single Inheritance): فئة واحدة ترث من فئة واحدة</li>
+                        <li>الوراثة المتعددة المستويات (Multilevel Inheritance): سلسلة من الوراثة (A ← B ← C)</li>
+                        <li>الوراثة الهرمية (Hierarchical Inheritance): عدة فئات ترث من فئة واحدة</li>
+                    </ul>
+                    </h4>
+            
+                    <strong>ملاحظة هامة:</strong> جافا لا تدعم الوراثة المتعددة للفئات (Multiple Inheritance) لتجنب مشكلة الماس (Diamond Problem).
+            
+                    <h4>مثال تفصيلي للوراثة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// الفئة الأساسية
+public class Vehicle {
+    protected String brand;
+    protected String model;
+    protected int year;
+    
+    public Vehicle(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+    
+    public void start() {
+        System.out.println("Vehicle starting...");
+    }
+    
+    public void stop() {
+        System.out.println("Vehicle stopping...");
+    }
+    
+    // دالة نهائية لا يمكن تجاوزها في الفئات المشتقة
+    public final void displayInfo() {
+        System.out.println("Brand: " + brand + ", Model: " + model + ", Year: " + year);
+    }
+}
+
+// فئة مشتقة
+public class Car extends Vehicle {
+    private int numberOfDoors;
+    private String transmission;
+    
+    public Car(String brand, String model, int year, int numberOfDoors, String transmission) {
+        super(brand, model, year);  // استدعاء constructor الفئة الأساسية
+        this.numberOfDoors = numberOfDoors;
+        this.transmission = transmission;
+    }
+    
+    // تجاوز دالة من الفئة الأساسية
+    @Override
+    public void start() {
+        System.out.println("Checking seatbelts...");
+        super.start();  // استدعاء نسخة الفئة الأساسية
+        System.out.println("Car is ready to drive!");
+    }
+    
+    // إضافة دوال جديدة
+    public void honk() {
+        System.out.println("Beep! Beep!");
+    }
+}
+
+// فئة مشتقة أخرى
+public class ElectricCar extends Car {
+    private int batteryCapacity;
+    private int range;
+    
+    public ElectricCar(String brand, String model, int year, 
+                        int numberOfDoors, String transmission,
+                        int batteryCapacity, int range) {
+        super(brand, model, year, numberOfDoors, transmission);
+        this.batteryCapacity = batteryCapacity;
+        this.range = range;
+    }
+    
+    @Override
+    public void start() {
+        System.out.println("Checking battery level...");
+        super.start();
+        System.out.println("Electric systems initialized!");
+    }
+    
+    public void charge() {
+        System.out.println("Charging battery...");
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال على استخدام الوراثة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class InheritanceDemo {
+    public static void main(String[] args) {
+        // إنشاء كائنات مختلفة
+        Vehicle vehicle = new Vehicle("Generic", "Base", 2023);
+        Car car = new Car("Toyota", "Camry", 2023, 4, "Automatic");
+        ElectricCar tesla = new ElectricCar("Tesla", "Model 3", 2023, 4, "Automatic", 75, 350);
+        
+        // استدعاء الدوال
+        System.out.println("=== Testing Vehicle ===");
+        vehicle.start();
+        vehicle.displayInfo();
+        
+        System.out.println("\n=== Testing Car ===");
+        car.start();
+        car.honk();
+        car.displayInfo();
+        
+        System.out.println("\n=== Testing Electric Car ===");
+        tesla.start();
+        tesla.charge();
+        tesla.displayInfo();
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>أفضل الممارسات في الوراثة:
+                    <ul>
+                        <li>استخدم الكلمة المفتاحية <code>final</code> لمنع الوراثة عندما لا تكون ضرورية</li>
+                        <li>تجنب سلاسل الوراثة العميقة (أكثر من 3 مستويات)</li>
+                        <li>استخدم <code>@Override</code> دائماً عند تجاوز الدوال</li>
+                        <li>لا تنسى استدعاء constructor الفئة الأساسية باستخدام <code>super()</code></li>
+                        <li>فكر في استخدام التركيب (Composition) بدلاً من الوراثة إذا لم تكن العلاقة "is-a" واضحة</li>
+                    </ul>
+                    </h4>
+                </div>
+
+
+                <div id="oop-6" class="section">
+                    <h3>الفئات المجردة في جافا (Abstract Classes)</h3>
+                    <p>الفئات المجردة هي فئات خاصة تستخدم كقوالب للفئات الأخرى. لا يمكن إنشاء كائنات منها مباشرة، ولكنها تستخدم كأساس للفئات المشتقة.</p>
+            
+                    <h4>الفرق بين الفئات المجردة والعادية:
+                    <ul>
+                        <li>لا يمكن إنشاء كائنات من الفئات المجردة</li>
+                        <li>يمكن أن تحتوي على دوال مجردة وعادية</li>
+                        <li>يمكن أن تحتوي على متغيرات ودوال بناء</li>
+                        <li>الفئات المشتقة يجب أن تنفذ جميع الدوال المجردة</li>
+                    </ul>
+                    </h4>
+            
+                    <h4>مثال شامل للفئات المجردة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// فئة مجردة تمثل شكل هندسي
+public abstract class Shape {
+    protected String color;
+    protected boolean filled;
+    
+    // يمكن للفئات المجردة أن تحتوي على constructor
+    public Shape(String color, boolean filled) {
+        this.color = color;
+        this.filled = filled;
+    }
+    
+    // دوال مجردة يجب تنفيذها في الفئات المشتقة
+    public abstract double getArea();
+    public abstract double getPerimeter();
+    
+    // دوال عادية مع تنفيذ
+    public String getColor() {
+        return color;
+    }
+    
+    public void setColor(String color) {
+        this.color = color;
+    }
+    
+    public boolean isFilled() {
+        return filled;
+    }
+    
+    public void setFilled(boolean filled) {
+        this.filled = filled;
+    }
+    
+    // تجاوز دالة toString
+    @Override
+    public String toString() {
+        return "A shape with color of " + color + " and " + 
+                (filled ? "filled" : "not filled");
+    }
+}
+
+// فئة مشتقة تمثل مستطيل
+public class Rectangle extends Shape {
+    protected double width;
+    protected double length;
+    
+    public Rectangle(String color, boolean filled, double width, double length) {
+        super(color, filled);
+        this.width = width;
+        this.length = length;
+    }
+    
+    @Override
+    public double getArea() {
+        return width * length;
+    }
+    
+    @Override
+    public double getPerimeter() {
+        return 2 * (width + length);
+    }
+    
+    @Override
+    public String toString() {
+        return "A Rectangle with width=" + width + " and length=" + length + 
+                ", which is a subclass of " + super.toString();
+    }
+}
+
+// فئة مشتقة تمثل دائرة
+public class Circle extends Shape {
+    protected double radius;
+    
+    public Circle(String color, boolean filled, double radius) {
+        super(color, filled);
+        this.radius = radius;
+    }
+    
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+    
+    @Override
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+    
+    @Override
+    public String toString() {
+        return "A Circle with radius=" + radius + 
+                ", which is a subclass of " + super.toString();
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال على استخدام الفئات المجردة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class AbstractClassDemo {
+    public static void main(String[] args) {
+        // Shape shape = new Shape("Red", true);  // خطأ! لا يمكن إنشاء كائن من فئة مجردة
+        
+        Shape rect = new Rectangle("Blue", true, 5, 3);
+        Shape circle = new Circle("Red", false, 4);
+        
+        System.out.println("=== Rectangle Details ===");
+        System.out.println(rect.toString());
+        System.out.println("Area: " + rect.getArea());
+        System.out.println("Perimeter: " + rect.getPerimeter());
+        
+        System.out.println("\n=== Circle Details ===");
+        System.out.println(circle.toString());
+        System.out.println("Area: " + circle.getArea());
+        System.out.println("Perimeter: " + circle.getPerimeter());
+        
+        // استخدام مصفوفة من الأشكال
+        Shape[] shapes = {rect, circle};
+        for (Shape shape : shapes) {
+            System.out.println("\nProcessing shape: " + shape.getClass().getSimpleName());
+            System.out.println("Area: " + shape.getArea());
+        }
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div id="oop-7" class="section">
+                    <h3>الواجهات في جافا (Interfaces)</h3>
+                    <p>الواجهات هي عقد يحدد مجموعة من السلوكيات التي يجب على الفئة تنفيذها. تعتبر الواجهات أساسية في تحقيق التجريد وتعدد الوراثة في جافا.</p>
+            
+                    <h4>مميزات الواجهات في جافا:
+                    <ul>
+                        <li>تحقيق تعدد الوراثة للسلوك</li>
+                        <li>تحقيق التجريد الكامل</li>
+                        <li>تعريف عقد موحد للفئات غير المرتبطة</li>
+                        <li>دعم للدوال الافتراضية (منذ Java 8)</li>
+                        <li>دعم للدوال الثابتة (static)</li>
+                    </ul>
+                    </h4>
+            
+                    <h4>مثال شامل للواجهات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// واجهة أساسية للدفع
+public interface Payable {
+    double calculatePayment();  // دالة مجردة
+    
+    // دالة افتراضية (منذ Java 8)
+    default void processPayment() {
+        double amount = calculatePayment();
+        System.out.println("Processing payment of: $" + amount);
+    }
+    
+    // دالة ثابتة
+    static boolean validateAmount(double amount) {
+        return amount > 0;
+    }
+}
+
+// واجهة للكائنات القابلة للمقارنة
+public interface Comparable<T> {
+    int compareTo(T other);
+}
+
+// واجهة للتقارير
+public interface Reportable {
+    void generateReport();
+    String getReportFormat();
+}
+
+// فئة تنفذ عدة واجهات
+public class Employee implements Payable, Comparable<Employee>, Reportable {
+    private String name;
+    private double salary;
+    private String department;
+    
+    public Employee(String name, double salary, String department) {
+        this.name = name;
+        this.salary = salary;
+        this.department = department;
+    }
+    
+    @Override
+    public double calculatePayment() {
+        return salary;
+    }
+    
+    @Override
+    public int compareTo(Employee other) {
+        return Double.compare(this.salary, other.salary);
+    }
+    
+    @Override
+    public void generateReport() {
+        System.out.println("Employee Report:");
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+        System.out.println("Salary: $" + salary);
+    }
+    
+    @Override
+    public String getReportFormat() {
+        return "PDF";
+    }
+}
+
+// مثال على واجهة وظيفية
+@FunctionalInterface
+public interface MathOperation {
+    double operate(double x, double y);
+    
+    // يمكن إضافة دوال افتراضية وثابتة
+    default double safeDivide(double x, double y) {
+        if (y == 0) return 0;
+        return operate(x, y);
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال على استخدام الواجهات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class InterfaceDemo {
+    public static void main(String[] args) {
+        // إنشاء موظفين
+        Employee emp1 = new Employee("John", 50000, "IT");
+        Employee emp2 = new Employee("Alice", 60000, "HR");
+        
+        // استخدام واجهة Payable
+        System.out.println("=== Payment Processing ===");
+        emp1.processPayment();
+        emp2.processPayment();
+        
+        // استخدام واجهة Comparable
+        System.out.println("\n=== Salary Comparison ===");
+        if (emp1.compareTo(emp2) < 0) {
+            System.out.println(emp1.getName() + " has lower salary");
+        }
+        
+        // استخدام واجهة Reportable
+        System.out.println("\n=== Generating Reports ===");
+        emp1.generateReport();
+        
+        // استخدام واجهة وظيفية
+        MathOperation addition = (x, y) -> x + y;
+        MathOperation division = (x, y) -> x / y;
+        
+        System.out.println("\n=== Math Operations ===");
+        System.out.println("10 + 5 = " + addition.operate(10, 5));
+        System.out.println("10 / 0 = " + division.safeDivide(10, 0));  // استخدام الدالة الافتراضية
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>أفضل ممارسات استخدام الواجهات:
+                    <ul>
+                        <li>استخدم الواجهات لتحديد السلوك المشترك بين الفئات غير المرتبطة</li>
+                        <li>احتفظ بالواجهات صغيرة ومركزة (مبدأ الفصل بين الواجهات)</li>
+                        <li>استخدم الدوال الافتراضية بحذر لتجنب التعقيد</li>
+                        <li>وثّق الواجهات جيداً لتوضيح العقد المتوقع</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                <div id="oop-8" class="section">
+                    <h3>تعدد الأشكال في جافا (Polymorphism)</h3>
+                    <p>تعدد الأشكال هو القدرة على التعامل مع الكائنات من أنواع مختلفة بطريقة موحدة. يعتبر من أهم مفاهيم البرمجة كائنية التوجه.</p>
+            
+                    <h4>أنواع تعدد الأشكال:
+                    <ul>
+                        <li>تعدد الأشكال في وقت التشغيل (Runtime/Dynamic Polymorphism)</li>
+                        <li>تعدد الأشكال في وقت التجميع (Compile-time/Static Polymorphism)</li>
+                    </ul>
+                    </h4>
+            
+                    <h4>مثال شامل لتعدد الأشكال</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// الفئة الأساسية
+public class Animal {
+    protected String name;
+    protected int age;
+    
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public void makeSound() {
+        System.out.println("Some generic sound");
+    }
+    
+    public void move() {
+        System.out.println("Moving...");
+    }
+}
+
+// فئات مشتقة
+public class Cat extends Animal {
+    private boolean isIndoor;
+    
+    public Cat(String name, int age, boolean isIndoor) {
+        super(name, age);
+        this.isIndoor = isIndoor;
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println("Cat is walking gracefully");
+    }
+    
+    // تحميل الدوال (overloading)
+    public void makeSound(boolean isHungry) {
+        if (isHungry) {
+            System.out.println("Loud Meow!!!!");
+        } else {
+            makeSound();
+        }
+    }
+}
+
+public class Bird extends Animal {
+    private double wingspan;
+    
+    public Bird(String name, int age, double wingspan) {
+        super(name, age);
+        this.wingspan = wingspan;
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println("Tweet tweet!");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println("Bird is flying");
+    }
+    
+    // دالة خاصة بالطيور
+    public void glide() {
+        System.out.println("Bird is gliding with wingspan: " + wingspan);
+    }
+}
+
+// مدير للحيوانات يوضح تعدد الأشكال
+public class AnimalManager {
+    // تعدد الأشكال في المعاملات
+    public void makeAnimalSound(Animal animal) {
+        System.out.println("Processing " + animal.getClass().getSimpleName());
+        animal.makeSound();
+    }
+    
+    // تحميل الدوال (overloading)
+    public void makeAnimalSound(Animal[] animals) {
+        for (Animal animal : animals) {
+            makeAnimalSound(animal);
+        }
+    }
+    
+    // استخدام تعدد الأشكال مع الواجهات
+    public void processMovable(List<Animal> movables) {
+        for (Animal movable : movables) {
+            movable.move();
+        }
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال على استخدام تعدد الأشكال</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class PolymorphismDemo {
+    public static void main(String[] args) {
+        // إنشاء كائنات
+        Animal genericAnimal = new Animal("Generic", 1);
+        Animal cat = new Cat("Whiskers", 3, true);
+        Animal bird = new Bird("Tweety", 2, 20.5);
+        
+        // تعدد الأشكال في وقت التشغيل
+        System.out.println("=== Runtime Polymorphism ===");
+        genericAnimal.makeSound();  // Some generic sound
+        cat.makeSound();           // Meow!
+        bird.makeSound();          // Tweet tweet!
+        
+        // استخدام مدير الحيوانات
+        AnimalManager manager = new AnimalManager();
+        
+        // تعدد الأشكال مع المصفوفات
+        System.out.println("\n=== Array Polymorphism ===");
+        Animal[] animals = {genericAnimal, cat, bird};
+        manager.makeAnimalSound(animals);
+        
+        // تعدد الأشكال مع القوائم
+        System.out.println("\n=== List Polymorphism ===");
+        List<Animal> animalList = Arrays.asList(animals);
+        manager.processMovable(animalList);
+        
+        // تحميل الدوال (Compile-time Polymorphism)
+        System.out.println("\n=== Method Overloading ===");
+        Cat realCat = (Cat) cat;  // type casting
+        realCat.makeSound();      // normal sound
+        realCat.makeSound(true);  // hungry sound
+        
+        // استخدام instanceof للتحقق من النوع
+        System.out.println("\n=== Type Checking ===");
+        for (Animal animal : animals) {
+            if (animal instanceof Bird) {
+                Bird realBird = (Bird) animal;
+                realBird.glide();
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>فوائد تعدد الأشكال:
+                    <ul>
+                        <li>يقلل من التكرار في الكود</li>
+                        <li>يزيد من قابلية إعادة الاستخدام</li>
+                        <li>يحسن المرونة والصيانة</li>
+                        <li>يدعم مبدأ التجريد</li>
+                        <li>يسهل اختبار وتوسيع التطبيق</li>
+                    </ul>
+                    </h4>
+                </div>
         </div>
     </div>
 </body>
