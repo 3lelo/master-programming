@@ -89,12 +89,12 @@ footer {
     .body-learn-k {background-image: url("kotlin-bg-phone.svg") !important;}
 
     .section-item {
-        font-size: small !important;
-        padding: 5px 20px !important;
+        font-size: .8rem !important;
+        padding: 7px 20px !important;
     }
     .section-item-k {
-        font-size: small !important;
-        padding: 5px 20px !important;
+        font-size: .8rem !important;
+        padding: 7px 20px !important;
     }
 
     .section.active h3{font-size: x-large !important;}
