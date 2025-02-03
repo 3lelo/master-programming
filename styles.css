@@ -88,6 +88,15 @@ footer {
     .body-learn-j {background-image: url("java-bg-phone.svg") !important;}
     .body-learn-k {background-image: url("kotlin-bg-phone.svg") !important;}
 
+    .section-item {
+        font-size: small !important;
+        padding: 5px 20px !important;
+    }
+    .section-item-k {
+        font-size: small !important;
+        padding: 5px 20px !important;
+    }
+
     .section.active h3{font-size: x-large !important;}
     .section.active h4{font-size: medium !important;}
     .section.active p{font-size: medium !important;}
@@ -442,7 +451,6 @@ nav .btn.active p:after {
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 .section-item-k:hover {
