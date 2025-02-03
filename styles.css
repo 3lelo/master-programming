@@ -407,7 +407,6 @@ nav .btn.active p:after {
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 .section-item:hover {
