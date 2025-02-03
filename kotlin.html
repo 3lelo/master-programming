@@ -49,6 +49,12 @@
                     <li class="section-item-k" data-section="loops-k">Kotlin Loops</li>
                     <li class="section-item-k" data-section="break.continue-k">Kotlin Break and Continue</li>
                     <li class="section-item-k" data-section="arrays-k">Kotlin Arrays</li>
+                    <li class="section-item-k" data-section="functions-k">Kotlin Functions</li>
+                    <li class="section-item-k" data-section="oop1-k">OOP: Classes and Objects</li>
+                    <li class="section-item-k" data-section="oop2-k">OOP: Primary and Secondary Constructors</li>
+                    <li class="section-item-k" data-section="oop3-k">OOP: Inheritance</li>
+                    <li class="section-item-k" data-section="oop4-k">OOP: Interfaces</li>
+                    <li class="section-item-k" data-section="oop5-k">OOP: Abstract Classes</li>
                 </ul>
             </div>
             <div class="section-content">
@@ -664,6 +670,396 @@ fun main() {
 }
                     </code>
                     </pre>
+                    </div>
+                </div>
+
+                <div id="functions-k" class="section-k">
+                    <h3>الدوال في كوتلن</h3>
+                    <p>تُستخدم الدوال (Functions) في كوتلن لتنظيم الكود وجعله أكثر قابلية لإعادة الاستخدام. يتم تعريف الدالة مرة واحدة ثم استدعاؤها عدة مرات عند الحاجة.</p>
+                    
+                    <h4>إنشاء دالة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// إنشاء دالة تقوم بطباعة رسالة
+fun sayHello() {
+    println("Hello, Kotlin!")
+}
+
+// استدعاء الدالة
+fun main() {
+    sayHello()
+}</code></pre>
+                    </div>
+                    
+                    <h4>دالة تُرجع قيمة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// دالة تقوم بجمع رقمين وتُرجع النتيجة
+fun add(num1: Int, num2: Int): Int {
+    return num1 + num2
+}
+
+// استدعاء الدالة
+fun main() {
+    val result = add(5, 3)
+    println("Result: $result")
+}</code></pre>
+                    </div>
+                    
+                    <h4>دالة لا تُرجع قيمة (Unit)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// دالة تقوم بطباعة رسالة بدون إرجاع قيمة
+fun printMessage() {
+    println("This is a Unit function!")
+}
+
+// استدعاء الدالة
+fun main() {
+    printMessage()
+}</code></pre>
+                    </div>
+                    
+                    <h4>تمرير المعاملات إلى الدالة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// دالة تقوم بحساب مساحة المستطيل
+fun calculateArea(length: Int, width: Int): Int {
+    return length * width
+}
+
+// استدعاء الدالة
+fun main() {
+    val area = calculateArea(5, 10)
+    println("Area: $area")
+}</code></pre>
+                    </div>
+                    
+                    <h4>الدوال المُثقلة (Function Overloading)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف دالتين بنفس الاسم ولكن بمعاملات مختلفة
+fun multiply(a: Int, b: Int): Int {
+    return a * b
+}
+
+fun multiply(a: Double, b: Double): Double {
+    return a * b
+}
+
+// استدعاء الدوال
+fun main() {
+    println("Multiplication (Int): ${multiply(4, 5)}")
+    println("Multiplication (Double): ${multiply(4.5, 3.2)}")
+}</code></pre>
+                    </div>
+                    
+                    <h4>الدوال العُليا (Higher-Order Functions)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// دالة تأخذ دالة أخرى كمعامل
+fun operateOnNumbers(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
+    return operation(a, b)
+}
+
+// استدعاء الدالة مع تمرير دالة مجهولة
+fun main() {
+    val sum = operateOnNumbers(5, 3) { x, y -> x + y }
+    println("Sum: $sum")
+}</code></pre>
+                    </div>
+                    
+                    <h4>الدوال المُدرجة (Lambda Functions)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// دالة مجهولة (Lambda)
+val square: (Int) -> Int = { number -> number * number }
+
+// استدعاء الدالة
+fun main() {
+    println("Square of 4: ${square(4)}")
+}</code></pre>
+                    </div>
+                    
+                    <p><strong>نصيحة احترافية:</strong> توفر كوتلن ميزات قوية مثل الدوال العُليا (Higher-Order Functions) والدوال المجهولة (Lambdas) لجعل الكود أكثر مرونة وكفاءة.</p>
+                </div>
+                
+                <div id="oop1-k" class="section-k">
+                    <h3>الفئات والكائنات (Classes and Objects)</h3>
+                    <p>تعتبر الفئات (Classes) والكائنات (Objects) الأساس في البرمجة كائنية التوجه. الفئة هي مخطط (Blueprint) لإنشاء الكائنات، بينما الكائن هو نسخة من هذه الفئة. يمكن أن تحتوي الفئات على خصائص (Properties) ودوال (Functions) التي تحدد سلوك الكائنات.</p>
+                    <p>في كوتلن، يمكن تعريف الفئات باستخدام الكلمة المفتاحية <code>class</code>، ويمكننا إنشاء كائنات منها باستخدام المُنشئ الافتراضي.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف فئة تحتوي على خاصية ودالة
+class Person(val name: String) {
+    fun greet() {
+        println("Hello, my name is $name")
+    }
+}
+// إنشاء كائن من الفئة واستدعاء الدالة
+fun main() {
+    val person = Person("Ahmed")
+    person.greet()
+}</code></pre>
+                    </div>
+                    <p>يمكننا أيضًا تعريف خصائص قابلة للتغيير باستخدام <code>var</code>، بينما يتم تعريف الخصائص غير القابلة للتغيير باستخدام <code>val</code>. كما يمكن تعيين قيم افتراضية للخصائص.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف فئة بخصائص قابلة للتغيير وثابتة
+class Car(var model: String, val year: Int) {
+    fun displayInfo() {
+        println("Car Model: $model, Year: $year")
+    }
+}
+// إنشاء كائن وتعديل خصائصه
+fun main() {
+    val car = Car("Toyota", 2023)
+    car.displayInfo()
+    car.model = "Honda" // يمكن تغييره لأنه var
+    car.displayInfo()
+}</code></pre>
+                    </div>
+                    <p>كما يمكننا إنشاء كائنات بدون تعريف فئة مسبقًا باستخدام <code>object</code>، وهو ما يعرف باسم <strong>الكائنات المجهولة (Anonymous Objects)</strong>.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// كائن مجهول يحتوي على دالة
+fun main() {
+    val obj = object {
+        fun sayHello() {
+            println("Hello from an anonymous object!")
+        }
+    }
+    obj.sayHello()
+}</code></pre>
+                    </div>
+                </div>
+
+                <div id="oop2-k" class="section-k">
+                    <h3>المُنشئات الأولية والثانوية (Primary and Secondary Constructors)</h3>
+                    <p>تستخدم كوتلن نوعين من المُنشئات لإنشاء الكائنات: المُنشئ الأولي (Primary Constructor) والمُنشئ الثانوي (Secondary Constructor). يمكن استخدام المُنشئات لتهيئة الخصائص عند إنشاء الكائن.</p>
+                    <p>المُنشئ الأولي يُعرَّف مباشرةً في رأس الفئة بعد اسمها، ويمكن استخدامه لتهيئة الخصائص دون الحاجة إلى كتلة تنفيذية.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف فئة بمُنشئ أولي
+class Person(val name: String, val age: Int) {
+    fun introduce() {
+        println("Hello, my name is $name and I am $age years old.")
+    }
+}
+// إنشاء كائن باستخدام المُنشئ الأولي
+fun main() {
+    val person = Person("Ali", 25)
+    person.introduce()
+}</code></pre>
+                    </div>
+                    <p>أما المُنشئ الثانوي فيتم تعريفه داخل جسم الفئة باستخدام الكلمة المفتاحية <code>constructor</code>. يُستخدم المُنشئ الثانوي عند الحاجة إلى تنفيذ منطق إضافي أثناء التهيئة.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف فئة بمُنشئ أولي وثانوي
+class Car() {
+    val brand: String
+    val model: String
+    
+    // المُنشئ الأولي
+    constructor(brand: String, model: String) {
+        this.brand = brand
+        this.model = model
+    }
+    
+    // المُنشئ الثانوي
+    constructor(brand: String) : this(brand, "Unknown") {
+        println("Secondary constructor called")
+    }
+}
+// إنشاء كائنات باستخدام المُنشئات
+fun main() {
+    val car1 = Car("Toyota", "Corolla")
+    val car2 = Car("Honda")
+}</code></pre>
+                    </div>
+                    <p>يمكن أيضًا استخدام القيم الافتراضية في المُنشئ الأولي لتقليل الحاجة إلى مُنشئات ثانوية.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// استخدام القيم الافتراضية بدلاً من المُنشئ الثانوي
+class Laptop(val brand: String, val model: String = "Unknown") {
+    fun showInfo() {
+        println("Laptop Brand: $brand, Model: $model")
+    }
+}
+// إنشاء كائنات باستخدام القيم الافتراضية
+fun main() {
+    val laptop1 = Laptop("Dell", "XPS 15")
+    val laptop2 = Laptop("HP")
+    laptop1.showInfo()
+    laptop2.showInfo()
+}</code></pre>
+                    </div>
+                </div>
+
+                <div id="oop3-k" class="section-k">
+                    <h3>الوراثة (Inheritance)</h3>
+                    <p>الوراثة (Inheritance) هي ميزة تسمح للفئات باكتساب خصائص ودوال من فئات أخرى، مما يساعد في إعادة استخدام الكود.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف فئة رئيسية وفئة فرعية
+open class Animal(val name: String) {
+    open fun makeSound() {
+        println("$name makes a sound")
+    }
+}
+class Dog(name: String) : Animal(name) {
+    override fun makeSound() {
+        println("$name barks")
+    }
+}
+// استدعاء الوراثة
+fun main() {
+    val dog = Dog("Buddy")
+    dog.makeSound()
+}</code></pre>
+                    </div>
+
+                    <h4>الوراثة (Inheritance) - تجاوز الدوال (Overriding)</h4>
+                    <p>يمكن للفئات الفرعية (Subclass) تجاوز الدوال في الفئة الرئيسية (Superclass) باستخدام الكلمة المفتاحية <code>override</code>.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تجاوز دالة من الفئة الأساسية
+open class Animal {
+    open fun makeSound() {
+        println("Animal makes a sound")
+    }
+}
+class Cat : Animal() {
+    override fun makeSound() {
+        println("Meow!")
+    }
+}
+// استدعاء الدالة
+fun main() {
+    val cat = Cat()
+    cat.makeSound()
+}</code></pre>
+                    </div>
+                </div>
+
+                <div id="oop4-k" class="section-k">
+                    <h3>الواجهات (Interfaces)</h3>
+                    <p>الواجهات (Interfaces) في كوتلن تُستخدم لتعريف سلوكيات مشتركة يمكن أن تتبناها عدة فئات دون الحاجة إلى الوراثة المباشرة. تحتوي الواجهة على دوال بدون تنفيذ افتراضي، لكن يمكن أن تحتوي على تنفيذ افتراضي أيضًا.</p>
+                    <p>يمكن لأي فئة تطبيق واجهة باستخدام الكلمة المفتاحية <code>interface</code>، كما يمكن للفئة أن تطبق أكثر من واجهة واحدة.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف واجهة تحتوي على دالة مجردة
+interface Drivable {
+    fun drive()
+}
+// تطبيق الواجهة في فئة
+class Car : Drivable {
+    override fun drive() {
+        println("The car is driving")
+    }
+}
+// استدعاء الواجهة
+fun main() {
+    val myCar = Car()
+    myCar.drive()
+}</code></pre>
+                    </div>
+                    <p>يمكن أن تحتوي الواجهات أيضًا على دوال ذات تنفيذ افتراضي، مما يسمح بإعادة استخدام الكود عبر الفئات المختلفة.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// واجهة تحتوي على دالة افتراضية
+interface Animal {
+    fun makeSound() {
+        println("Animal makes a sound")
+    }
+}
+// تطبيق الواجهة في فئة
+class Dog : Animal {
+    override fun makeSound() {
+        println("Woof! Woof!")
+    }
+}
+// استدعاء الكائن
+fun main() {
+    val dog = Dog()
+    dog.makeSound()
+}</code></pre>
+                    </div>
+                    <p>يمكن للفئة أن تطبق أكثر من واجهة، مما يوفر مرونة أكبر في التصميم.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف واجهتين
+interface Flyable {
+    fun fly()
+}
+interface Swimmable {
+    fun swim()
+}
+// فئة تطبق أكثر من واجهة
+class Duck : Flyable, Swimmable {
+    override fun fly() {
+        println("Duck is flying")
+    }
+    override fun swim() {
+        println("Duck is swimming")
+    }
+}
+// استدعاء الدوال
+fun main() {
+    val duck = Duck()
+    duck.fly()
+    duck.swim()
+}</code></pre>
+                    </div>
+                </div>
+
+                <div id="oop5-k" class="section-k">
+                    <h3>الفئات المجردة (Abstract Classes)</h3>
+                    <p>الفئات المجردة (Abstract Classes) تُستخدم عندما نحتاج إلى فئة تحتوي على دوال غير معرفة يجب على الفئات الفرعية تنفيذها. لا يمكن إنشاء كائنات مباشرة من الفئات المجردة، بل يجب أن يتم توسيعها (Extend) من خلال فئات أخرى.</p>
+                    <p>تُعرّف الفئة المجردة بالكلمة المفتاحية <code>abstract</code>، ويمكن أن تحتوي على دوال مجردة (بدون تنفيذ) أو دوال عادية مع تنفيذ افتراضي.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف فئة مجردة ودالة مجردة
+abstract class Vehicle {
+    abstract fun startEngine()
+    fun stopEngine() {
+        println("Engine stopped")
+    }
+}
+// فئة فرعية تطبق الفئة المجردة
+class Bike : Vehicle() {
+    override fun startEngine() {
+        println("Bike engine started")
+    }
+}
+// استدعاء الفئة المجردة
+fun main() {
+    val myBike = Bike()
+    myBike.startEngine()
+    myBike.stopEngine()
+}</code></pre>
+                    </div>
+                    <p>يمكن أيضًا أن تحتوي الفئات المجردة على خصائص مجردة يجب تهيئتها في الفئات الفرعية.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-kotlin">// تعريف فئة مجردة بخصائص مجردة
+abstract class Animal {
+    abstract val name: String
+    abstract fun makeSound()
+}
+// فئة فرعية تطبق الفئة المجردة
+class Dog : Animal() {
+    override val name = "Dog"
+    override fun makeSound() {
+        println("Woof! Woof!")
+    }
+}
+// استدعاء الكائن
+fun main() {
+    val dog = Dog()
+    println("Animal: ${dog.name}")
+    dog.makeSound()
+}</code></pre>
                     </div>
                 </div>
             </div>
