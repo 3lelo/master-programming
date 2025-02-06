@@ -97,6 +97,7 @@ footer {
     .section-k.active {margin-right: -20px !important;}
     .section-k.active {overflow-x: hidden;}
 
+    .sidebar {top: 0 !important;}
     .sidebar-toggle {right: 0 !important;}
 
     .code-container {
