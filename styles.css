@@ -127,6 +127,11 @@ footer {
         padding: 0 0 10px;
         gap: 50px;
     }
+
+    #back-to-top {
+        bottom: 1vh !important;
+        right: 1vh !important;
+    }
 }
 
 
@@ -147,7 +152,7 @@ a:active {
 
 nav {
     width: 100%;
-    height: 100px;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -276,7 +281,7 @@ nav .btn:hover span:after {
 }
 
 nav .btn:hover p:before {
-    top: -70%;
+    top: -80%;
     transform: rotate(10deg);
 }
 
@@ -296,7 +301,7 @@ nav .btn.active span:after {
 }
 
 nav .btn.active p:before {
-    top: -70%;
+    top: -80%;
     transform: rotate(10deg);
 }
 
@@ -348,32 +353,32 @@ nav .btn.active p:after {
 .sidebar {
     direction: ltr;
     position: fixed;
-    top: 0;
-    right: -280px;
+    top: 11vh;
+    left: -280px;
     height: 100vh;
     width: 250px;
-    background-color: #ffffff;
-    color: #000000;
-    border-left: 2px solid #00c74c;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: right 0.5s ease;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border-right: 2px solid #00c74c;
+    transition: left 0.5s ease;
     z-index: 1000;
     border-radius: 0;
     padding: 20px 0;
     overflow-y: auto;
 }
 
+
 .sidebar.open {
-    right: -20px;
+    left: 0;
 }
 
 .sidebar-overlay {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 999;
 }
@@ -383,15 +388,21 @@ nav .btn.active p:after {
 }
 
 .sidebar-toggle {
-    font-size: 35px;
+    font-size: 40px;
     background: none;
     border: none;
     cursor: pointer;
     color: #fff;
     position: relative;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    left: 20px;
     z-index: 1001;
+    transition: opacity 0.5s ease;
+}
+
+.sidebar-toggle.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .sidebar-toggle:focus {
@@ -407,16 +418,16 @@ nav .btn.active p:after {
 .section-item {
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 
 .section-item:hover {
-    background-color: #e0e0e0;
+    background-color: #558367;
 }
 
 .section-item.active {
     background-color: #19c059;
-    color: white;
+    color: #fff;
 }
 
 .section-content {
@@ -432,7 +443,6 @@ nav .btn.active p:after {
 .section.active {
     display: flex;
     flex-direction: column;
-    margin-right: 100px;
 }
 
 .section.active h3{font-size: xx-large;}
@@ -446,12 +456,12 @@ nav .btn.active p:after {
 }
 
 .section-item-k:hover {
-    background-color: #e0e0e0;
+    background-color: #558367;
 }
 
 .section-item-k.active {
     background-color: #19c059;
-    color: white;
+    color: #fff;
 }
 
 .section-k {
@@ -461,7 +471,6 @@ nav .btn.active p:after {
 .section-k.active {
     display: flex;
     flex-direction: column;
-    margin-right: 100px;
 }
 
 .section-k.active h3{font-size: xx-large;}
@@ -846,4 +855,34 @@ code {
 
 .left-fast.visible {
     animation: fadeInLeft 0.5s forwards;
+}
+
+
+#back-to-top {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vh;
+    background-color: #263238;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+  
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
