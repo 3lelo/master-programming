@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-    name="description"
-    content="انطلق في رحلة تصميم وتطوير التطبيقات من خلال تعلم أساسيات لغات البرمجة
-     Java و Kotlin بأساليب تفاعلية وممتعة.">
-    <title>تعلم برمجة جافا وكوتلن</title>
+    <title>تعلم جافا</title>
     <link rel="icon" href="site-icon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-kotlin.min.js"></script>
 </head>
-<body dir="rtl">
+<body class="learn" dir="rtl">
+    
     <nav>
         <button class="btn" data-page="index.html" aria-label="الرئيسية">
             <span></span>
@@ -27,172 +29,2181 @@
             <p data-start="كوتلن" data-text="تعلم كوتلن!" data-title="كوتلن" style="font-family: 'Almarai', serif;"></p>
         </button>
     </nav>
+    
 
-    <div class="hero-section">
-        <div class="hero-content">
-            <div class="hero-text fade-in-right">
-                <h1>تعلم برمجة جافا وكوتلن</h1>
-                <p style="font-size : 1.3rem">انطلق في رحلة تصميم وتطوير التطبيقات</p>
+    <div class="header">
+        <button class="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+    </div>
+    <div id="java" class="main active">
+        <div class="course-content" dir="rtl">
+            <div class="sidebar">
+                <ul class="section-list">
+                    <li class="section-item active" data-section="hello-world">Hello World with Java</li>
+                    <li class="section-item" data-section="comments">Java Comments</li>
+                    <li class="section-item" data-section="variables">Java Variables</li>
+                    <li class="section-item" data-section="type-casting">Java Type Casting</li>
+                    <li class="section-item" data-section="operators">Java Operators</li>
+                    <li class="section-item" data-section="strings">Java Strings</li>
+                    <li class="section-item" data-section="math">Java Math</li>
+                    <li class="section-item" data-section="booleans">Java Booleans</li>
+                    <li class="section-item" data-section="if.else">Java If..Else</li>
+                    <li class="section-item" data-section="switch">Java Switch</li>
+                    <li class="section-item" data-section="loops">Java Loops</li>
+                    <li class="section-item" data-section="break.continue">Java Break and Continue</li>
+                    <li class="section-item" data-section="arrays">Java Arrays</li>
+                    <li class="section-item" data-section="functions">Java Functions</li>
+                    <li class="section-item" data-section="oop-1">OOP: Classes and Objects</li>
+                    <li class="section-item" data-section="oop-2">OOP: Constructors</li>
+                    <li class="section-item" data-section="oop-3">OOP: Methods</li>
+                    <li class="section-item" data-section="oop-4">OOP: Access Modifiers</li>
+                    <li class="section-item" data-section="oop-5">OOP: Inheritance</li>
+                    <li class="section-item" data-section="oop-6">OOP: Abstract Classes</li>
+                    <li class="section-item" data-section="oop-7">OOP: Interfaces</li>
+                    <li class="section-item" data-section="oop-8">OOP: Polymorphism</li>
+                    
+                </ul>
             </div>
-            <div class="hero-image fade-in-left">
-                <img src="hero-image.jpg" alt="Programming Illustration">
-            </div>
+            <div class="section-content">
+                <div id="hello-world" class="section active">
+                    <h3>أول برنامج في جافا</h3>
+                    <p>برنامج "مرحبا بالعالم" هو مثال بسيط للبدء في تعلم جافا. يظهر هيكل برنامج جافا الأساسي.</p>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre>
+<code class="language-java">// مرحبًا بالعالم في جافا
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                
+                <div id="comments" class="section">
+                    <h3>تعليقات جافا</h3>
+                    <p>تستخدم التعليقات في جافا لشرح الشفرة وليست موضوعة للمراجعة من قبل المترجم. هي مفيدة لجعل الشفرة قابلة للقراءة والصيانة.</p>
+                    <ul>
+                        <li><strong>تعليقات خطية واحدة:</strong> تبدأ بـ <code>//</code> وتمتد إلى نهاية السطر.</li>
+                        <li><strong>تعليقات متعددة الخطوط:</strong> محاصرة بين <code>/* */</code> ويمكن أن تمتد عبر عدة خطوط.</li>
+                    </ul>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre>
+<code class="language-java">// هذا تعليق خطي واحد
+/* 
+هذا تعليق 
+متعدد الخطوط 
+*/
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+
+                <div id="variables" class="section">
+                    <h3>متغيرات جافا</h3>
+                    <p>المتغيرات في جافا هي حاويات تُستخدم لتخزين قيم البيانات. لكل متغير نوع يحدد نوع البيانات التي يمكنه تخزينها:</p>
+                    <ul>
+                        <li><strong>الأنواع الأولية:</strong> تشمل <code>int</code>، <code>double</code>، <code>boolean</code> والمزيد.</li>
+                        <li><strong>الأنواع المرجعية:</strong> تشمل الكائنات والمصفوفات.</li>
+                    </ul>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre>
+<code class="language-java">// مثال على المتغيرات
+int age = 25;
+double salary = 55000.50;
+boolean isJavaFun = true;
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                
+                <div id="type-casting" class="section">
+                    <h3>تحويل الأنواع في جافا</h3>
+                    <p>يُستخدم تحويل الأنواع في جافا لتحويل المتغيرات من نوع إلى آخر. هناك نوعان:</p>
+                    <ul>
+                        <li><strong>التحويل الضمني:</strong> تحويل نوعي تلقائي (مثل <code>int</code> إلى <code>double</code>).</li>
+                        <li><strong>التحويل الصريح:</strong> تحويل نوعي يدوي باستخدام الأقواس (مثل <code>double</code> إلى <code>int</code>).</li>
+                    </ul>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre>
+<code class="language-java">// مثال على تحويل الأنواع
+int num = 10;
+double numDouble = num; // تحويل ضمني
+int numInt = (int) numDouble; // تحويل صريح
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                
+                <div id="operators" class="section">
+                    <h3>العوامل في جافا</h3>
+                    <p>العوامل في جافا هي رموز خاصة تُستخدم لإجراء العمليات على المتغيرات والقيم. وهي أساسية لتنفيذ الحسابات والمقارنات والمعالجات المنطقية.</p>
+                    
+                    <h4>أنواع العوامل</h4>
+                    <ul style="display: flex; flex-direction: column;">
+                        <li><strong>عوامل حسابية:</strong> تُستخدم لإجراء العمليات الرياضية </li>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">int a = 10, b = 5;
+int sum = a + b;     // الجمع: 15
+int diff = a - b;    // الطرح: 5
+int prod = a * b;    // الضرب: 50
+int div = a / b;     // القسمة: 2
+int mod = a % b;     // الباقي: 0
+                            </code></pre>
+                        </div>
+                        <li><strong>عوامل مقارنة:</strong> تُستخدم لمقارنة قيمتين </li>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">int x = 5, y = 10;
+boolean isEqual = (x == y);    // يساوي: false
+boolean isNotEqual = (x != y); // لا يساوي: true
+boolean isGreater = (x > y);   // أكبر من: false
+boolean isLess = (x < y);      // أصغر من: true
+boolean isGreaterOrEqual = (x >= y); // أكبر أو يساوي: false
+boolean isLessOrEqual = (x <= y);    // أصغر أو يساوي: true
+                            </code></pre>
+                        </div>
+                        <li><strong>عوامل منطقية:</strong> تُستخدم للجمع بين العبارات الشرطية </li>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">boolean a = true, b = false;
+boolean andResult = a && b;    // و منطقي: false
+boolean orResult = a || b;     // أو منطقي: true
+boolean notResult = !a;        // نفي منطقي: false
+                            </code></pre>
+                        </div>
+                        
+                        <li><strong>عوامل بتية:</strong> تُستخدم لإجراء العمليات على مستوى البت </li>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">int num1 = 5;  // ثنائي: 0101
+int num2 = 3;  // ثنائي: 0011
+int andBit = num1 & num2;   // و بت: 1 (0001)
+int orBit = num1 | num2;    // أو بت: 7 (0111)
+int xorBit = num1 ^ num2;   // إكس أو بت: 6 (0110)
+                            </code></pre>
+                        </div>
+                        
+                        <li><strong>عوامل الإسناد:</strong> تُستخدم لإسناد القيم إلى المتغيرات </li>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-java">int a = 10;
+a += 5;  // يعادل: a = a + 5 (الآن a يساوي 15)
+a -= 3;  // يعادل: a = a - 3 (الآن a يساوي 12)
+a *= 2;  // يعادل: a = a * 2 (الآن a يساوي 24)
+a /= 4;  // يعادل: a = a / 4 (الآن a يساوي 6)
+                            </code></pre>
+                        </div>
+                    </ul>
+                </div>
+                
+                <div id="strings" class="section">
+                    <h3>سلاسل النصوص في جافا</h3>
+                    <p>السلاسل في جافا هي كائنات تمثل تسلسلًا من الحروف. على عكس الأنواع الأساسية، السلاسل جزء من حزمة java.lang.</p>
+                    
+                    <h4>إنشاء سلاسل النصوص وتشغيلها الأساسي</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إنشاء سلاسل النصوص
+String greeting = "Hello, World!"; // إنشاء سلسلة جديدة تحتوي على النص "Hello, World!"
+String name = new String("Java"); // إنشاء سلسلة جديدة باستخدام المُنشئ
+
+// طول السلسلة
+int length = greeting.length(); // استرجاع طول السلسلة
+
+// طرق سلاسل النصوص
+String lowercase = greeting.toLowerCase(); // تحويل النص إلى الأحرف الصغيرة
+String uppercase = greeting.toUpperCase(); // تحويل النص إلى الأحرف الكبيرة
+
+// جزء من السلسلة
+String sub = greeting.substring(0, 5); // استرجاع جزء من السلسلة من الحرف 0 إلى 5
+
+// استبدال الأحرف
+String replaced = greeting.replace('l', 'x'); // استبدال الأحرف 'l' بـ 'x' في السلسلة
+                </code></pre>
+                    </div>
+                    
+                    <h4>إضافة سلاسل النصوص</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق متعددة لدمج السلاسل
+String firstName = "John"; // السلسلة الأولى
+String lastName = "Doe"; // السلسلة الثانية
+
+String fullName1 = firstName + " " + lastName; // دمج السلاسل باستخدام مشغل +
+String fullName2 = String.format("%s %s", firstName, lastName); // دمج السلاسل باستخدام طريقة التنسيق
+String fullName3 = String.join(" ", firstName, lastName); // دمج السلاسل باستخدام طريقة join
+                </code></pre>
+                    </div>
+                    
+                    <h4>مقارنة سلاسل النصوص</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">String s1 = "Java"; // السلسلة الأولى
+String s2 = "Java"; // السلسلة الثانية
+String s3 = new String("Java"); // إنشاء نسخة جديدة من السلسلة
+
+// استخدام طريقة equals() (موصى بها)
+boolean areEqual = s1.equals(s3); // مقارنة السلسلة مع نفسها
+boolean areEqualIgnoreCase = s1.equalsIgnoreCase("java"); // مقارنة السلسلة مع نفسها مع تجاهل حالة الأحرف
+
+// استخدام == (ليس موصى به للسلاسل)
+boolean sameReference = (s1 == s2); // مقارنة المرجع (تشيران إلى نفس السلسلة)
+boolean differentReference = (s1 == s3); // مقارنة المرجع (السلسلتان مختلفتان)
+                </code></pre>
+                    </div>
+                    
+                    <h4>تحليل السلاسل</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">String text = "  Java Programming  "; // سلسلة تحتوي على نص برمجة جافا
+                
+// تقليم المسافات البيضاء
+String trimmed = text.trim(); // إزالة المسافات البيضاء من بداية ونهاية السلسلة
+
+// التحقق من إذا كانت فارغة
+boolean isEmpty = text.isEmpty(); // التحقق إذا كانت السلسلة فارغة
+boolean isBlank = text.isBlank(); // التحقق إذا كانت السلسلة فارغة أو تحتوي على مسافات فقط (من جافا 11+)
+
+// تقسيم السلاسل
+String csv = "Java,Kotlin,Python"; // سلسلة تحتوي على نص مفصول بفواصل
+String[] languages = csv.split(","); // تقسيم السلسلة إلى عناصر بناءً على الفواصل
+                </code></pre>
+                    </div>
+                    
+                    <p><strong>ملاحظة:</strong> السلاسل غير قابلة للتغيير في جافا، مما يعني أن القيمة لا يمكن تغييرها بعد إنشائها. كل معالجة سلسلة تولد سلسلة جديدة.</p>
+                </div>
+                
+                <div id="math" class="section">
+                    <h3>رياضيات جافا</h3>
+                    <p>توفر جافا فئة <code>Math</code> في حزمة <code>java.lang</code>، التي تقدم عمليات رياضية متنوعة وثوابت.</p>
+                    
+                    <h4>العمليات الرياضية الأساسية</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق رياضية أساسية
+double absolute = Math.abs(-10.5);     // الحصول على القيمة المطلقة
+double rounded = Math.round(10.6);     // تقريب الرقم لأقرب عدد صحيح
+double ceiling = Math.ceil(10.1);      // تقويم الرقم لأقرب عدد صحيح أكبر
+double floor = Math.floor(10.9);       // تقويم الرقم لأقرب عدد صحيح أصغر
+
+// الحد الأقصى والحد الأدنى
+int max = Math.max(10, 20);            // الحصول على العدد الأكبر
+int min = Math.min(10, 20);            // الحصول على العدد الأصغر
+                </code></pre>
+                    </div>
+                    
+                    <h4>الدوال المثلثية</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// حسابات المثلثات (بالراديان)
+double sine = Math.sin(Math.PI / 2);   // حساب جيب الزاوية π/2
+double cosine = Math.cos(0);           // حساب جيب تمام الزاوية 0
+double tangent = Math.tan(Math.PI / 4);// حساب ظل الزاوية π/4
+                </code></pre>
+                    </div>
+                    
+                    <h4>الدوال الأسية واللوغاريتمية</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// حسابات الأس واللوغاريتمات
+double power = Math.pow(2, 3);         // 2 مرفوعة للأس 3
+double squareRoot = Math.sqrt(16);     // الجذر التربيعي للعدد 16
+double naturalLog = Math.log(Math.E);  // اللوغاريتم الطبيعي للعدد e
+double base10Log = Math.log10(100);    // اللوغاريتم الأساس 10 للعدد 100
+                </code></pre>
+                    </div>
+                    <h4>إنتاج الأعداد العشوائية</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إنتاج أعداد عشوائية
+// عدد عشوائي بين 0.0 و 1.0
+double randomDecimal = Math.random();
+
+// عدد صحيح عشوائي ضمن نطاق محدد
+int randomInRange = (int)(Math.random() * 100) + 1; // من 1 إلى 100
+                </code></pre>
+                    </div>
+                    
+                    <h4>الثوابت الرياضية</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الثوابت الرياضية المحددة
+double pi = Math.PI;        // قيمة π (3.141592653589793)
+double e = Math.E;          // قيمة e (2.718281828459045)
+                </code></pre>
+                    </div>
+                    
+                    <p><strong>نصيحة احترافية:</strong> للحصول على عمليات رياضية متقدمة، يفضل استخدام <code>java.math.BigDecimal</code> لحسابات عشرية دقيقة.</p>
+                </div>
+                
+                <div id="booleans" class="section">
+                    <h3>البوليانات في جافا</h3>
+                    <p>البوليانات في جافا تمثل قيمتين ممكنتين: <code>true</code> أو <code>false</code>. وهي أساسية للمنطق الشرطي والسيطرة على التدفق.</p>
+                    
+                    <h4>إعلان وتخصيص البوليانات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إعلان متغيرات البوليانات
+boolean isJavaFun = true; // صحيح أن البرمجة بلغة جافا ممتعة
+boolean isComplexLanguage = false; // البرمجة بلغة جافا ليست معقدة
+
+// بوليانات من المقارنات
+int x = 10, y = 20;
+boolean isGreater = x < y;     // صحيح
+boolean isEqual = x == y;      // خاطئ
+                </code></pre>
+                    </div>
+                    
+                    <h4>عمليات المنطق البولي</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// المنطق البولي AND (&&)
+boolean result1 = true && true;    // true
+boolean result2 = true && false;   // false
+
+// المنطق البولي OR (||)
+boolean result3 = true || false;   // true
+boolean result4 = false || false;  // false
+
+// المنطق البولي NOT (!)
+boolean result5 = !true;           // false
+boolean result6 = !false;          // true
+                </code></pre>
+                    </div>
+                    
+                    <h4>طرق البوليانات والتحليل</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// تحويل إلى بوليانات
+boolean fromString1 = Boolean.parseBoolean("true");   // true
+boolean fromString2 = Boolean.parseBoolean("false");  // false
+boolean fromString3 = Boolean.parseBoolean("True");   // true (حساس لحالة الأحرف)
+
+// مقارنة بوليانات
+boolean compare = Boolean.compare(true, false);      // ترجع 1
+boolean logicalXOR = true ^ false;                   // ترجع true
+                </code></pre>
+                    </div>
+                    
+                    <h4>استخدام البوليانات العملية في الشروط</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// استخدام البوليانات في العبارات الشرطية
+int age = 25;
+boolean isAdult = age >= 18;
+
+if (isAdult) {
+    System.out.println("You are an adult");
+} else {
+    System.out.println("You are a minor");
+}
+
+// فحوصات بوليانية مضغوطة
+boolean hasPermission = checkUserPermission();
+boolean isValidUser = hasPermission && isAdult;
+                </code></pre>
+                    </div>
+                    
+                    <p><strong>ملاحظة:</strong> يتم استخدام البوليانات بشكل شائع في الهياكل الشرطية، والتحقق، وإنشاء المنطق الشرطي المعقد في برامج جافا.</p>
+                </div>
+                
+
+                <div id="if.else" class="section">
+                    <h3>جافا If ... Else</h3>
+                    <p>عبارات الشرط في جافا تسمح لك بتنفيذ كتل تعليمات مختلفة بناءً على ظروف محددة. إنها أساسية للتحكم في تدفق البرنامج.</p>
+                    
+                    <h4>عبارة إذا بسيطة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// عبارة إذا بسيطة
+int age = 20;
+if (age >= 18) {
+    System.out.println("You are an adult");
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>عبارة إذا - وإلا</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// هيكل if-else
+int score = 75;
+if (score >= 60) {
+    System.out.println("You passed");
+} else {
+    System.out.println("You failed");
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>سلم else if</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// شروط متعددة باستخدام else if
+int marks = 85;
+if (marks >= 90) {
+    System.out.println("Grade A");
+} else if (marks >= 80) {
+    System.out.println("Grade B");
+} else if (marks >= 70) {
+    System.out.println("Grade C");
+} else if (marks >= 60) {
+    System.out.println("Grade D");
+} else {
+    System.out.println("Fail");
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>عبارات if المدمجة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// منطق الشرط المدمج
+int temperature = 25;
+boolean isSunny = true;
+
+if (temperature > 20) {
+    if (isSunny) {
+        System.out.println("Perfect day for outdoor activities");
+    } else {
+        System.out.println("Warm but cloudy");
+    }
+} else {
+    System.out.println("It's a bit cold");
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>مشغل الشرط الثلاثي (إذا قصيرة)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// تخصيص مشروط مضغوط
+int age = 20;
+String status = (age >= 18) ? "Adult" : "Minor";
+System.out.println(status);
+
+// مشغلات شرطية متعددة
+int x = 10, y = 20;
+String result = (x > y) ? "x is larger" : (x < y) ? "y is larger" : "x and y are equal";
+                </code></pre>
+                    </div>
+                    
+                    <h4>أفضل الممارسات:
+                        <ul>
+                            <li>ابق المنطق الشرطي بسيطًا وقابلًا للقراءة</li>
+                            <li>استخدم أسماء متغيرة وشروط معبرة</li>
+                            <li>تجنب العبارات الشرطية المدمجة بشكل مفرط إن أمكن</li>
+                        </ul>
+                    </h4>
+                </div>
+                
+                <div id="switch" class="section">
+                    <h3>عبارة Switch في جافا</h3>
+                    <p>توفر عبارة Switch بديلاً لعدة عبارات If-Else لمقارنة متغير مقابل قيم متعددة.</p>
+                    
+                    <h4>عبارة Switch التقليدية</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// عبارة Switch الأساسية
+int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    case 4:
+        System.out.println("Thursday");
+        break;
+    case 5:
+        System.out.println("Friday");
+        break;
+    default:
+        System.out.println("Weekend");
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>Switch مع حالات متعددة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// حالات متعددة تشارك نفس الإجراء
+String month = "JUN";
+switch (month) {
+    case "JUN":
+    case "JUL":
+    case "AUG":
+        System.out.println("Summer Months");
+        break;
+    case "SEP":
+    case "OCT":
+    case "NOV":
+        System.out.println("Autumn Months");
+        break;
+    default:
+        System.out.println("Other Months");
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>Switch المحسن (Java 12+)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// تعبير Switch حديث
+int numLetters = switch (day) {
+    case 1, 4, 7 -> 1;
+    case 2, 5, 8 -> 2;
+    case 3, 6, 9 -> 3;
+    default -> 0;
+};
+
+// Switch مع Yield (Java 13+)
+String dayType = switch (day) {
+    case 1, 2, 3, 4, 5 -> {
+        yield "Weekday";
+    }
+    case 6, 7 -> {
+        yield "Weekend";
+    }
+    default -> "Invalid Day";
+};
+                </code></pre>
+                    </div>
+                    
+                    <h4>تحويل النوع في Switch</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// Switch مع أنواع مختلفة
+Object obj = "Hello";
+switch (obj) {
+    case Integer i -> System.out.println("Integer: " + i);
+    case String s -> System.out.println("String length: " + s.length());
+    case null -> System.out.println("Null object");
+    default -> System.out.println("Unknown type");
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>نقاط رئيسية:
+                    <ul>
+                        <li>إصدارات جافا الحديثة توفر سطر بسيط أكثر مرونة</li>
+                        <li>دائماً استخدم <code>break</code> في العبارات التقليدية</li>
+                        <li>التبديلات المحسنة تقلل من الشيفرة الزائدة</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                
+                <div id="loops" class="section">
+                    <h3>الحلقات في جافا</h3>
+                    <p>تتيح الحلقات في جافا تنفيذ كتلة من التعليمات بشكل متكرر بناءً على حالة معينة أو عدد محدد من التكرارات.</p>
+                    
+                    <h4>الحلقة While</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الحلقة While الأساسية
+int count = 0;
+while (count < 5) {
+    System.out.println("Count is: " + count);
+    count++;
+}
+
+// حلقة While مع شرط معقد
+int[] numbers = {1, 2, 3, 4, 5};
+int index = 0;
+while (index < numbers.length && numbers[index] < 4) {
+    System.out.println(numbers[index]);
+    index++;
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>الحلقة Do-While</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// حلقة Do-While (ضمان تنفيذ واحد على الأقل)
+int x = 10;
+do {
+    System.out.println("Value of x: " + x);
+    x--;
+} while (x > 0);
+
+// مثال على التحقق من الإدخال من المستخدم
+import java.util.Scanner;
+int userInput;
+do {
+    System.out.print("Enter a number between 1 and 10: ");
+    Scanner scanner = new Scanner(System.in);
+    userInput = scanner.nextInt();
+} while (userInput < 1 || userInput > 10);
+                </code></pre>
+                    </div>
+                    
+                    <h4>الحلقة For</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الحلقة For القياسية
+for (int i = 0; i < 5; i++) {
+    System.out.println("Iteration: " + i);
+}
+
+// متغيرات متعددة في الحلقة For
+for (int i = 0, j = 10; i < 5; i++, j--) {
+    System.out.println("i: " + i + ", j: " + j);
+}
+
+// حلقة لانهائية (كن حذرًا!)
+/* for (;;) {
+    System.out.println("This will run forever");
+} */
+                </code></pre>
+                    </div>
+                    
+                    <h4>الحلقة المدمجة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الحلقات المدمجة For
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        System.out.println("i: " + i + ", j: " + j);
+    }
+}
+
+// جدول الضرب باستخدام الحلقات المدمجة
+for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= 5; j++) {
+        System.out.print(i * j + "\t");
+    }
+    System.out.println(); // سطر جديد بعد كل صف
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>الحلقة For-Each (الحلقة المحسنة)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// التكرار من خلال المصفوفات
+int[] numbers = {10, 20, 30, 40, 50};
+for (int number : numbers) {
+    System.out.println(number);
+}
+
+// For-Each مع كائنات معقدة
+String[] fruits = {"Apple", "Banana", "Cherry"};
+for (String fruit : fruits) {
+    System.out.println("Fruit: " + fruit);
+}
+
+// For-Each مع المصفوفات الثنائية الأبعاد
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+for (int[] row : matrix) {
+    for (int value : row) {
+        System.out.print(value + " ");
+    }
+    System.out.println();
+}
+                </code></pre>
+                    </div>
+                    
+                    <h4>نصائح تحكم في الحلقات:
+                    <ul>
+                        <li>اختر نوع الحلقة المناسب بناءً على حالة الاستخدام الخاصة بك</li>
+                        <li>دائماً توفر شرط انتهاء واضح لمنع الحلقات اللانهائية</li>
+                        <li>الحلقات For-Each رائعة للتكرار البسيط لكنها لا تستطيع تعديل المجموعة</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                
+                <div id="break.continue" class="section">
+                    <h3>Java كسر واستمرار</h3>
+                    <p>الكسر والاستمرار هما عبارات تحكم تساعد في إدارة تنفيذ الحلقات وتوفير مرونة أكبر في عمليات التكرار.</p>
+                    
+                    <h4>عبارة الكسر</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الخروج من الحلقة
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break; // يخرج من الحلقة بالكامل عندما تكون i تساوي 5
+    }
+    System.out.println("الرقم الحالي: " + i);
+}
+// المخرجات: 0، 1، 2، 3، 4
+
+// الكسر في الحلقات المتداخلة
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        if (i == 1 && j == 1) {
+            break; // يكسر الحلقة الداخلية فقط
+        }
+        System.out.println("i: " + i + ", j: " + j);
+    }
+}
+
+// الكسر باستخدام تصنيف محدد
+outer: for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        if (i == 1 && j == 1) {
+            break outer; // يكسر الحلقة الخارجية
+        }
+        System.out.println("i: " + i + ", j: " + j);
+    }
+}
+                </code></pre>
+                    </div>
+                
+                    <h4>عبارة الاستمرار</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// تخطي التكرار
+for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) {
+        continue; // يتخطى الأرقام الزوجية
+    }
+    System.out.println("رقم فردي: " + i);
+}
+// المخرجات: 1، 3، 5، 7، 9
+
+// الاستمرار مع الشروط
+int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+for (int num : numbers) {
+    if (num <= 5) {
+        continue; // يتخطى الأرقام الأقل أو المساوية لـ 5
+    }
+    System.out.println("رقم أكبر من 5: " + num);
+}
+
+// مثال أكثر تعقيداً للاستمرار
+for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) {
+        continue; // يتخطى الأرقام الزوجية
+    }
+    if (i > 7) {
+        break; // يتوقف عندما يتجاوز الرقم 7
+    }
+    System.out.println("رقم فردي: " + i);
+}
+// المخرجات: 1، 3، 5، 7
+                </code></pre>
+                    </div>
+                
+                    <h4>استخدامات عملية</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// البحث في مصفوفة
+int[] data = {10, 20, 30, 40, 50, 60, 70};
+int searchValue = 40;
+boolean found = false;
+
+for (int value : data) {
+    if (value == searchValue) {
+        found = true;
+        break; // يتوقف عن البحث بمجرد العثور على القيمة
+    }
+}
+System.out.println("القيمة " + (found ? "تم العثور عليها" : "لم يتم العثور عليها"));
+
+// التصفية والمعالجة
+int[] scores = {85, 92, 60, 75, 45, 88};
+int passingScore = 70;
+
+System.out.println("الدرجات الناجحة:");
+for (int score : scores) {
+    if (score < passingScore) {
+        continue; // يتخطى الدرجات الفاشلة
+    }
+    System.out.println(score);
+}
+                </code></pre>
+                    </div>
+                
+                    <h4>أفضل الممارسات لاستخدام الكسر والاستمرار:
+                    <ul>
+                        <li>استخدم الكسر للخروج من الحلقات عند توافر شرط معين</li>
+                        <li>استخدم الاستمرار لتخطي التكرارات التي لا تستوفي معايير معينة</li>
+                        <li>كن حذراً عند استخدام الكسر المصنف للحفاظ على وضوح الكود</li>
+                        <li>فكر في استخدام أساليب بديلة مثل مرشحات البيانات للمنطق المعقد</li>
+                    </ul>
+                    </h4>
+                </div>
+                
+                <div id="arrays" class="section">
+                    <h3>المصفوفات في جافا</h3>
+                    <p>المصفوفات في جافا هي كائنات تخزن قيمًا متعددة من نفس نوع البيانات في موقع ذاكرة متجاور. توفر طريقة لتخزين ومعالجة مجموعات من العناصر.</p>
+                    
+                    <h4>إعلان المصفوفة وتهيئتها</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق مختلفة لإنشاء المصفوفات
+// الطريقة 1: الإعلان والتهيئة
+int[] numbers = {1, 2, 3, 4, 5};
+
+// الطريقة 2: الإعلان مع الحجم
+int[] scores = new int[5];
+scores[0] = 85;
+scores[1] = 90;
+
+// الطريقة 3: الإعلان الصريح
+String[] names = new String[3];
+names[0] = "Alice";
+names[1] = "Bob";
+names[2] = "Charlie";
+
+// الطريقة 4: القيم الافتراضية
+double[] prices = new double[4]; 
+// جميع العناصر مهيأة إلى 0.0
+                </code></pre>
+                    </div>
+                    
+                    <h4>الوصول إلى عناصر المصفوفة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// الوصول إلى وتعديل عناصر المصفوفة
+int[] ages = {25, 30, 35, 40};
+
+// الوصول باستخدام الفهرس
+int firstAge = ages[0];    // 25
+int thirdAge = ages[2];    // 35
+
+// تعديل العناصر
+ages[1] = 32;              // يغير العنصر الثاني
+
+// طول المصفوفة
+int arrayLength = ages.length; // 4
+                </code></pre>
+                    </div>
+                    
+                    <h4>التكرار عبر المصفوفات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق مختلفة للتكرار عبر المصفوفات
+int[] numbers = {10, 20, 30, 40, 50};
+
+// الحلقة التقليدية
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println("العنصر عند الفهرس " + i + ": " + numbers[i]);
+}
+
+// الحلقة المحسنة (For-Each)
+for (int number : numbers) {
+    System.out.println(number);
+}
+
+// استخدام تدفقات جافا 8
+Arrays.stream(numbers).forEach(System.out::println);
+                </code></pre>
+                    </div>
+                    
+                    <h4>المصفوفات متعددة الأبعاد</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إعلان مصفوفة ثنائية الأبعاد
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// الوصول إلى عناصر المصفوفة الثنائية الأبعاد
+int element = matrix[1][2];  // يعيد 6
+
+// استخدام حلقة متداخلة للمصفوفة الثنائية الأبعاد
+for (int[] row : matrix) {
+    for (int value : row) {
+        System.out.print(value + " ");
+    }
+    System.out.println();
+}
+
+// مثال على مصفوفة ثلاثية الأبعاد
+int[][][] threeDArray = new int[3][4][5];
+                </code></pre>
+                    </div>
+                    
+                    <h4>طرق التعامل مع المصفوفات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// طرق المرافق الخاصة بالمصفوفات
+import java.util.Arrays;
+
+int[] original = {5, 2, 8, 1, 9};
+
+// الترتيب
+Arrays.sort(original);  // [1, 2, 5, 8, 9]
+
+// نسخ المصفوفات
+int[] copy = Arrays.copyOf(original, original.length);
+
+// ملء المصفوفة بقيمة
+int[] filledArray = new int[5];
+Arrays.fill(filledArray, 42);  // [42, 42, 42, 42, 42]
+
+// البحث الثنائي
+int index = Arrays.binarySearch(original, 5);  // يعيد فهرس الرقم 5
+                </code></pre>
+                    </div>
+                    
+                    <h4>أمثلة حقيقية لاستخدام المصفوفات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                    <pre><code class="language-java">// إدارة درجات الطلاب
+class GradeTracker {
+    private double[] grades;
+    
+    public GradeTracker(int classSize) {
+        grades = new double[classSize];
+    }
+    
+    public void addGrade(int index, double grade) {
+        grades[index] = grade;
+    }
+    
+    public double calculateAverage() {
+        double sum = 0;
+        for (double grade : grades) {
+            sum += grade;
+        }
+        return sum / grades.length;
+    }
+}
+
+// الاستخدام
+GradeTracker tracker = new GradeTracker(5);
+tracker.addGrade(0, 85.5);
+tracker.addGrade(1, 92.3);
+// ... إضافة المزيد من الدرجات
+double classAverage = tracker.calculateAverage();
+                </code></pre>
+                    </div>
+                    
+                    <h4>أفضل ممارسات العمل مع المصفوفات:
+                    <ul>
+                        <li>تحقق دائمًا من حدود المصفوفة لتجنب <code>ArrayIndexOutOfBoundsException</code></li>
+                        <li>استخدم <code>Arrays.copyOf()</code> لإنشاء نسخ من المصفوفات</li>
+                        <li>فكر في استخدام <code>ArrayList</code> للحصول على الحجم الديناميكي</li>
+                        <li>استخدم تدفقات جافا 8+ لإجراء عمليات متقدمة على المصفوفات</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                <div id="functions" class="section">
+                    <h3>الدوال في جافا</h3>
+                    <p>تُستخدم الدوال (Methods) في جافا لتنظيم الكود وجعله أكثر قابلية لإعادة الاستخدام. يتم تعريف الدالة مرة واحدة ثم استدعاؤها عدة مرات عند الحاجة.</p>
+                    
+                    <h4>إنشاء دالة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// إنشاء دالة تقوم بطباعة رسالة
+public void sayHello() {
+    System.out.println("Hello, Java!");
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    sayHello();
+}</code></pre>
+                    </div>
+                    
+                    <h4>دالة تُرجع قيمة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// دالة تقوم بجمع رقمين وتُرجع النتيجة
+public int add(int num1, int num2) {
+    return num1 + num2;
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    int result = add(5, 3);
+    System.out.println("Result: " + result);
+}</code></pre>
+                    </div>
+                    
+                    <h4>دالة لا تُرجع قيمة (void)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// دالة تقوم بطباعة رسالة بدون إرجاع قيمة
+public void printMessage() {
+    System.out.println("This is a void method!");
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    printMessage();
+}</code></pre>
+                    </div>
+                    
+                    <h4>تمرير المعاملات إلى الدالة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// دالة تقوم بحساب مساحة المستطيل
+public int calculateArea(int length, int width) {
+    return length * width;
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    int area = calculateArea(5, 10);
+    System.out.println("Area: " + area);
+}</code></pre>
+                    </div>
+                    
+                    <h4>دوال مُثقلة (Method Overloading)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// تعريف دالتين بنفس الاسم ولكن بمعاملات مختلفة
+public int multiply(int a, int b) {
+    return a * b;
+}
+
+public double multiply(double a, double b) {
+    return a * b;
+}
+
+// استدعاء الدوال
+public static void main(String[] args) {
+    System.out.println("Multiplication (int): " + multiply(4, 5));
+    System.out.println("Multiplication (double): " + multiply(4.5, 3.2));
+}</code></pre>
+                    </div>
+                    
+                    <h4>الدوال الثابتة (Static Methods)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// دالة ثابتة يمكن استدعاؤها بدون إنشاء كائن من الكلاس
+public static void staticMethod() {
+    System.out.println("This is a static method!");
+}
+
+// استدعاء الدالة
+public static void main(String[] args) {
+    staticMethod();
+}</code></pre>
+                    </div>
+                    
+                    <p><strong>نصيحة احترافية:</strong> يُفضل استخدام الدوال لتقسيم الكود إلى وحدات صغيرة لجعله أكثر تنظيمًا وسهولة في الصيانة.</p>
+                </div>
+
+                <div id="oop-1" class="section">
+                    <h3>الفئات والكائنات في جافا (Classes and Objects)</h3>
+                    <p>الفئات والكائنات هي الأساس في البرمجة كائنية التوجه. الفئة هي المخطط الذي يحدد هيكل وسلوك الكائنات.</p>
+            
+                    <h4>تعريف الفئة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Car {
+    // متغيرات النسخة (Instance Variables)
+    private String brand;
+    private String model;
+    private int year;
+
+    // دالة (Method)
+    public void startEngine() {
+        System.out.println("The " + brand + " " + model + " is starting...");
+    }
+
+    // دالة أخرى
+    public void drive() {
+        System.out.println("Driving the " + year + " " + brand + " " + model);
+    }
+
+    // دوال الضبط والحصول (Setters and Getters)
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>إنشاء واستخدام الكائنات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        // إنشاء كائن جديد
+        Car myCar = new Car();
+        
+        // تعيين قيم للمتغيرات
+        myCar.setBrand("Toyota");
+        myCar.setModel("Camry");
+        myCar.setYear(2024);
+        
+        // استدعاء الدوال
+        myCar.startEngine();  // Output: The Toyota Camry is starting...
+        myCar.drive();       // Output: Driving the 2024 Toyota Camry
+        
+        // إنشاء كائن آخر
+        Car anotherCar = new Car();
+        anotherCar.setBrand("Honda");
+        anotherCar.setModel("Civic");
+        anotherCar.setYear(2023);
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مفاهيم مهمة:
+                    <ul>
+                        <li><strong>متغيرات النسخة (Instance Variables):</strong> تخزن حالة الكائن</li>
+                        <li><strong>الدوال (Methods):</strong> تحدد سلوك الكائن</li>
+                        <li><strong>التغليف (Encapsulation):</strong> استخدام private مع getters/setters</li>
+                        <li><strong>الكائن (Object):</strong> نسخة من الفئة تحتوي على قيمها الخاصة</li>
+                    </ul>
+                    </h4>
+            
+                    <h4>مثال متقدم: فئة مع تحقق من البيانات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    private String ownerName;
+    
+    // التحقق من صحة رقم الحساب
+    public void setAccountNumber(String accountNumber) {
+        if (accountNumber != null && accountNumber.length() == 10) {
+            this.accountNumber = accountNumber;
+        } else {
+            throw new IllegalArgumentException("Account number must be 10 digits");
+        }
+    }
+    
+    // التحقق من صحة المبلغ
+    public void deposit(double amount) {
+        if (amount > 0) {
+            this.balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+    }
+    
+    // دالة السحب مع التحقق من الرصيد
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            this.balance -= amount;
+            System.out.println("Withdrawn: $" + amount);
+        } else {
+            throw new IllegalArgumentException("Invalid withdrawal amount");
+        }
+    }
+    
+    // دالة عرض معلومات الحساب
+    public void displayInfo() {
+        System.out.println("Account Information:");
+        System.out.println("Owner: " + ownerName);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Balance: $" + balance);
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>نصائح للممارسات الجيدة:
+                    <ul>
+                        <li>اجعل متغيرات النسخة private دائماً للحفاظ على التغليف</li>
+                        <li>قم بتنفيذ التحقق من صحة البيانات في setters</li>
+                        <li>استخدم أسماء وصفية للفئات والمتغيرات والدوال</li>
+                        <li>قم بتوثيق الكود باستخدام التعليقات عند الحاجة</li>
+                    </ul>
+                    </h4>
+                </div>
+            
+                <div id="oop-2" class="section">
+                    <h3>المُنشئات في جافا (Constructors)</h3>
+                    <p>المُنشئ هو دالة خاصة تُستدعى عند إنشاء كائن جديد. يستخدم لتهيئة حالة الكائن.</p>
+            
+                    <h4>المُنشئ الافتراضي</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Student {
+    private String name;
+    private int age;
+    
+    // المُنشئ الافتراضي
+    public Student() {
+        name = "Unknown";
+        age = 0;
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>المُنشئ المعلمي</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Student {
+    private String name;
+    private int age;
+    private String id;
+    
+    // مُنشئ معلمي
+    public Student(String name, int age) {
+        this.name = name;
+        setAge(age);  // استخدام دالة setter للتحقق
+    }
+    
+    // مُنشئ معلمي آخر
+    public Student(String name, int age, String id) {
+        this(name, age);  // استدعاء المُنشئ الآخر
+        this.id = id;
+    }
+    
+    // دالة للتحقق من العمر
+    private void setAge(int age) {
+        if (age >= 0 && age <= 120) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("Invalid age");
+        }
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال متكامل: فئة مع منشئات متعددة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Employee {
+    private String name;
+    private String department;
+    private double salary;
+    private int id;
+    private static int nextId = 1;  // متغير ثابت لتوليد الـ ID
+    
+    // المُنشئ الافتراضي
+    public Employee() {
+        this("Unknown", "Unassigned", 0.0);
+    }
+    
+    // مُنشئ بمعلمتين
+    public Employee(String name, String department) {
+        this(name, department, 3000.0);  // راتب افتراضي
+    }
+    
+    // المُنشئ الرئيسي
+    public Employee(String name, String department, double salary) {
+        this.name = name;
+        this.department = department;
+        setSalary(salary);
+        this.id = nextId++;
+    }
+    
+    // دالة للتحقق من الراتب
+    private void setSalary(double salary) {
+        if (salary >= 0) {
+            this.salary = salary;
+        } else {
+            throw new IllegalArgumentException("Salary cannot be negative");
+        }
+    }
+    
+    // دالة لعرض معلومات الموظف
+    public void displayInfo() {
+        System.out.println("Employee Information:");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+        System.out.println("Salary: $" + salary);
+    }
+    
+    // مثال على الاستخدام
+    public static void main(String[] args) {
+        Employee emp1 = new Employee();  // استخدام المُنشئ الافتراضي
+        Employee emp2 = new Employee("Ahmed", "IT");  // استخدام المُنشئ بمعلمتين
+        Employee emp3 = new Employee("Sara", "HR", 5000.0);  // استخدام المُنشئ الكامل
+        
+        emp1.displayInfo();
+        emp2.displayInfo();
+        emp3.displayInfo();
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>نقاط مهمة عن المُنشئات:
+                    <ul>
+                        <li>اسم المُنشئ يجب أن يكون نفس اسم الفئة</li>
+                        <li>المُنشئ لا يُرجع أي قيمة (حتى void)</li>
+                        <li>يمكن أن يكون للفئة أكثر من مُنشئ (تحميل المُنشئ)</li>
+                        <li>this() تُستخدم لاستدعاء مُنشئ آخر من نفس الفئة</li>
+                        <li>المُنشئ الافتراضي يتم توفيره تلقائياً إذا لم يتم تعريف أي مُنشئ</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                <div id="oop-3" class="section">
+                    <h3>الدوال في جافا (Methods)</h3>
+                    <p>الدوال هي كتل من التعليمات البرمجية التي تؤدي مهمة محددة. تُستخدم لتنظيم الكود وإعادة استخدامه.</p>
+
+                    <h4>أنواع الدوال</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Calculator {
+    // دالة تُرجع قيمة
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    // دالة لا تُرجع قيمة (void)
+    public void printSum(int a, int b) {
+        System.out.println("Sum: " + (a + b));
+    }
+    
+    // دالة ثابتة (static)
+    public static double calculateAverage(double... numbers) {
+        if (numbers.length == 0) return 0.0;
+        
+        double sum = 0;
+        for (double num : numbers) {
+            sum += num;
+        }
+        return sum / numbers.length;
+    }
+    
+    // دالة تأخذ مصفوفة كمعامل
+    public int findMax(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            throw new IllegalArgumentException("Array cannot be empty");
+        }
+        
+        int max = numbers[0];
+        for (int num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>تحميل الدوال (Method Overloading)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class MathOperations {
+    // تحميل الدوال بأعداد مختلفة من المعاملات
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    public int multiply(int a, int b, int c) {
+        return a * b * c;
+    }
+    
+    // تحميل الدوال بأنواع مختلفة من المعاملات
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+    
+    // مثال على استخدام الدوال المحملة
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+        
+        System.out.println(math.multiply(5, 3));      // يستدعي النسخة الأولى
+        System.out.println(math.multiply(2, 3, 4));   // يستدعي النسخة الثانية
+        System.out.println(math.multiply(2.5, 3.0));  // يستدعي النسخة الثالثة
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>مثال متقدم: دوال مع معالجة الأخطاء</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class BankAccount {
+    private double balance;
+    
+    // دالة تتحقق من صحة المعاملات
+    public void deposit(double amount) throws IllegalArgumentException {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+        this.balance += amount;
+    }
+    
+    // دالة مع منطق معالجة متقدم
+    public boolean transfer(BankAccount recipient, double amount) {
+        try {
+            if (amount <= 0) {
+                throw new IllegalArgumentException("Transfer amount must be positive");
+            }
+            
+            if (this.balance < amount) {
+                throw new InsufficientFundsException("Insufficient funds for transfer");
+            }
+            
+            this.balance -= amount;
+            recipient.deposit(amount);
+            return true;
+            
+        } catch (Exception e) {
+            System.err.println("Transfer failed: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    // دالة مساعدة (helper method) خاصة
+    private void validateAmount(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>نقاط مهمة عن الدوال:
+                    <ul>
+                        <li>يجب أن يكون للدالة اسم وصفي يعبر عن وظيفتها</li>
+                        <li>يمكن تحميل الدوال بتغيير عدد أو نوع المعاملات</li>
+                        <li>الدوال الثابتة (static) تنتمي للفئة وليس للكائن</li>
+                        <li>الدوال الخاصة (private) تستخدم للمساعدة في التنظيم الداخلي</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                <div id="oop-4" class="section">
+                    <h3>معدلات الوصول في جافا (Access Modifiers)</h3>
+                    <p>معدلات الوصول تتحكم في إمكانية الوصول إلى الفئات والمتغيرات والدوال من أجزاء مختلفة من البرنامج.</p>
+
+                    <h4>أنواع معدلات الوصول</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">package com.example;
+
+public class AccessExample {
+    public String publicVar;      // يمكن الوصول من أي مكان
+    private String privateVar;    // يمكن الوصول فقط داخل الفئة
+    protected String protectedVar;// يمكن الوصول في نفس الحزمة والفئات الوارثة
+    String defaultVar;           // يمكن الوصول في نفس الحزمة فقط
+    
+    public void publicMethod() {
+        System.out.println("Public method");
+    }
+    
+    private void privateMethod() {
+        System.out.println("Private method");
+    }
+    
+    protected void protectedMethod() {
+        System.out.println("Protected method");
+    }
+    
+    void defaultMethod() {
+        System.out.println("Default method");
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>مثال على التغليف (Encapsulation)</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class Person {
+    private String name;
+    private int age;
+    private double salary;
+    
+    // دوال الوصول العامة (Getters)
+    public String getName() {
+        return name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    // دوال التعيين العامة (Setters) مع التحقق
+    public void setName(String name) {
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+    }
+    
+    public void setAge(int age) {
+        if (age >= 0 && age <= 120) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("Invalid age");
+        }
+    }
+    
+    // دالة خاصة للتحقق من البيانات
+    private boolean validateSalary(double salary) {
+        return salary >= 0;
+    }
+    
+    // دالة محمية يمكن للفئات الوارثة استخدامها
+    protected void updateSalary(double newSalary) {
+        if (validateSalary(newSalary)) {
+            this.salary = newSalary;
+        } else {
+            throw new IllegalArgumentException("Invalid salary amount");
+        }
+    }
+}</code></pre>
+                    </div>
+
+                    <h4>ملخص معدلات الوصول:
+                    <ul>
+                        <li><strong>public:</strong> يمكن الوصول من أي مكان</li>
+                        <li><strong>private:</strong> يمكن الوصول فقط داخل نفس الفئة</li>
+                        <li><strong>protected:</strong> يمكن الوصول في نفس الحزمة والفئات الوارثة</li>
+                        <li><strong>default:</strong> يمكن الوصول في نفس الحزمة فقط</li>
+                    </ul>
+                    </h4>
+
+                    <h4>مثال عملي: تطبيق معدلات الوصول</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">package com.example.banking;
+
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    protected String accountType;
+    String branchCode;  // default access
+    
+    // Constructor
+    public BankAccount(String accountNumber, String accountType) {
+        this.accountNumber = accountNumber;
+        this.accountType = accountType;
+        this.balance = 0.0;
+    }
+    
+    // Public interface
+    public void deposit(double amount) {
+        validateAmount(amount);
+        updateBalance(amount);
+    }
+    
+    public void withdraw(double amount) {
+        validateAmount(amount);
+        validateWithdrawal(amount);
+        updateBalance(-amount);
+    }
+    
+    // Protected method for inheritance
+    protected void updateBalance(double amount) {
+        this.balance += amount;
+    }
+    
+    // Private validation methods
+    private void validateAmount(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+    }
+    
+    private void validateWithdrawal(double amount) {
+        if (amount > balance) {
+            throw new InsufficientFundsException("Insufficient funds");
+        }
+    }
+    
+    // Default access method
+    void updateBranchCode(String newCode) {
+        this.branchCode = newCode;
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div id="oop-5" class="section">
+                    <h3>الوراثة في جافا (Inheritance)</h3>
+                    <p>الوراثة هي أحد أهم مفاهيم البرمجة كائنية التوجه، حيث تسمح للفئات بوراثة الخصائص والسلوكيات من فئات أخرى. تساعد في تنظيم الكود وإعادة استخدامه وبناء تسلسل هرمي للفئات.</p>
+            
+                    <h4>أنواع الوراثة في جافا
+                    <ul>
+                        <li>الوراثة الأحادية (Single Inheritance): فئة واحدة ترث من فئة واحدة</li>
+                        <li>الوراثة المتعددة المستويات (Multilevel Inheritance): سلسلة من الوراثة (A ← B ← C)</li>
+                        <li>الوراثة الهرمية (Hierarchical Inheritance): عدة فئات ترث من فئة واحدة</li>
+                    </ul>
+                    </h4>
+            
+                    <strong>ملاحظة هامة:</strong> جافا لا تدعم الوراثة المتعددة للفئات (Multiple Inheritance) لتجنب مشكلة الماس (Diamond Problem).
+            
+                    <h4>مثال تفصيلي للوراثة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// الفئة الأساسية
+public class Vehicle {
+    protected String brand;
+    protected String model;
+    protected int year;
+    
+    public Vehicle(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+    
+    public void start() {
+        System.out.println("Vehicle starting...");
+    }
+    
+    public void stop() {
+        System.out.println("Vehicle stopping...");
+    }
+    
+    // دالة نهائية لا يمكن تجاوزها في الفئات المشتقة
+    public final void displayInfo() {
+        System.out.println("Brand: " + brand + ", Model: " + model + ", Year: " + year);
+    }
+}
+
+// فئة مشتقة
+public class Car extends Vehicle {
+    private int numberOfDoors;
+    private String transmission;
+    
+    public Car(String brand, String model, int year, int numberOfDoors, String transmission) {
+        super(brand, model, year);  // استدعاء constructor الفئة الأساسية
+        this.numberOfDoors = numberOfDoors;
+        this.transmission = transmission;
+    }
+    
+    // تجاوز دالة من الفئة الأساسية
+    @Override
+    public void start() {
+        System.out.println("Checking seatbelts...");
+        super.start();  // استدعاء نسخة الفئة الأساسية
+        System.out.println("Car is ready to drive!");
+    }
+    
+    // إضافة دوال جديدة
+    public void honk() {
+        System.out.println("Beep! Beep!");
+    }
+}
+
+// فئة مشتقة أخرى
+public class ElectricCar extends Car {
+    private int batteryCapacity;
+    private int range;
+    
+    public ElectricCar(String brand, String model, int year, 
+                        int numberOfDoors, String transmission,
+                        int batteryCapacity, int range) {
+        super(brand, model, year, numberOfDoors, transmission);
+        this.batteryCapacity = batteryCapacity;
+        this.range = range;
+    }
+    
+    @Override
+    public void start() {
+        System.out.println("Checking battery level...");
+        super.start();
+        System.out.println("Electric systems initialized!");
+    }
+    
+    public void charge() {
+        System.out.println("Charging battery...");
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال على استخدام الوراثة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class InheritanceDemo {
+    public static void main(String[] args) {
+        // إنشاء كائنات مختلفة
+        Vehicle vehicle = new Vehicle("Generic", "Base", 2023);
+        Car car = new Car("Toyota", "Camry", 2023, 4, "Automatic");
+        ElectricCar tesla = new ElectricCar("Tesla", "Model 3", 2023, 4, "Automatic", 75, 350);
+        
+        // استدعاء الدوال
+        System.out.println("=== Testing Vehicle ===");
+        vehicle.start();
+        vehicle.displayInfo();
+        
+        System.out.println("\n=== Testing Car ===");
+        car.start();
+        car.honk();
+        car.displayInfo();
+        
+        System.out.println("\n=== Testing Electric Car ===");
+        tesla.start();
+        tesla.charge();
+        tesla.displayInfo();
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>أفضل الممارسات في الوراثة:
+                    <ul>
+                        <li>استخدم الكلمة المفتاحية <code>final</code> لمنع الوراثة عندما لا تكون ضرورية</li>
+                        <li>تجنب سلاسل الوراثة العميقة (أكثر من 3 مستويات)</li>
+                        <li>استخدم <code>@Override</code> دائماً عند تجاوز الدوال</li>
+                        <li>لا تنسى استدعاء constructor الفئة الأساسية باستخدام <code>super()</code></li>
+                        <li>فكر في استخدام التركيب (Composition) بدلاً من الوراثة إذا لم تكن العلاقة "is-a" واضحة</li>
+                    </ul>
+                    </h4>
+                </div>
+
+
+                <div id="oop-6" class="section">
+                    <h3>الفئات المجردة في جافا (Abstract Classes)</h3>
+                    <p>الفئات المجردة هي فئات خاصة تستخدم كقوالب للفئات الأخرى. لا يمكن إنشاء كائنات منها مباشرة، ولكنها تستخدم كأساس للفئات المشتقة.</p>
+            
+                    <h4>الفرق بين الفئات المجردة والعادية:
+                    <ul>
+                        <li>لا يمكن إنشاء كائنات من الفئات المجردة</li>
+                        <li>يمكن أن تحتوي على دوال مجردة وعادية</li>
+                        <li>يمكن أن تحتوي على متغيرات ودوال بناء</li>
+                        <li>الفئات المشتقة يجب أن تنفذ جميع الدوال المجردة</li>
+                    </ul>
+                    </h4>
+            
+                    <h4>مثال شامل للفئات المجردة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// فئة مجردة تمثل شكل هندسي
+public abstract class Shape {
+    protected String color;
+    protected boolean filled;
+    
+    // يمكن للفئات المجردة أن تحتوي على constructor
+    public Shape(String color, boolean filled) {
+        this.color = color;
+        this.filled = filled;
+    }
+    
+    // دوال مجردة يجب تنفيذها في الفئات المشتقة
+    public abstract double getArea();
+    public abstract double getPerimeter();
+    
+    // دوال عادية مع تنفيذ
+    public String getColor() {
+        return color;
+    }
+    
+    public void setColor(String color) {
+        this.color = color;
+    }
+    
+    public boolean isFilled() {
+        return filled;
+    }
+    
+    public void setFilled(boolean filled) {
+        this.filled = filled;
+    }
+    
+    // تجاوز دالة toString
+    @Override
+    public String toString() {
+        return "A shape with color of " + color + " and " + 
+                (filled ? "filled" : "not filled");
+    }
+}
+
+// فئة مشتقة تمثل مستطيل
+public class Rectangle extends Shape {
+    protected double width;
+    protected double length;
+    
+    public Rectangle(String color, boolean filled, double width, double length) {
+        super(color, filled);
+        this.width = width;
+        this.length = length;
+    }
+    
+    @Override
+    public double getArea() {
+        return width * length;
+    }
+    
+    @Override
+    public double getPerimeter() {
+        return 2 * (width + length);
+    }
+    
+    @Override
+    public String toString() {
+        return "A Rectangle with width=" + width + " and length=" + length + 
+                ", which is a subclass of " + super.toString();
+    }
+}
+
+// فئة مشتقة تمثل دائرة
+public class Circle extends Shape {
+    protected double radius;
+    
+    public Circle(String color, boolean filled, double radius) {
+        super(color, filled);
+        this.radius = radius;
+    }
+    
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+    
+    @Override
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+    
+    @Override
+    public String toString() {
+        return "A Circle with radius=" + radius + 
+                ", which is a subclass of " + super.toString();
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال على استخدام الفئات المجردة</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class AbstractClassDemo {
+    public static void main(String[] args) {
+        // Shape shape = new Shape("Red", true);  // خطأ! لا يمكن إنشاء كائن من فئة مجردة
+        
+        Shape rect = new Rectangle("Blue", true, 5, 3);
+        Shape circle = new Circle("Red", false, 4);
+        
+        System.out.println("=== Rectangle Details ===");
+        System.out.println(rect.toString());
+        System.out.println("Area: " + rect.getArea());
+        System.out.println("Perimeter: " + rect.getPerimeter());
+        
+        System.out.println("\n=== Circle Details ===");
+        System.out.println(circle.toString());
+        System.out.println("Area: " + circle.getArea());
+        System.out.println("Perimeter: " + circle.getPerimeter());
+        
+        // استخدام مصفوفة من الأشكال
+        Shape[] shapes = {rect, circle};
+        for (Shape shape : shapes) {
+            System.out.println("\nProcessing shape: " + shape.getClass().getSimpleName());
+            System.out.println("Area: " + shape.getArea());
+        }
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div id="oop-7" class="section">
+                    <h3>الواجهات في جافا (Interfaces)</h3>
+                    <p>الواجهات هي عقد يحدد مجموعة من السلوكيات التي يجب على الفئة تنفيذها. تعتبر الواجهات أساسية في تحقيق التجريد وتعدد الوراثة في جافا.</p>
+            
+                    <h4>مميزات الواجهات في جافا:
+                    <ul>
+                        <li>تحقيق تعدد الوراثة للسلوك</li>
+                        <li>تحقيق التجريد الكامل</li>
+                        <li>تعريف عقد موحد للفئات غير المرتبطة</li>
+                        <li>دعم للدوال الافتراضية (منذ Java 8)</li>
+                        <li>دعم للدوال الثابتة (static)</li>
+                    </ul>
+                    </h4>
+            
+                    <h4>مثال شامل للواجهات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// واجهة أساسية للدفع
+public interface Payable {
+    double calculatePayment();  // دالة مجردة
+    
+    // دالة افتراضية (منذ Java 8)
+    default void processPayment() {
+        double amount = calculatePayment();
+        System.out.println("Processing payment of: $" + amount);
+    }
+    
+    // دالة ثابتة
+    static boolean validateAmount(double amount) {
+        return amount > 0;
+    }
+}
+
+// واجهة للكائنات القابلة للمقارنة
+public interface Comparable<T> {
+    int compareTo(T other);
+}
+
+// واجهة للتقارير
+public interface Reportable {
+    void generateReport();
+    String getReportFormat();
+}
+
+// فئة تنفذ عدة واجهات
+public class Employee implements Payable, Comparable<Employee>, Reportable {
+    private String name;
+    private double salary;
+    private String department;
+    
+    public Employee(String name, double salary, String department) {
+        this.name = name;
+        this.salary = salary;
+        this.department = department;
+    }
+    
+    @Override
+    public double calculatePayment() {
+        return salary;
+    }
+    
+    @Override
+    public int compareTo(Employee other) {
+        return Double.compare(this.salary, other.salary);
+    }
+    
+    @Override
+    public void generateReport() {
+        System.out.println("Employee Report:");
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+        System.out.println("Salary: $" + salary);
+    }
+    
+    @Override
+    public String getReportFormat() {
+        return "PDF";
+    }
+}
+
+// مثال على واجهة وظيفية
+@FunctionalInterface
+public interface MathOperation {
+    double operate(double x, double y);
+    
+    // يمكن إضافة دوال افتراضية وثابتة
+    default double safeDivide(double x, double y) {
+        if (y == 0) return 0;
+        return operate(x, y);
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال على استخدام الواجهات</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class InterfaceDemo {
+    public static void main(String[] args) {
+        // إنشاء موظفين
+        Employee emp1 = new Employee("John", 50000, "IT");
+        Employee emp2 = new Employee("Alice", 60000, "HR");
+        
+        // استخدام واجهة Payable
+        System.out.println("=== Payment Processing ===");
+        emp1.processPayment();
+        emp2.processPayment();
+        
+        // استخدام واجهة Comparable
+        System.out.println("\n=== Salary Comparison ===");
+        if (emp1.compareTo(emp2) < 0) {
+            System.out.println(emp1.getName() + " has lower salary");
+        }
+        
+        // استخدام واجهة Reportable
+        System.out.println("\n=== Generating Reports ===");
+        emp1.generateReport();
+        
+        // استخدام واجهة وظيفية
+        MathOperation addition = (x, y) -> x + y;
+        MathOperation division = (x, y) -> x / y;
+        
+        System.out.println("\n=== Math Operations ===");
+        System.out.println("10 + 5 = " + addition.operate(10, 5));
+        System.out.println("10 / 0 = " + division.safeDivide(10, 0));  // استخدام الدالة الافتراضية
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>أفضل ممارسات استخدام الواجهات:
+                    <ul>
+                        <li>استخدم الواجهات لتحديد السلوك المشترك بين الفئات غير المرتبطة</li>
+                        <li>احتفظ بالواجهات صغيرة ومركزة (مبدأ الفصل بين الواجهات)</li>
+                        <li>استخدم الدوال الافتراضية بحذر لتجنب التعقيد</li>
+                        <li>وثّق الواجهات جيداً لتوضيح العقد المتوقع</li>
+                    </ul>
+                    </h4>
+                </div>
+
+                <div id="oop-8" class="section">
+                    <h3>تعدد الأشكال في جافا (Polymorphism)</h3>
+                    <p>تعدد الأشكال هو القدرة على التعامل مع الكائنات من أنواع مختلفة بطريقة موحدة. يعتبر من أهم مفاهيم البرمجة كائنية التوجه.</p>
+            
+                    <h4>أنواع تعدد الأشكال:
+                    <ul>
+                        <li>تعدد الأشكال في وقت التشغيل (Runtime/Dynamic Polymorphism)</li>
+                        <li>تعدد الأشكال في وقت التجميع (Compile-time/Static Polymorphism)</li>
+                    </ul>
+                    </h4>
+            
+                    <h4>مثال شامل لتعدد الأشكال</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">// الفئة الأساسية
+public class Animal {
+    protected String name;
+    protected int age;
+    
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public void makeSound() {
+        System.out.println("Some generic sound");
+    }
+    
+    public void move() {
+        System.out.println("Moving...");
+    }
+}
+
+// فئات مشتقة
+public class Cat extends Animal {
+    private boolean isIndoor;
+    
+    public Cat(String name, int age, boolean isIndoor) {
+        super(name, age);
+        this.isIndoor = isIndoor;
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println("Cat is walking gracefully");
+    }
+    
+    // تحميل الدوال (overloading)
+    public void makeSound(boolean isHungry) {
+        if (isHungry) {
+            System.out.println("Loud Meow!!!!");
+        } else {
+            makeSound();
+        }
+    }
+}
+
+public class Bird extends Animal {
+    private double wingspan;
+    
+    public Bird(String name, int age, double wingspan) {
+        super(name, age);
+        this.wingspan = wingspan;
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println("Tweet tweet!");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println("Bird is flying");
+    }
+    
+    // دالة خاصة بالطيور
+    public void glide() {
+        System.out.println("Bird is gliding with wingspan: " + wingspan);
+    }
+}
+
+// مدير للحيوانات يوضح تعدد الأشكال
+public class AnimalManager {
+    // تعدد الأشكال في المعاملات
+    public void makeAnimalSound(Animal animal) {
+        System.out.println("Processing " + animal.getClass().getSimpleName());
+        animal.makeSound();
+    }
+    
+    // تحميل الدوال (overloading)
+    public void makeAnimalSound(Animal[] animals) {
+        for (Animal animal : animals) {
+            makeAnimalSound(animal);
+        }
+    }
+    
+    // استخدام تعدد الأشكال مع الواجهات
+    public void processMovable(List<Animal> movables) {
+        for (Animal movable : movables) {
+            movable.move();
+        }
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>مثال على استخدام تعدد الأشكال</h4>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-java">public class PolymorphismDemo {
+    public static void main(String[] args) {
+        // إنشاء كائنات
+        Animal genericAnimal = new Animal("Generic", 1);
+        Animal cat = new Cat("Whiskers", 3, true);
+        Animal bird = new Bird("Tweety", 2, 20.5);
+        
+        // تعدد الأشكال في وقت التشغيل
+        System.out.println("=== Runtime Polymorphism ===");
+        genericAnimal.makeSound();  // Some generic sound
+        cat.makeSound();           // Meow!
+        bird.makeSound();          // Tweet tweet!
+        
+        // استخدام مدير الحيوانات
+        AnimalManager manager = new AnimalManager();
+        
+        // تعدد الأشكال مع المصفوفات
+        System.out.println("\n=== Array Polymorphism ===");
+        Animal[] animals = {genericAnimal, cat, bird};
+        manager.makeAnimalSound(animals);
+        
+        // تعدد الأشكال مع القوائم
+        System.out.println("\n=== List Polymorphism ===");
+        List<Animal> animalList = Arrays.asList(animals);
+        manager.processMovable(animalList);
+        
+        // تحميل الدوال (Compile-time Polymorphism)
+        System.out.println("\n=== Method Overloading ===");
+        Cat realCat = (Cat) cat;  // type casting
+        realCat.makeSound();      // normal sound
+        realCat.makeSound(true);  // hungry sound
+        
+        // استخدام instanceof للتحقق من النوع
+        System.out.println("\n=== Type Checking ===");
+        for (Animal animal : animals) {
+            if (animal instanceof Bird) {
+                Bird realBird = (Bird) animal;
+                realBird.glide();
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+            
+                    <h4>فوائد تعدد الأشكال:
+                    <ul>
+                        <li>يقلل من التكرار في الكود</li>
+                        <li>يزيد من قابلية إعادة الاستخدام</li>
+                        <li>يحسن المرونة والصيانة</li>
+                        <li>يدعم مبدأ التجريد</li>
+                        <li>يسهل اختبار وتوسيع التطبيق</li>
+                    </ul>
+                    </h4>
+                </div>
         </div>
     </div>
-    
-    
-    <main>
-        <div id="main" class="main home active">
-            <div class="pc">
-                <div class="cards-container">
-                    <div class="row fade-in-top">
-                        <div class="card-p image-card">
-                            <img src="cards-image.jpg" alt="Image Placeholder" class="image" />
-                        </div>
-                        <div class="card-p large-text-card">
-                            <h1>لغات البرمجة: Kotlin و Java</h1>
-                            <p>هل ترغب في تعلم البرمجة وبناء تطبيقات قوية؟ تعلم 
-                                Kotlin و Java هو الخيار الأمثل لك! 
-                                كلا اللغتين هما الأساس لتطوير تطبيقات Android، 
-                                بالإضافة إلى استخدامهما في العديد من المجالات الأخرى.
-                            </p>
-                        </div>
-                    </div>
-                
-                    <div class="row fade-in-bottom">
-                        <div class="card-p small-card" style="padding-bottom: 120px;">
-                            <h1>Kotlin: لغة حديثة</h1>
-                            <p>تعتبر <strong>Kotlin</strong> الخيار المثالي للمطورين الذين يبحثون عن لغة سهلة وآمنة. تتميز Kotlin ب:</p>
-                            <ul>
-                                <li><strong>كتابة كود أسرع وأسهل</strong>.</li>
-                                <li><strong>التوافق مع Java</strong>، مما يتيح دمجها بسهولة.</li>
-                                <li><strong>أداء عالٍ</strong> في التطبيقات.</li>
-                            </ul>
-                            <a href="kotlin.html">
-                                <button class="floating-btn">ابدأ رحلة كوتلن</button>
-                            </a>
-                        </div>
-                        <div class="card-p small-card" style="padding-bottom: 120px;">
-                            <h1>Java: استقرار وقوة</h1>
-                            <p><strong>Java</strong> هي لغة تقليدية ومتينة تُستخدم في بناء أنظمة كبيرة مثل تطبيقات الويب والألعاب. مميزاتها تشمل:</p>
-                            <ul>
-                                <li><strong>استقرار وقوة</strong> في المشاريع الكبيرة.</li>
-                                <li><strong>دعم مجتمع واسع</strong> وحلول جاهزة للمشاكل.</li>
-                                <li><strong>تشغيل عبر منصات متعددة</strong>.</li>
-                            </ul>
-                            <a href="java.html">
-                                <button class="floating-btn">ابدأ رحلة جافا</button>
-                            </a>
-                        </div>
-                    </div>
-                
-                    <div class="footer-btn fade-in-bottom bottom-slow">
-                        <a href="about.html">
-                        <button class="about-project-btn">عن المشروع</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="phone">
-                <div class="card fade-in-bottom">
-                    <img src="programming.png" alt="Computer" class="card-img">
-                    <div class="align">
-                        <span class="red"></span>
-                        <span class="yellow"></span>
-                        <span class="green"></span>
-                    </div>
-
-                    <h1>لغات البرمجة: Kotlin و Java</h1>
-                    <p>هل ترغب في تعلم البرمجة وبناء تطبيقات قوية؟ تعلم <strong>Kotlin</strong> و <strong>Java</strong> هو الخيار الأمثل لك! كلا اللغتين هما الأساس لتطوير تطبيقات <strong>Android</strong>، بالإضافة إلى استخدامهما في العديد من المجالات الأخرى.</p>
-                </div>
-
-                <div class="card fade-in-right">
-                    <img src="kotlin-logo.png" alt="Kotlin language" class="card-img">
-                    <div class="align">
-                        <span class="red"></span>
-                        <span class="yellow"></span>
-                        <span class="green"></span>
-                    </div>
-                    
-                    <h1>Kotlin: لغة حديثة</h1>
-                    <p>تعتبر <strong>Kotlin</strong> الخيار المثالي للمطورين الذين يبحثون عن لغة سهلة وآمنة. تتميز Kotlin ب:</p>
-                    <ul>
-                        <li><strong>كتابة كود أسرع وأسهل</strong>.</li>
-                        <li><strong>التوافق مع Java</strong>، مما يتيح دمجها بسهولة.</li>
-                        <li><strong>أداء عالٍ</strong> في التطبيقات.</li>
-                    </ul>
-                </div>
-
-                <div class="card fade-in-left">
-                    <img src="java-logo.png" alt="Java language" class="card-img" style="width: 60px; height: 60px;">
-                    <div class="align">
-                        <span class="red"></span>
-                        <span class="yellow"></span>
-                        <span class="green"></span>
-                    </div>
-
-                    <h1>Java: استقرار وقوة</h1>
-                    <p><strong>Java</strong> هي لغة تقليدية ومتينة تُستخدم في بناء أنظمة كبيرة مثل تطبيقات الويب والألعاب. مميزاتها تشمل:</p>
-                    <ul>
-                        <li><strong>استقرار وقوة</strong> في المشاريع الكبيرة.</li>
-                        <li><strong>دعم مجتمع واسع</strong> وحلول جاهزة للمشاكل.</li>
-                        <li><strong>تشغيل عبر منصات متعددة</strong>.</li>
-                    </ul>
-                </div>
-
-                <div class="card fade-in-right">
-                    <img src="question-mark.png" alt="Question mark" class="card-img">
-                    <div class="align">
-                        <span class="red"></span>
-                        <span class="yellow"></span>
-                        <span class="green"></span>
-                    </div>
-                    
-                    <h1>لماذا تتعلم معنا</h1>
-                    <p>
-                        <ul>
-                            <li style="color: #e7e7e7">محتوى مجاني 100%</li>
-                            <li style="color: #e7e7e7">شروحات وأمثلة مفصلة</li>
-                            <li style="color: #e7e7e7">تمارين تفاعلية</li>
-                            <li style="color: #e7e7e7">تعلم مرن يناسب وتيرتك الخاصة</li>
-                        </ul>
-                    </p>
-                </div>
-
-                <div class="card fade-in-left">
-                    <img src="shuttle.png" alt="Start" class="card-img" style="width: 40px; height: 40px;">
-                    <div class="align">
-                        <span class="red"></span>
-                        <span class="yellow"></span>
-                        <span class="green"></span>
-                    </div>
-                    
-                    <h1>ابدأ الآن</h1>
-                    <h3 style="color: #e7e7e7">اختر دورة لبدء رحلتك في عالم البرمجة.</h3>
-                </div>
-
-                <div class="footer-btn fade-in-bottom bottom-slow" style="margin-bottom: 20px;">
-                    <a href="about.html">
-                    <button class="about-project-btn">عن المشروع</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-section">
-            <h3>روابط سريعة</h3>
-            <a href="https://www.programiz.com/java-programming/online-compiler/" target="_blank" style="font-weight: 500;">مشغل أكواد Java</a>
-            <a href="https://play.kotlinlang.org/" target="_blank" style="font-weight: 400;">مشغل أكواد Kotlin</a>
-        </div>
-        
-        <div class="footer-section">
-            <h3>تصميم وتطوير</h3>
-            <li>علي عدنان</li>
-        </div>
-    </footer>
 </body>
 </html>
