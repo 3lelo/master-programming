@@ -73,16 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.className = 'sidebar-overlay';
     document.body.appendChild(overlay);
 
-    toggleButton.addEventListener('click', () => {
+    const toggleSidebar = () => {
         sidebar.classList.toggle('open');
         overlay.classList.toggle('active');
-        toggleButton.style.display = sidebar.classList.contains('open') ? 'none' : 'block';
-    });
+        toggleButton.classList.toggle('hidden');
+    };
 
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        toggleButton.style.display = 'block';
+    toggleButton.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
+    document.querySelectorAll('.section-item, .section-item-k').forEach(item => {
+        item.addEventListener('click', () => {
+            if (sidebar.classList.contains('open')) {
+                toggleSidebar();
+            }
+        });
     });
 });
 
@@ -107,5 +112,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
   animatedElements.forEach(element => {
     observer.observe(element);
+  });
+});
+
+
+
+
+
+
+
+
+const backToTopButton = document.getElementById('back-to-top');
+
+function checkScrollPosition() {
+
+  if (window.scrollY > 200) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
+  }
+}
+
+window.addEventListener('scroll', checkScrollPosition);
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
 });
