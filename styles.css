@@ -820,14 +820,30 @@ code {
     animation: fadeInBottom 1.5s forwards;
 }
 
+.bottom-fast.visible{
+    animation: fadeInBottom 0.5s forwards;
+}
+
 .top-slow.visible {
     animation: fadeInTop 1.5s forwards;
+}
+
+.top-fast.visible {
+    animation: fadeInTop 0.5s forwards;
 }
 
 .right-slow.visible {
     animation: fadeInRight 1.5s forwards;
 }
 
+.right-fast.visible {
+    animation: fadeInRight 0.5s forwards;
+}
+
 .left-slow.visible {
     animation: fadeInLeft 1.5s forwards;
+}
+
+.left-fast.visible {
+    animation: fadeInLeft 0.5s forwards;
 }
