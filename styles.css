@@ -644,7 +644,7 @@ code {
 }
 
 .hero-image img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     border-radius: 10px;
 }
