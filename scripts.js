@@ -85,3 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleButton.style.display = 'block';
     });
 });
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const animatedElements = document.querySelectorAll(
+    '.fade-in-right, .fade-in-left, .fade-in-top, .fade-in-bottom'
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  animatedElements.forEach(element => {
+    observer.observe(element);
+  });
+});
