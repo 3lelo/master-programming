@@ -97,7 +97,6 @@ footer {
     .section-k.active {margin-right: -20px !important;}
     .section-k.active {overflow-x: hidden;}
 
-    .sidebar {top: 0 !important;}
     .sidebar-toggle {right: 0 !important;}
 
     .code-container {
@@ -354,7 +353,7 @@ nav .btn.active p:after {
 .sidebar {
     direction: ltr;
     position: fixed;
-    top: 11vh;
+    top: 0;
     left: -280px;
     height: 100vh;
     width: 250px;
