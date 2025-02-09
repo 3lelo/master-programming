@@ -119,14 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
 const backToTopButton = document.getElementById('back-to-top');
 
 function checkScrollPosition() {
-
-  if (window.scrollY > 200) {
+  const sectionContent = document.querySelector('.section-content');
+  const activeSection = document.querySelector('.section.active, .section-k.active');
+  
+  if (window.scrollY > 200 || (activeSection && sectionContent && sectionContent.scrollTop > 200)) {
     backToTopButton.classList.add('show');
   } else {
     backToTopButton.classList.remove('show');
@@ -134,10 +133,22 @@ function checkScrollPosition() {
 }
 
 window.addEventListener('scroll', checkScrollPosition);
+document.querySelector('.section-content')?.addEventListener('scroll', checkScrollPosition);
 
 backToTopButton.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+  const sectionContent = document.querySelector('.section-content');
+  const activeSection = document.querySelector('.section.active, .section-k.active');
+  
+  if (activeSection && sectionContent) {
+    sectionContent.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  else {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 });
