@@ -88,6 +88,7 @@ footer {
     .section.active p{font-size: medium !important;}
     .section.active li{font-size: small !important;}
     .section.active {margin-right: -20px !important;}
+    .section.active {margin-left: 0 !important;}
     .section.active {overflow-x: hidden;}
 
     .section-k.active h3{font-size: x-large !important;}
@@ -95,12 +96,14 @@ footer {
     .section-k.active p{font-size: medium !important;}
     .section-k.active li{font-size: small !important;}
     .section-k.active {margin-right: -20px !important;}
+    .section-k.active {margin-left: 0 !important;}
     .section-k.active {overflow-x: hidden;}
 
     .sidebar-toggle {right: 0 !important;}
 
     .code-container {
         margin-left: -120px !important;
+        left: 0 !important;
         width: 130% !important;
         font-size: 0.7rem;
     }
@@ -130,8 +133,34 @@ footer {
 
     #back-to-top {
         bottom: 1vh !important;
-        right: 1vh !important;
+        left: 1vh !important;
+        right: unset !important;
+        height: 25px !important;
+        width: 25px !important;
+        font-size: 15px !important;
     }
+}
+
+
+
+@media (min-width: 768px) {
+    .sidebar {
+        left: 0 !important;
+        background: linear-gradient(180deg, #4CAF50, #46946d) !important;
+        border: none !important;
+        top: 11vh !important;
+    }
+    
+    .sidebar-toggle {
+        display: none;
+    }
+    
+    .sidebar-overlay {
+        display: none !important;
+    }
+    .section-item-k.active{background-color: #26be98 !important;}
+    .section-item.active{background-color: #26be98 !important;}
+
 }
 
 
@@ -355,7 +384,7 @@ nav .btn.active p:after {
     position: fixed;
     top: 0;
     left: -280px;
-    height: 100vh;
+    height: 100%;
     width: 250px;
     backdrop-filter: blur(20px);
     background: rgba(0, 0, 0, 0.3);
@@ -365,7 +394,9 @@ nav .btn.active p:after {
     z-index: 1000;
     border-radius: 0;
     padding: 20px 0;
-    overflow-y: auto;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 
@@ -443,6 +474,7 @@ nav .btn.active p:after {
 .section.active {
     display: flex;
     flex-direction: column;
+    margin-left: 250px;
 }
 
 .section.active h3{font-size: xx-large;}
@@ -471,6 +503,7 @@ nav .btn.active p:after {
 .section-k.active {
     display: flex;
     flex-direction: column;
+    margin-left: 250px;
 }
 
 .section-k.active h3{font-size: xx-large;}
@@ -581,8 +614,8 @@ code {
 .code-container {
     align-self: center;
     position: relative;
-    width: 70%;
-    margin-left: 150px;
+    width: 100%;
+    left: -100px;
 }
 
 .copy-btn {
