@@ -1,4 +1,5 @@
-**جميع الموارد التي تم استخدامها في إنشاء موقع master programming
-<html>
-  <li>بواسطة : علي عدنان</li>
-</html>
+You'll find here the all sources that were used to build "master programming" website.
+
+By:
+====
+- `Ali Adnan`
